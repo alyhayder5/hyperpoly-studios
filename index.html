@@ -1,0 +1,323 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Hyperpoly Studios</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Hyperpoly Studios: YouTube automation, game development and SaaS products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single centered column. Hero pairs the headline with a static low-poly "hyperpoly" mesh; services are a pure-CSS sticky stack; footer ends on a faceted wordmark. No animation. */
+:root{
+  color-scheme:dark;
+  --bg:#0f0d0c; --surface:#181513; --surface-2:#1f1b18;
+  --fg:#efe9e3; --muted:#9a918a; --line:#2b2623; --accent:#e8935a; --ok:#8fbf7f;
+  --font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --nav-h:64px;
+}
+*{box-sizing:border-box}
+html{scrollbar-width:thin;scrollbar-color:#3a332e var(--bg)}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#3a332e;border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+[id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:var(--nav-h)}
+.brand{display:flex;align-items:center;gap:10px;font:700 1.05rem/1 var(--display);text-decoration:none;letter-spacing:-.01em}
+.brand svg{width:22px;height:22px}
+.links{display:flex;gap:24px;margin-left:auto}
+.links a{text-decoration:none;color:var(--muted);font-size:.92rem}
+.links a:hover{color:var(--fg)}
+@media (max-width:640px){.links{display:none}}
+
+/* ---------- Hero ---------- */
+.hero{padding-block:28px 0}
+.meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px;color:var(--muted);padding-bottom:20px;border-bottom:1px solid var(--line)}
+.status{display:flex;align-items:center;gap:8px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 18%,transparent)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(48px,8vw,96px)}
+h1{font:800 clamp(2.6rem,6.6vw,5.4rem)/.96 var(--display);font-variation-settings:"opsz" 96;letter-spacing:-.04em;margin:0 0 24px;text-wrap:balance}
+h1 .soft{color:var(--muted)}
+.hero p.lede{color:var(--muted);font-size:1.12rem;max-width:46ch;margin:0 0 32px}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:.95rem;padding:12px 20px;border-radius:99px;background:var(--fg);color:var(--bg);border:0;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--accent)}
+.btn.line{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.line:hover{box-shadow:inset 0 0 0 1px var(--fg);background:transparent}
+.figure{margin:0;display:grid;gap:12px}
+.figure img{width:100%;max-width:100%;height:auto;aspect-ratio:1;display:block;mix-blend-mode:lighten;
+  -webkit-mask-image:radial-gradient(closest-side,#000 82%,transparent);mask-image:radial-gradient(closest-side,#000 82%,transparent)}
+.figure figcaption{display:flex;justify-content:space-between;gap:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+@media (max-width:760px){
+  .hero-grid{grid-template-columns:1fr}
+  .figure{max-width:320px}
+}
+
+/* Division index */
+.index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.index a{display:grid;gap:6px;padding:22px 24px 24px;text-decoration:none;border-left:1px solid var(--line);min-width:0}
+.index a:first-child{border-left:0;padding-left:0}
+.index a:hover .name{color:var(--accent)}
+.index .code{color:var(--accent)}
+.index .name{font:700 1.25rem/1.15 var(--display);letter-spacing:-.01em}
+.index .fig{color:var(--muted);font-size:.92rem}
+.index .fig b{color:var(--fg);font:600 1rem var(--mono);font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  .index{grid-template-columns:1fr}
+  .index a,.index a:first-child{border-left:0;border-top:1px solid var(--line);padding:18px 0}
+  .index a:first-child{border-top:0}
+}
+
+h2{font:700 clamp(1.7rem,3.6vw,2.6rem)/1.08 var(--display);letter-spacing:-.03em;margin:0 0 12px}
+.sub{color:var(--muted);margin:0 0 40px;max-width:52ch}
+
+/* ---------- Sticky card stack ---------- */
+#services{padding-block:96px}
+.stack{display:flex;flex-direction:column;gap:56px;padding-bottom:48px}
+.card{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--nav-h) + 20px + var(--i) * 16px);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;
+  min-height:340px;padding:clamp(24px,4vw,44px);
+  background:var(--surface);border:1px solid var(--line);border-radius:24px}
+.card:nth-child(even){background:var(--surface-2)}
+.label{color:var(--accent);margin:0 0 16px}
+.card h3{font:700 clamp(1.6rem,3vw,2.2rem)/1.08 var(--display);letter-spacing:-.025em;margin:0 0 14px;text-wrap:balance}
+.card p{color:var(--muted);margin:0;max-width:42ch}
+.card ul{list-style:none;margin:0;padding:0;align-self:end;border-top:1px solid var(--line)}
+.card li{padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+@media (max-width:760px),(max-height:560px){
+  .card{position:relative;top:auto;grid-template-columns:1fr;min-height:0}
+  .stack{gap:16px}
+}
+
+#contact{padding-block:96px;border-top:1px solid var(--line)}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.mail code{font:500 1rem/1 var(--mono);padding:13px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--line);user-select:all;word-break:break-all}
+.copyable{cursor:copy}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:20;
+  font:500 .85rem/1 var(--font);padding:12px 18px;border-radius:99px;background:var(--fg);color:var(--bg)}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
+.foot-top{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:32px;padding-block:64px 48px}
+.foot-top h4{margin:0 0 14px;color:var(--muted);font-weight:500}
+.foot-top ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot-top a{text-decoration:none;color:var(--fg);font-size:.95rem}
+.foot-top a:hover{color:var(--accent)}
+.foot-pitch p{font:700 1.6rem/1.15 var(--display);letter-spacing:-.02em;margin:0 0 16px;max-width:14ch}
+.foot-pitch .muted{color:var(--muted);font:400 .92rem/1.5 var(--font);max-width:32ch;margin:0}
+@media (max-width:860px){.foot-top{grid-template-columns:repeat(2,minmax(0,1fr))}.foot-pitch{grid-column:1/-1}}
+@media (max-width:420px){.foot-top{grid-template-columns:1fr}}
+.wordmark{display:block;text-align:center;font:800 clamp(3.4rem,16.4vw,15.5rem)/.78 var(--display);font-variation-settings:"opsz" 96;
+  letter-spacing:-.055em;white-space:nowrap;margin:0;padding-top:.06em;user-select:none;
+  color:transparent;background:linear-gradient(180deg,#f2b98d,#7a3f22 70%,#2a1a12);background-size:cover;background-position:center;
+  -webkit-background-clip:text;background-clip:text}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:20px;border-top:1px solid var(--line);color:var(--muted)}
+.foot-bottom a{text-decoration:none}
+.foot-bottom a:hover{color:var(--fg)}
+</style>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Hyperpoly Studios home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14L16 30 4 23V9z" fill="#e8935a"/><path d="M16 2 28 9 16 16zM4 23 16 16v14z" fill="#f2b98d"/><path d="M28 9v14L16 16z" fill="#7a3f22"/></svg>
+      Hyperpoly
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="meta mono">
+        <span>Hyperpoly Studios · Independent studio</span>
+        <span class="status"><i></i>Taking new projects for Q4 2026</span>
+      </div>
+
+      <div class="hero-grid">
+        <div>
+          <h1>Channels, games and software. <span class="soft">Built by one studio.</span></h1>
+          <p class="lede">We run automated YouTube channels, develop games and build SaaS products, with one team and shared tools across all three.</p>
+          <div class="actions">
+            <a class="btn" href="#services">Our services</a>
+            <a class="btn line" href="#contact">Start a project</a>
+          </div>
+        </div>
+        <figure class="figure">
+          <img src="hp-mark.webp" width="900" height="900" alt="Hyperpoly Studios HP monogram, faceted low-poly letters lit in warm orange" decoding="async" fetchpriority="high">
+        </figure>
+      </div>
+
+      <nav class="index" aria-label="Divisions">
+        <a href="#youtube"><span class="code mono">YT</span><span class="name">YouTube Automation</span><span class="fig"><b>38</b> channels operated</span></a>
+        <a href="#games"><span class="code mono">GD</span><span class="name">Game Development</span><span class="fig"><b>6</b> games shipped</span></a>
+        <a href="#saas"><span class="code mono">SA</span><span class="name">SaaS Products</span><span class="fig"><b>4</b> products live</span></a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <p class="sub">Five ways we work with creators, players and businesses.</p>
+      <div class="stack">
+        <article class="card" id="youtube" style="--i:0">
+          <div>
+            <p class="label mono">YouTube Automation</p>
+            <h3>Faceless channels, run end to end.</h3>
+            <p>Niche research, scripts, voiceover, editing and uploads. You own the channel and the revenue.</p>
+          </div>
+          <ul><li>Niche &amp; keyword research</li><li>Scripts &amp; voiceover</li><li>Editing &amp; thumbnails</li><li>Upload scheduling &amp; SEO</li></ul>
+        </article>
+
+        <article class="card" id="games" style="--i:1">
+          <div>
+            <p class="label mono">Game Development</p>
+            <h3>Small teams that ship games.</h3>
+            <p>Original titles and client work for PC and mobile, from first prototype to store launch.</p>
+          </div>
+          <ul><li>Unity, Godot &amp; Unreal</li><li>Game design &amp; prototyping</li><li>3D &amp; 2D art</li><li>Steam, Play Store &amp; App Store</li></ul>
+        </article>
+
+        <article class="card" id="saas" style="--i:2">
+          <div>
+            <p class="label mono">SaaS Products</p>
+            <h3>Software with billing from day one.</h3>
+            <p>We build our own SaaS tools and partner with founders to design, launch and grow theirs.</p>
+          </div>
+          <ul><li>Product discovery</li><li>MVP design &amp; build</li><li>Stripe subscriptions</li><li>Analytics &amp; growth</li></ul>
+        </article>
+
+        <article class="card" id="creative" style="--i:3">
+          <div>
+            <p class="label mono">Creative Production</p>
+            <h3>Visuals for every project.</h3>
+            <p>The in-house team behind our channels and games, available for client work.</p>
+          </div>
+          <ul><li>Video editing</li><li>3D modelling &amp; animation</li><li>Thumbnails &amp; key art</li><li>Brand identity</li></ul>
+        </article>
+
+        <article class="card" id="growth" style="--i:4">
+          <div>
+            <p class="label mono">Growth &amp; Consulting</p>
+            <h3>Advice from people who run the numbers.</h3>
+            <p>Audits and strategy for channels, games and apps, based on what works in our own projects.</p>
+          </div>
+          <ul><li>Channel audits</li><li>Monetization strategy</li><li>Launch planning</li><li>Analytics setup</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Start a project</h2>
+      <p class="sub">Email us with which service fits and a short note about your idea.</p>
+      <div class="mail">
+        <code id="email" class="copyable" title="Double-click to copy">hyperpolystudios@gmail.com</code>
+        <button class="btn line" id="copy" type="button">Copy email</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-top">
+    <div class="foot-pitch">
+      <p>Have an idea worth building?</p>
+      <p class="muted">We reply to every enquiry within one working hour.</p>
+    </div>
+    <div>
+      <h4 class="mono">Services</h4>
+      <ul><li><a href="#youtube">YouTube Automation</a></li><li><a href="#games">Game Development</a></li><li><a href="#saas">SaaS Products</a></li><li><a href="#creative">Creative Production</a></li><li><a href="#growth">Growth &amp; Consulting</a></li></ul>
+    </div>
+    <div>
+      <h4 class="mono">Studio</h4>
+      <ul><li><a href="#services">What we do</a></li><li><a href="#contact">Start a project</a></li><li><a href="#top">Back to top ↑</a></li></ul>
+    </div>
+    <div>
+      <h4 class="mono">Contact</h4>
+      <ul><li><span class="copyable" title="Double-click to copy" style="user-select:all;word-break:break-all">hyperpolystudios@gmail.com</span></li><li style="color:var(--muted);font-size:.92rem">Replies within 1 working hour</li></ul>
+    </div>
+  </div>
+  <p class="wordmark" id="wordmark" aria-hidden="true">HYPERPOLY</p>
+  <div class="wrap foot-bottom mono">
+    <span>© 2026 Hyperpoly Studios</span>
+    <span>YT · GD · SA</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(() => {
+  /* Copy email */
+  const EMAIL = 'hyperpolystudios@gmail.com';
+  const btn = document.getElementById('copy');
+  let toast = null, toastTimer = 0, btnTimer = 0;
+  const notify = msg => {
+    if (!toast) { toast = document.createElement('div'); toast.className = 'toast'; toast.setAttribute('role', 'status'); document.body.appendChild(toast); }
+    toast.textContent = msg; toast.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => { toast.hidden = true; }, 1800);
+  };
+  const selectText = el => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  const copied = () => {
+    btn.textContent = 'Copied'; clearTimeout(btnTimer); btnTimer = setTimeout(() => { btn.textContent = 'Copy email'; }, 1800);
+    notify('Email copied');
+  };
+  // Copy must run inside the click / double-click handler so the browser allows it
+  const copyEmail = el => {
+    const legacy = () => {
+      selectText(el);
+      let ok = false; try { ok = document.execCommand('copy'); } catch (err) {}
+      ok ? copied() : notify('Email selected, press Ctrl+C to copy');
+    };
+    try { navigator.clipboard.writeText(EMAIL).then(copied, legacy); } catch (err) { legacy(); }
+  };
+  btn.addEventListener('click', () => copyEmail(document.getElementById('email')));
+  document.querySelectorAll('.copyable').forEach(el => el.addEventListener('dblclick', () => copyEmail(el)));
+
+  /* Shared facet shading: dark ember → accent → light apricot */
+  const stops = [[42, 26, 18], [122, 63, 34], [232, 147, 90], [246, 205, 168]];
+  const shade = v => {
+    v = Math.min(1, Math.max(0, v)) * (stops.length - 1);
+    const i = Math.min(stops.length - 2, Math.floor(v)), f = v - i, a = stops[i], b = stops[i + 1];
+    return `rgb(${a.map((c, k) => Math.round(c + (b[k] - c) * f)).join(',')})`;
+  };
+  const rng = seed => () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+  /* Footer wordmark: letters filled with a faceted texture */
+  const paintWordmark = () => {
+    const cv = document.createElement('canvas'), W = 1600, H = 420, step = 70, rnd = rng(5);
+    cv.width = W; cv.height = H;
+    const ctx = cv.getContext('2d'), cols = Math.ceil(W / step) + 1, rows = Math.ceil(H / step) + 1, g = [];
+    for (let j = 0; j <= rows; j++) { g[j] = []; for (let i = 0; i <= cols; i++) {
+      const jx = i && i < cols ? (rnd() - 0.5) * step * 0.7 : 0, jy = j && j < rows ? (rnd() - 0.5) * step * 0.7 : 0;
+      g[j][i] = [i * step + jx, j * step + jy];
+    } }
+    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
+      const a = g[j][i], b = g[j][i + 1], c = g[j + 1][i], d = g[j + 1][i + 1];
+      [[a, b, c], [b, d, c]].forEach(t => {
+        const yMid = (t[0][1] + t[1][1] + t[2][1]) / 3;
+        ctx.beginPath(); ctx.moveTo(...t[0]); ctx.lineTo(...t[1]); ctx.lineTo(...t[2]); ctx.closePath();
+        ctx.fillStyle = shade(0.95 - (yMid / H) * 0.8 + (rnd() - 0.5) * 0.35); ctx.fill();
+      });
+    }
+    try { document.getElementById('wordmark').style.backgroundImage = `url(${cv.toDataURL('image/png')})`; } catch (err) {}
+  };
+
+  paintWordmark();
+})();
+</script>
+
+</body></html>
