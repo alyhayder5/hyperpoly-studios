@@ -171,7 +171,7 @@
 }
 </script>
 <style>
-/* Layout: single centered column. Hero pairs the headline with a static low-poly "hyperpoly" mesh; services are a pure-CSS sticky stack; footer ends on a faceted wordmark. No animation. */
+/* Layout: single centered column. Hero pairs the headline with a static low-poly "hyperpoly" mesh; services are a pure-CSS sticky stack; footer ends on a faceted wordmark. Only motion: the orbit rings around the hero mark. */
 :root{
   color-scheme:dark;
   --bg:#0f0d0c; --surface:#181513; --surface-2:#1f1b18;
@@ -201,14 +201,14 @@ a{color:inherit}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:1.5rem;height:var(--nav-h)}
 .brand{display:flex;align-items:center;gap:10px;font:700 1.05rem/1 var(--display);text-decoration:none;letter-spacing:-.01em}
-.brand svg{width:1.4rem;height:1.4rem}
+.brand img{width:1.9rem;height:1.9rem;display:block;mix-blend-mode:lighten}
 .links{display:flex;gap:1.75rem;margin-left:auto}
 .links a{text-decoration:none;color:var(--muted);font-size:.92rem}
 .links a:hover{color:var(--fg)}
 @media (max-width:640px){.links{display:none}}
 
 /* ---------- Hero ---------- */
-.hero{padding-block:1.75rem 0}
+.hero{padding-block:1.75rem 0;overflow-x:clip}
 .meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem;color:var(--muted);padding-bottom:1.25rem;border-bottom:1px solid var(--line)}
 .status{display:flex;align-items:center;gap:8px}
 .status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 18%,transparent)}
@@ -221,8 +221,13 @@ h1 .soft{color:var(--muted)}
 .btn:hover{background:var(--accent)}
 .btn.line{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
 .btn.line:hover{box-shadow:inset 0 0 0 1px var(--fg);background:transparent}
-.figure{margin:0;display:grid;justify-self:end;width:100%;max-width:56rem}
-.figure img{width:100%;max-width:100%;height:auto;aspect-ratio:1;display:block;mix-blend-mode:lighten;
+.figure{position:relative;margin:0;display:grid;place-items:center;justify-self:end;width:100%;max-width:56rem;aspect-ratio:1}
+/* Orbit field: hairline orbits painted once, bodies redrawn each frame, gentle sway on the compositor */
+.orbit{position:absolute;inset:0;z-index:0;pointer-events:none;will-change:transform;animation:sway 14s ease-in-out infinite alternate}
+.orbit canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+@keyframes sway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){.orbit{animation:none}}
+.figure img{position:relative;z-index:1;width:56%;max-width:100%;height:auto;aspect-ratio:1;display:block;mix-blend-mode:lighten;
   -webkit-mask-image:radial-gradient(closest-side,#000 82%,transparent);mask-image:radial-gradient(closest-side,#000 82%,transparent)}
 .figure figcaption{display:flex;justify-content:space-between;gap:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
 @media (max-width:760px){
@@ -248,22 +253,33 @@ h1 .soft{color:var(--muted)}
 h2{font:700 clamp(1.7rem,3vw,3.4rem)/1.08 var(--display);letter-spacing:-.03em;margin:0 0 12px}
 .sub{color:var(--muted);margin:0 0 2.5rem;max-width:52ch}
 
-/* ---------- Sticky card stack ---------- */
+/* ---------- Diagonal card stack: each card lands over the last, leaving only tilted top edges ---------- */
 #services{padding-block:6rem}
-.stack{display:flex;flex-direction:column;gap:3.5rem;padding-bottom:3rem}
-.card{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--nav-h) + 1.25rem + var(--i) * 1rem);
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,4vw,6rem);
-  min-height:22rem;padding:clamp(1.5rem,3vw,3.25rem);
-  background:var(--surface);border:1px solid var(--line);border-radius:1.5rem}
-.card:nth-child(even){background:var(--surface-2)}
-.label{color:var(--accent);margin:0 0 1rem}
+.stack{display:flex;flex-direction:column;gap:22vh;padding-bottom:12vh;
+  --card-h:min(clamp(24rem,58vh,36rem), calc(100vh - 12rem))}
+.slot{--tint:var(--surface);--edge:var(--accent);--glow:var(--accent);--r:0deg;
+  position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--nav-h) + 1.5rem + var(--i) * 1.1rem)}
+.card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,4vw,6rem);
+  min-height:var(--card-h);padding:clamp(1.75rem,3vw,3.5rem);border-radius:1.75rem;overflow:hidden;
+  background:
+    linear-gradient(118deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,0) 32%),
+    radial-gradient(55% 85% at 90% 12%,color-mix(in srgb,var(--glow) 16%,transparent),transparent 70%),
+    radial-gradient(45% 70% at 0% 100%,color-mix(in srgb,var(--glow) 14%,transparent),transparent 70%),
+    linear-gradient(105deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 70%,var(--bg)) 50%,color-mix(in srgb,var(--tint) 28%,var(--bg)) 100%);
+  border:1px solid color-mix(in srgb,var(--edge) 22%,transparent);
+  box-shadow:inset 0 1px 0 color-mix(in srgb,var(--edge) 55%,transparent),0 -1.25rem 2.5rem -1rem rgba(0,0,0,.7);
+  transform:rotate(var(--r));transform-origin:50% 0;will-change:transform;backface-visibility:hidden;contain:layout paint}
+.card > *{position:relative;z-index:1}
+.card > .shade{position:absolute;inset:0;z-index:2;background:#000;opacity:0;pointer-events:none;will-change:opacity}
+.label{color:var(--edge);margin:0 0 1rem}
 .card h3{font:700 clamp(1.6rem,2.4vw,3rem)/1.08 var(--display);letter-spacing:-.025em;margin:0 0 .9rem;text-wrap:balance}
-.card p{color:var(--muted);margin:0;max-width:42ch}
-.card ul{list-style:none;margin:0;padding:0;align-self:end;border-top:1px solid var(--line)}
-.card li{padding:.75rem 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.card p{color:color-mix(in srgb,var(--fg) 90%,transparent);margin:0;max-width:42ch}
+.card ul{list-style:none;margin:0;padding:0;align-self:end;border-top:1px solid color-mix(in srgb,var(--fg) 16%,transparent)}
+.card li{padding:.75rem 0;border-bottom:1px solid color-mix(in srgb,var(--fg) 16%,transparent);font-size:.95rem}
 @media (max-width:760px),(max-height:560px){
-  .card{position:relative;top:auto;grid-template-columns:1fr;min-height:0}
-  .stack{gap:1rem}
+  .stack{gap:1rem;padding-bottom:0}
+  .slot{position:relative;top:auto}
+  .card{grid-template-columns:1fr;min-height:0;transform:none!important}
 }
 
 #contact{padding-block:6rem;border-top:1px solid var(--line)}
@@ -299,7 +315,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Hyperpoly Studios home">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 28 9v14L16 30 4 23V9z" fill="#e8935a"/><path d="M16 2 28 9 16 16zM4 23 16 16v14z" fill="#f2b98d"/><path d="M28 9v14L16 16z" fill="#7a3f22"/></svg>
+      <img src="hp-icon.webp" width="56" height="56" alt="" decoding="async">
       Hyperpoly
     </a>
     <nav class="links" aria-label="Sections">
@@ -327,14 +343,15 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
           </div>
         </div>
         <figure class="figure">
+          <div class="orbit" aria-hidden="true"><canvas class="orbit-rings"></canvas><canvas class="orbit-bodies"></canvas></div>
           <img src="hp-mark.webp" width="900" height="900" alt="Hyperpoly Studios HP monogram, faceted low-poly letters lit in warm orange" decoding="async" fetchpriority="high" loading="eager">
         </figure>
       </div>
 
       <nav class="index" aria-label="Divisions">
-        <a href="#youtube"><span class="code mono">YT</span><span class="name">YouTube Automation</span><span class="fig"><b>38</b> channels operated</span></a>
-        <a href="#games"><span class="code mono">GD</span><span class="name">Game Development</span><span class="fig"><b>6</b> games shipped</span></a>
-        <a href="#saas"><span class="code mono">SA</span><span class="name">SaaS Products</span><span class="fig"><b>4</b> products live</span></a>
+        <a href="#youtube"><span class="code mono">YT</span><span class="name">YouTube Automation</span><span class="fig"><b>29</b> channels operated</span></a>
+        <a href="#games"><span class="code mono">GD</span><span class="name">Game Development</span><span class="fig"><b>17</b> games shipped</span></a>
+        <a href="#saas"><span class="code mono">SA</span><span class="name">SaaS Products</span><span class="fig"><b>43</b> products live</span></a>
       </nav>
     </div>
   </section>
@@ -344,50 +361,50 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
       <h2>What we do</h2>
       <p class="sub">Five ways we work with creators, players and businesses.</p>
       <div class="stack">
-        <article class="card" id="youtube" style="--i:0">
+        <article class="slot" id="youtube" style="--i:0;--tint:#5c1612;--edge:#ffab96;--glow:#c4442c;--r:-.6deg"><div class="card">
           <div>
             <p class="label mono">YouTube Automation</p>
             <h3>Faceless channels, run end to end.</h3>
             <p>Niche research, scripts, voiceover, editing and uploads. You own the channel and the revenue.</p>
           </div>
-          <ul><li>Niche &amp; keyword research</li><li>Scripts &amp; voiceover</li><li>Editing &amp; thumbnails</li><li>Upload scheduling &amp; SEO</li></ul>
-        </article>
+          <ul><li>Niche &amp; keyword research</li><li>Scripts &amp; voiceover</li><li>Editing &amp; thumbnails</li><li>Upload scheduling &amp; SEO</li></ul><div class="shade" aria-hidden="true"></div>
+        </div></article>
 
-        <article class="card" id="games" style="--i:1">
+        <article class="slot" id="games" style="--i:1;--tint:#573411;--edge:#f1c47e;--glow:#c98a2e;--r:.5deg"><div class="card">
           <div>
             <p class="label mono">Game Development</p>
             <h3>Small teams that ship games.</h3>
             <p>Original titles and client work for PC and mobile, from first prototype to store launch.</p>
           </div>
-          <ul><li>Unity, Godot &amp; Unreal</li><li>Game design &amp; prototyping</li><li>3D &amp; 2D art</li><li>Steam, Play Store &amp; App Store</li></ul>
-        </article>
+          <ul><li>Unity, Godot &amp; Unreal</li><li>Game design &amp; prototyping</li><li>3D &amp; 2D art</li><li>Steam, Play Store &amp; App Store</li></ul><div class="shade" aria-hidden="true"></div>
+        </div></article>
 
-        <article class="card" id="saas" style="--i:2">
+        <article class="slot" id="saas" style="--i:2;--tint:#4c1533;--edge:#f3abc9;--glow:#b23f7a;--r:-.4deg"><div class="card">
           <div>
             <p class="label mono">SaaS Products</p>
             <h3>Software with billing from day one.</h3>
             <p>We build our own SaaS tools and partner with founders to design, launch and grow theirs.</p>
           </div>
-          <ul><li>Product discovery</li><li>MVP design &amp; build</li><li>Stripe subscriptions</li><li>Analytics &amp; growth</li></ul>
-        </article>
+          <ul><li>Product discovery</li><li>MVP design &amp; build</li><li>Stripe subscriptions</li><li>Analytics &amp; growth</li></ul><div class="shade" aria-hidden="true"></div>
+        </div></article>
 
-        <article class="card" id="creative" style="--i:3">
+        <article class="slot" id="creative" style="--i:3;--tint:#231c52;--edge:#bdb6ff;--glow:#5d52d6;--r:.6deg"><div class="card">
           <div>
             <p class="label mono">Creative Production</p>
             <h3>Visuals for every project.</h3>
             <p>The in-house team behind our channels and games, available for client work.</p>
           </div>
-          <ul><li>Video editing</li><li>3D modelling &amp; animation</li><li>Thumbnails &amp; key art</li><li>Brand identity</li></ul>
-        </article>
+          <ul><li>Video editing</li><li>3D modelling &amp; animation</li><li>Thumbnails &amp; key art</li><li>Brand identity</li></ul><div class="shade" aria-hidden="true"></div>
+        </div></article>
 
-        <article class="card" id="growth" style="--i:4">
+        <article class="slot" id="growth" style="--i:4;--tint:#0f3b33;--edge:#93e2cb;--glow:#2a9a80;--r:-.5deg"><div class="card">
           <div>
             <p class="label mono">Growth &amp; Consulting</p>
             <h3>Advice from people who run the numbers.</h3>
             <p>Audits and strategy for channels, games and apps, based on what works in our own projects.</p>
           </div>
-          <ul><li>Channel audits</li><li>Monetization strategy</li><li>Launch planning</li><li>Analytics setup</li></ul>
-        </article>
+          <ul><li>Channel audits</li><li>Monetization strategy</li><li>Launch planning</li><li>Analytics setup</li></ul><div class="shade" aria-hidden="true"></div>
+        </div></article>
       </div>
     </div>
   </section>
@@ -489,6 +506,302 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
   };
 
   paintWordmark();
+
+  /* Diagonal card stack: the incoming card tilts in and settles; covered cards shrink back and dim.
+     Card positions are worked out from scrollY alone, so a scroll frame does no layout reads, and only
+     transform/opacity change (both handled by the compositor). */
+  const stackEl = document.querySelector('.stack');
+  const slots = [...stackEl.querySelectorAll('.slot')];
+  const faces = slots.map(s => s.querySelector('.card'));
+  const shades = faces.map(f => f.querySelector('.shade'));
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let tops = [], rests = [], flow = [], heights = [], sticky = true, queued = false;
+  let lastTf = [], lastOp = [];
+  const measure = () => {
+    sticky = getComputedStyle(slots[0]).position === 'sticky';
+    const cs = getComputedStyle(stackEl), gap = parseFloat(cs.rowGap) || 0;
+    let y = stackEl.getBoundingClientRect().top + scrollY + (parseFloat(cs.paddingTop) || 0);
+    slots.forEach((s, i) => {
+      const ss = getComputedStyle(s);
+      tops[i] = parseFloat(ss.top) || 0;
+      rests[i] = parseFloat(ss.getPropertyValue('--r')) || 0;
+      heights[i] = s.offsetHeight;
+      flow[i] = y; y += heights[i] + gap;     // where the card sits before it sticks
+    });
+    lastTf = []; lastOp = [];
+  };
+  const update = () => {
+    queued = false;
+    if (!sticky) {
+      faces.forEach((f, i) => { f.style.transform = ''; shades[i].style.opacity = ''; });
+      lastTf = []; lastOp = []; return;
+    }
+    const sy = scrollY, vh = innerHeight;
+    const left = flow.map((f, i) => Math.max(0, f - sy - tops[i]));   // px each card still travels before it sticks
+    for (let i = 0; i < slots.length; i++) {
+      const t = Math.min(1, left[i] / (vh * .7));
+      let depth = 0;
+      for (let j = i + 1; j < slots.length; j++) depth += Math.min(1, Math.max(0, 1 - left[j] / heights[i]));
+      const rot = reduceMotion ? rests[i] : rests[i] + t * 3.5;
+      const tiltX = reduceMotion ? 0 : t * 7;
+      const scale = 1 - Math.min(depth, 4) * .025;
+      const tf = `perspective(1800px) rotateX(${tiltX.toFixed(3)}deg) rotate(${rot.toFixed(3)}deg) scale(${scale.toFixed(4)})`;
+      if (tf !== lastTf[i]) { faces[i].style.transform = tf; lastTf[i] = tf; }
+      const op = Math.min(depth * .1, .3).toFixed(3);
+      if (op !== lastOp[i]) { shades[i].style.opacity = op; lastOp[i] = op; }
+    }
+  };
+  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+  addEventListener('scroll', queue, { passive: true });
+  const remeasure = () => { measure(); update(); };
+  addEventListener('resize', remeasure);
+  if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(stackEl);   // fonts loading, content changes
+  addEventListener('load', remeasure);
+  measure(); update();
+
+  /* Orbit field: a few hundred hairline orbits on one diagonal, each carrying a body that wanders along it:
+     stars, gold, platinum, crystal, ruby, sapphire, emerald, amethyst, small ringed planets and comets.
+     The engine below runs in a background worker (OffscreenCanvas) when the browser supports it, so nothing
+     on the page can slow it down; otherwise it runs here. Orbits are painted once, bodies come from
+     pre-rendered sprites, and the slow sway of the whole field is a CSS animation on the compositor. */
+  const ORBIT_ENGINE = function (rctx, bctx, mkCanvas, opts) {
+    const TAU = Math.PI * 2;
+    const CLEAR = .275, EDGE = .488, TILT = -32 * Math.PI / 180, SPREAD = 11 * Math.PI / 180;
+    const rand = (a, b) => a + Math.random() * (b - a);
+    const ringStyles = ['rgba(246,205,168,.20)', 'rgba(232,147,90,.17)', 'rgba(200,105,58,.15)', 'rgba(246,205,168,.08)', 'rgba(232,147,90,.07)'];
+    /* ---- sprites, drawn once: each body is pre-rendered with its glow baked in ---- */
+    const SP = 96, R = SP * .16;                       // sprite size and body radius inside it (glow fills the rest)
+    const painters = {
+      ball: cols => g => {
+        const gr = g.createRadialGradient(-R * .35, -R * .4, R * .05, 0, 0, R);
+        gr.addColorStop(0, cols[0]); gr.addColorStop(.35, cols[1]); gr.addColorStop(.8, cols[2]); gr.addColorStop(1, cols[3]);
+        g.fillStyle = gr; g.beginPath(); g.arc(0, 0, R, 0, TAU); g.fill();
+        g.fillStyle = 'rgba(255,255,255,.8)'; g.beginPath(); g.ellipse(-R * .38, -R * .42, R * .2, R * .12, -.6, 0, TAU); g.fill();
+      },
+      gem: (sides, cols, stretch = 1) => g => {
+        const pts = Array.from({ length: sides }, (_, i) => { const a = -Math.PI / 2 + i * TAU / sides; return [Math.cos(a) * R, Math.sin(a) * R * stretch]; });
+        const cx = -R * .12, cy = -R * .15 * stretch;  // off-centre table gives the facets their sparkle
+        pts.forEach((p, i) => {
+          const q = pts[(i + 1) % sides];
+          g.beginPath(); g.moveTo(cx, cy); g.lineTo(p[0], p[1]); g.lineTo(q[0], q[1]); g.closePath();
+          const lit = .5 + .5 * Math.cos(Math.atan2((p[1] + q[1]) / 2, (p[0] + q[0]) / 2) + 2.36);   // light from the top left
+          g.fillStyle = lit > .66 ? cols[0] : lit > .3 ? cols[1] : cols[2]; g.fill();
+        });
+        g.beginPath(); pts.forEach((p, i) => { const x = cx + (p[0] - cx) * .42, y = cy + (p[1] - cy) * .42; i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.closePath();
+        g.globalAlpha = .5; g.fillStyle = cols[0]; g.fill(); g.globalAlpha = 1;
+        g.strokeStyle = 'rgba(255,255,255,.6)'; g.lineWidth = SP * .008;
+        g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1])); g.closePath(); g.stroke();
+      },
+      flare: (core, ray) => g => {
+        const gr = g.createRadialGradient(0, 0, 0, 0, 0, R * .7);
+        gr.addColorStop(0, '#ffffff'); gr.addColorStop(.35, core); gr.addColorStop(1, 'rgba(0,0,0,0)');
+        g.fillStyle = gr; g.beginPath(); g.arc(0, 0, R * .7, 0, TAU); g.fill();
+        g.fillStyle = ray;
+        g.beginPath(); g.ellipse(0, 0, R * .09, R * 1.9, 0, 0, TAU); g.fill();
+        g.beginPath(); g.ellipse(0, 0, R * 1.9, R * .09, 0, 0, TAU); g.fill();
+      },
+      planet: () => g => {
+        g.strokeStyle = 'rgba(246,205,168,.9)'; g.lineWidth = SP * .018;
+        g.beginPath(); g.ellipse(0, 0, R * 1.55, R * .44, -.38, Math.PI, TAU); g.stroke();          // far side of the ring
+        painters.ball(['#fff0d6', '#f2b27a', '#b4562b', '#3a160a'])(g);
+        g.fillStyle = 'rgba(122,63,34,.35)'; g.fillRect(-R * .95, -R * .12, R * 1.9, R * .18);    // a band
+        g.beginPath(); g.ellipse(0, 0, R * 1.55, R * .44, -.38, 0, Math.PI); g.stroke();           // near side
+      }
+    };
+    const make = (paint, rgb, ga) => {
+      const c = mkCanvas(SP, SP);
+      const g = c.getContext('2d'); g.translate(SP / 2, SP / 2);
+      if (rgb) {
+        const gr = g.createRadialGradient(0, 0, 0, 0, 0, SP / 2);
+        gr.addColorStop(0, `rgba(${rgb},${ga})`); gr.addColorStop(.2, `rgba(${rgb},${ga * .45})`); gr.addColorStop(.55, `rgba(${rgb},${ga * .1})`); gr.addColorStop(1, `rgba(${rgb},0)`);
+        g.fillStyle = gr; g.fillRect(-SP / 2, -SP / 2, SP, SP);
+      }
+      paint(g); return c;
+    };
+    const sparkle = make(painters.flare('#eaf7ff', 'rgba(235,248,255,.85)'));
+    // weight = how common; size = body radius in CSS px
+    const TYPES = [
+      { w: 42, size: [.45, 1.15], body: make(painters.flare('#ffe2bf', 'rgba(255,236,214,.7)'), '255,214,170', .35), twinkle: 1 },     // star
+      { w: 12, size: [1.7, 2.9],  body: make(painters.ball(['#fff6cf', '#f5c451', '#a86d12', '#4d2e05']), '255,196,80', .45) },         // gold
+      { w: 10, size: [1.5, 2.7],  body: make(painters.ball(['#ffffff', '#e3e7ec', '#9ca3ad', '#3e434a']), '220,232,255', .32) },        // platinum
+      { w: 9,  size: [2.2, 3.4],  body: make(painters.gem(4, ['#ffffff', '#d4f1ff', '#79b0d4'], 1.45), '190,235,255', .45), spin: 1, sparkle: 1 }, // crystal
+      { w: 8,  size: [2, 3.2],    body: make(painters.gem(6, ['#ff9bb0', '#d1123f', '#6e0019']), '255,40,90', .5), spin: 1 },              // ruby
+      { w: 4,  size: [2, 3],      body: make(painters.gem(5, ['#b3cfff', '#2357db', '#0a1f6b']), '70,130,255', .45), spin: 1 },            // sapphire
+      { w: 3,  size: [2, 3],      body: make(painters.gem(8, ['#aaffd2', '#13a45c', '#03492a'], .8), '50,240,150', .4), spin: 1 },         // emerald
+      { w: 3,  size: [2, 3],      body: make(painters.gem(6, ['#eecdff', '#9a45dc', '#4a1678'], 1.25), '190,120,255', .45), spin: 1 },     // amethyst
+      { w: 2,  size: [4, 5.4],    body: make(painters.planet(), '255,160,90', .32) },                                                     // ringed planet
+      { w: 5,  size: [1.1, 1.7],  body: make(painters.flare('#d8ecff', 'rgba(220,236,255,.8)'), '180,215,255', .5), tail: 1 }               // comet
+    ];
+    const totalW = TYPES.reduce((a, t) => a + t.w, 0);
+    const pickType = () => { let x = Math.random() * totalW; for (const t of TYPES) { if ((x -= t.w) < 0) return t; } return TYPES[0]; };
+
+    /* ---- orbits ---- */
+    const maxRx = (ry, phi) => {
+      const c2 = Math.cos(phi) ** 2, s2 = Math.sin(phi) ** 2; let best = Infinity;
+      if (c2 > 1e-6) best = Math.min(best, Math.sqrt(Math.max(0, (EDGE * EDGE - ry * ry * s2) / c2)));
+      if (s2 > 1e-6) best = Math.min(best, Math.sqrt(Math.max(0, (EDGE * EDGE - ry * ry * c2) / s2)));
+      return best;
+    };
+    let S = 0, dpr = 1, rings = [];
+    const build = () => {
+      const n = Math.round(Math.min(480, Math.max(160, S * .75)));
+      rings = Array.from({ length: n }, () => {
+        const phi = TILT + rand(-SPREAD, SPREAD);
+        const ryF = rand(CLEAR + .005, CLEAR + .07);
+        const top = Math.max(ryF * 1.1, maxRx(ryF, phi));
+        const rxF = ryF * 1.1 + (top - ryF * 1.1) * Math.sqrt(Math.random());
+        const type = pickType();
+        return {
+          rx: rxF * S, ry: ryF * S, phi, cp: Math.cos(phi), sp: Math.sin(phi),
+          style: (Math.random() * ringStyles.length) | 0, type, size: rand(type.size[0], type.size[1]),
+          rot: rand(0, TAU), spin: type.spin ? rand(.4, 1.6) * (Math.random() < .5 ? -1 : 1) : 0, ph: rand(0, TAU), tw: rand(1.5, 4),
+          t: rand(0, TAU), v: 0, target: 0, next: 0
+        };
+      });
+    };
+    const drawRings = () => {
+      const c = S / 2;
+      rctx.setTransform(dpr, 0, 0, dpr, 0, 0); rctx.clearRect(0, 0, S, S); rctx.lineWidth = .35;
+      for (let k = 0; k < ringStyles.length; k++) {
+        rctx.beginPath();
+        for (const r of rings) if (r.style === k) { rctx.moveTo(c + r.rx * r.cp, c + r.rx * r.sp); rctx.ellipse(c, c, r.rx, r.ry, r.phi, 0, TAU); }
+        rctx.strokeStyle = ringStyles[k]; rctx.stroke();
+      }
+    };
+
+    /* ---- bodies, every frame ---- */
+    let clock = 0;
+    const step = dt => {
+      clock += dt;
+      for (const r of rings) {
+        if (clock >= r.next) {                        // new random speed; about a third of the time it turns around
+          const keep = Math.sign(r.target) || (Math.random() < .5 ? -1 : 1);
+          r.target = (Math.random() < .3 ? -keep : keep) * rand(.12, 1.5);
+          r.next = clock + rand(1, 4.5);
+        }
+        r.v += (r.target - r.v) * (1 - Math.exp(-dt * 1.5));
+        r.t += r.v * dt;
+        r.rot += r.spin * dt;
+      }
+    };
+    const drawBodies = () => {
+      const c = S / 2, g = bctx;
+      g.setTransform(dpr, 0, 0, dpr, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+      g.clearRect(0, 0, S, S);
+      for (const r of rings) {
+        const ct = Math.cos(r.t), st = Math.sin(r.t), lx = r.rx * ct, ly = r.ry * st;
+        r.x = c + lx * r.cp - ly * r.sp; r.y = c + lx * r.sp + ly * r.cp;
+        r.depth = .5 + .5 * st;                       // near half of the orbit is larger and brighter
+      }
+      g.globalCompositeOperation = 'lighter';
+      for (const r of rings) {                        // comet tails
+        if (!r.type.tail) continue;
+        let tx = -r.rx * Math.sin(r.t), ty = r.ry * Math.cos(r.t);
+        const wx = tx * r.cp - ty * r.sp, wy = tx * r.sp + ty * r.cp, len = Math.hypot(wx, wy) || 1, dir = r.v < 0 ? 1 : -1;
+        const L = (8 + Math.abs(r.v) * 26) * (.8 + .4 * r.depth), ex = r.x + wx / len * dir * L, ey = r.y + wy / len * dir * L;
+        const gr = g.createLinearGradient(r.x, r.y, ex, ey);
+        gr.addColorStop(0, 'rgba(200,228,255,.7)'); gr.addColorStop(1, 'rgba(200,228,255,0)');
+        g.strokeStyle = gr; g.lineWidth = r.size * 1.1; g.lineCap = 'round';
+        g.beginPath(); g.moveTo(r.x, r.y); g.lineTo(ex, ey); g.stroke();
+      }
+      g.globalCompositeOperation = 'source-over';
+      for (const r of rings) {                        // bodies (glow is part of the sprite)
+        const k = .78 + .44 * r.depth, s = r.size * k * (SP / R);
+        const tw = r.type.twinkle ? .55 + .45 * Math.sin(clock * r.tw + r.ph) : 1;
+        g.globalAlpha = (.6 + .4 * r.depth) * tw;
+        if (r.spin) {
+          const cr = Math.cos(r.rot) * dpr, sr = Math.sin(r.rot) * dpr;
+          g.setTransform(cr, sr, -sr, cr, r.x * dpr, r.y * dpr);
+          g.drawImage(r.type.body, -s / 2, -s / 2, s, s);
+          g.setTransform(dpr, 0, 0, dpr, 0, 0);
+        } else {
+          g.drawImage(r.type.body, r.x - s / 2, r.y - s / 2, s, s);
+        }
+      }
+      g.globalCompositeOperation = 'lighter';
+      for (const r of rings) {                        // crystal sparkle
+        if (!r.type.sparkle) continue;
+        const tw = Math.max(0, Math.sin(clock * r.tw * 1.3 + r.ph));
+        if (tw < .05) continue;
+        const s = r.size * 3.2 * (SP / R) * (.6 + .4 * tw) * .5;
+        g.globalAlpha = tw * .9;
+        g.drawImage(sparkle, r.x - s / 2, r.y - s / 2, s, s);
+      }
+      g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+    };
+
+    let visible = true, running = false, last = 0;
+    const frame = now => {
+      if (!visible || opts.reduce) { running = false; last = 0; return; }
+      opts.raf(frame);
+      const dt = last ? Math.min((now - last) / 1000, .1) : 0; last = now;
+      if (!S) return;
+      step(dt); drawBodies();
+    };
+    const kick = () => { if (!running && visible && !opts.reduce) { running = true; opts.raf(frame); } };
+    return {
+      resize(w, ratio) {
+        if (!w) return;
+        dpr = ratio;
+        for (const cv of [rctx.canvas, bctx.canvas]) { cv.width = Math.round(w * dpr); cv.height = Math.round(w * dpr); }
+        if (rings.length && S) { const k = w / S; rings.forEach(r => { r.rx *= k; r.ry *= k; }); }
+        S = w;
+        if (!rings.length) { build(); step(0); }
+        drawRings(); drawBodies(); kick();
+      },
+      setVisible(v) { visible = v; kick(); }
+    };
+  };
+
+  const orbitWrap = document.querySelector('.orbit');
+  const ringCv = orbitWrap && orbitWrap.querySelector('.orbit-rings');
+  const bodyCv = orbitWrap && orbitWrap.querySelector('.orbit-bodies');
+  if (ringCv && bodyCv && ringCv.getContext) {
+    let api = null, pending = null;
+    const size = () => [orbitWrap.clientWidth, Math.min(devicePixelRatio || 1, 2)];
+    const startLocal = () => {
+      const local = ORBIT_ENGINE(ringCv.getContext('2d'), bodyCv.getContext('2d'),
+        (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; },
+        { reduce: reduceMotion, raf: f => requestAnimationFrame(f) });
+      api = { resize: (w, r) => local.resize(w, r), vis: v => local.setVisible(v) };
+      api.resize(...size());
+    };
+    const startWorker = () => {
+      const code = `const ENGINE = ${ORBIT_ENGINE.toString()};
+        let e = null;
+        const raf = self.requestAnimationFrame ? f => self.requestAnimationFrame(f) : f => setTimeout(() => f(performance.now()), 16);
+        onmessage = ev => {
+          const m = ev.data;
+          if (m.type === 'ping') postMessage('pong');
+          else if (m.type === 'init') { e = ENGINE(m.rings.getContext('2d'), m.bodies.getContext('2d'), (w, h) => new OffscreenCanvas(w, h), { reduce: m.reduce, raf }); e.resize(m.w, m.dpr); }
+          else if (e && m.type === 'size') e.resize(m.w, m.dpr);
+          else if (e && m.type === 'vis') e.setVisible(m.v);
+        };`;
+      let worker;
+      try { worker = new Worker(URL.createObjectURL(new Blob([code], { type: 'text/javascript' }))); } catch (err) { startLocal(); return; }
+      // only hand the canvases over once the worker has answered, so a blocked worker never leaves them blank
+      const fallback = setTimeout(() => { worker.terminate(); startLocal(); }, 1500);
+      worker.onerror = () => { clearTimeout(fallback); worker.terminate(); if (!api) startLocal(); };
+      worker.onmessage = ev => {
+        if (ev.data !== 'pong' || api) return;
+        clearTimeout(fallback);
+        try {
+          const r = ringCv.transferControlToOffscreen(), b = bodyCv.transferControlToOffscreen();
+          const [w, dpr] = size();
+          worker.postMessage({ type: 'init', rings: r, bodies: b, reduce: reduceMotion, w, dpr }, [r, b]);
+          api = { resize: (w, d) => worker.postMessage({ type: 'size', w, dpr: d }), vis: v => worker.postMessage({ type: 'vis', v }) };
+        } catch (err) { worker.terminate(); startLocal(); }
+      };
+      worker.postMessage({ type: 'ping' });
+    };
+    if (typeof Worker !== 'undefined' && 'OffscreenCanvas' in window && ringCv.transferControlToOffscreen) startWorker(); else startLocal();
+    const onResize = () => { if (api) api.resize(...size()); };
+    if ('ResizeObserver' in window) new ResizeObserver(onResize).observe(orbitWrap); else addEventListener('resize', onResize);
+    let inView = true;
+    const sendVis = () => { if (api) api.vis(inView && !document.hidden); };
+    new IntersectionObserver(es => { inView = es[0].isIntersecting; sendVis(); }).observe(orbitWrap);
+    document.addEventListener('visibilitychange', sendVis);
+  }
 })();
 </script>
 </body>
