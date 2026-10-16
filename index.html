@@ -1,865 +1,2230 @@
 <!doctype html>
 <html lang="en" dir="ltr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Hyperpoly Studios | YouTube Automation, Game Development & SaaS</title>
-<meta name="description" content="Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products.">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="author" content="Hyperpoly Studios">
-<meta name="keywords" content="Hyperpoly Studios, YouTube automation, faceless YouTube channels, game development studio, indie games, SaaS development, MVP development, 3D animation">
-<link rel="canonical" href="https://www.hyperpolystudios.com/">
-<meta name="theme-color" content="#0f0d0c">
-<meta name="color-scheme" content="dark">
-<meta name="format-detection" content="telephone=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>
+      Hyperpoly Studios | YouTube Automation, Game Development & SaaS
+    </title>
+    <meta
+      name="description"
+      content="Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products."
+    />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="author" content="Hyperpoly Studios" />
+    <meta
+      name="keywords"
+      content="Hyperpoly Studios, YouTube automation, faceless YouTube channels, game development studio, indie games, SaaS development, MVP development, 3D animation"
+    />
+    <link rel="canonical" href="https://www.hyperpolystudios.com/" />
+    <meta name="theme-color" content="#0f0d0c" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no" />
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hyperpoly Studios">
-<meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://www.hyperpolystudios.com/">
-<meta property="og:title" content="Hyperpoly Studios | YouTube Automation, Game Development & SaaS">
-<meta property="og:description" content="Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products.">
-<meta property="og:image" content="https://www.hyperpolystudios.com/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hyperpoly Studios HP monogram">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hyperpoly Studios" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://www.hyperpolystudios.com/" />
+    <meta
+      property="og:title"
+      content="Hyperpoly Studios | YouTube Automation, Game Development & SaaS"
+    />
+    <meta
+      property="og:description"
+      content="Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products."
+    />
+    <meta
+      property="og:image"
+      content="https://www.hyperpolystudios.com/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hyperpoly Studios HP monogram" />
 
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hyperpoly Studios | YouTube Automation, Game Development & SaaS">
-<meta name="twitter:description" content="Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products.">
-<meta name="twitter:image" content="https://www.hyperpolystudios.com/og-image.jpg">
-<meta name="twitter:image:alt" content="Hyperpoly Studios HP monogram">
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Hyperpoly Studios | YouTube Automation, Game Development & SaaS"
+    />
+    <meta
+      name="twitter:description"
+      content="Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.hyperpolystudios.com/og-image.jpg"
+    />
+    <meta name="twitter:image:alt" content="Hyperpoly Studios HP monogram" />
 
-<!-- Icons & app -->
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
+    <!-- Icons & app -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-<!-- Performance -->
-<link rel="preload" as="image" href="hp-mark.jpg" type="image/jpeg" fetchpriority="high">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <!-- Performance -->
+    <link
+      rel="preload"
+      as="image"
+      href="hp-mark.jpg"
+      type="image/jpeg"
+      fetchpriority="high"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
 
-<!-- Structured data -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@graph": [
-  {
-   "@type": "Organization",
-   "@id": "https://www.hyperpolystudios.com/#organization",
-   "name": "Hyperpoly Studios",
-   "url": "https://www.hyperpolystudios.com/",
-   "logo": {
-    "@type": "ImageObject",
-    "url": "https://www.hyperpolystudios.com/icon-512.png",
-    "width": 512,
-    "height": 512
-   },
-   "image": "https://www.hyperpolystudios.com/og-image.jpg",
-   "email": "hyperpolystudios@gmail.com",
-   "description": "Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products.",
-   "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "hyperpolystudios@gmail.com",
-    "availableLanguage": [
-     "English"
-    ]
-   },
-   "knowsAbout": [
-    "YouTube automation",
-    "Faceless YouTube channels",
-    "Game development",
-    "Unity",
-    "Godot",
-    "Mobile game development",
-    "App Store and Google Play publishing",
-    "SaaS development",
-    "3D animation"
-   ],
-   "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Hyperpoly Studios services",
-    "itemListElement": [
-     {
-      "@type": "Offer",
-      "itemOffered": {
-       "@type": "Service",
-       "name": "YouTube Automation",
-       "provider": {
-        "@id": "https://www.hyperpolystudios.com/#organization"
-       }
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.hyperpolystudios.com/#organization",
+            "name": "Hyperpoly Studios",
+            "url": "https://www.hyperpolystudios.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.hyperpolystudios.com/icon-512.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://www.hyperpolystudios.com/og-image.jpg",
+            "email": "hyperpolystudios@gmail.com",
+            "description": "Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "email": "hyperpolystudios@gmail.com",
+              "availableLanguage": ["English"]
+            },
+            "knowsAbout": [
+              "YouTube automation",
+              "Faceless YouTube channels",
+              "Game development",
+              "Unity",
+              "Godot",
+              "Mobile game development",
+              "App Store and Google Play publishing",
+              "SaaS development",
+              "3D animation"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Hyperpoly Studios services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "YouTube Automation",
+                    "provider": {
+                      "@id": "https://www.hyperpolystudios.com/#organization"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Game Development",
+                    "provider": {
+                      "@id": "https://www.hyperpolystudios.com/#organization"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "SaaS Products",
+                    "provider": {
+                      "@id": "https://www.hyperpolystudios.com/#organization"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Creative Production",
+                    "provider": {
+                      "@id": "https://www.hyperpolystudios.com/#organization"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Growth & Consulting",
+                    "provider": {
+                      "@id": "https://www.hyperpolystudios.com/#organization"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.hyperpolystudios.com/#website",
+            "url": "https://www.hyperpolystudios.com/",
+            "name": "Hyperpoly Studios",
+            "publisher": {
+              "@id": "https://www.hyperpolystudios.com/#organization"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.hyperpolystudios.com/#webpage",
+            "url": "https://www.hyperpolystudios.com/",
+            "name": "Hyperpoly Studios | YouTube Automation, Game Development & SaaS",
+            "description": "Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products.",
+            "isPartOf": {
+              "@id": "https://www.hyperpolystudios.com/#website"
+            },
+            "about": {
+              "@id": "https://www.hyperpolystudios.com/#organization"
+            },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://www.hyperpolystudios.com/og-image.jpg"
+            },
+            "inLanguage": "en"
+          }
+        ]
       }
-     },
-     {
-      "@type": "Offer",
-      "itemOffered": {
-       "@type": "Service",
-       "name": "Game Development",
-       "provider": {
-        "@id": "https://www.hyperpolystudios.com/#organization"
-       }
+    </script>
+    <style>
+      /* Layout: single centered column. Hero pairs the headline with a static low-poly "hyperpoly" mesh; services are a pure-CSS sticky stack; footer ends on a faceted wordmark. Only motion: the orbit rings around the hero mark. */
+      :root {
+        color-scheme: dark;
+        --bg: #0f0d0c;
+        --surface: #181513;
+        --surface-2: #1f1b18;
+        --fg: #efe9e3;
+        --muted: #9a918a;
+        --line: #2b2623;
+        --accent: #e8935a;
+        --ok: #8fbf7f;
+        --font:
+          "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+          sans-serif;
+        --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+        --mono:
+          "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        --nav-h: 4rem;
+        --gut: max(16px, 3vw);
       }
-     },
-     {
-      "@type": "Offer",
-      "itemOffered": {
-       "@type": "Service",
-       "name": "SaaS Products",
-       "provider": {
-        "@id": "https://www.hyperpolystudios.com/#organization"
-       }
+      * {
+        box-sizing: border-box;
       }
-     },
-     {
-      "@type": "Offer",
-      "itemOffered": {
-       "@type": "Service",
-       "name": "Creative Production",
-       "provider": {
-        "@id": "https://www.hyperpolystudios.com/#organization"
-       }
+      img {
+        max-width: 100%;
       }
-     },
-     {
-      "@type": "Offer",
-      "itemOffered": {
-       "@type": "Service",
-       "name": "Growth & Consulting",
-       "provider": {
-        "@id": "https://www.hyperpolystudios.com/#organization"
-       }
+      [hidden] {
+        display: none !important;
       }
-     }
-    ]
-   }
-  },
-  {
-   "@type": "WebSite",
-   "@id": "https://www.hyperpolystudios.com/#website",
-   "url": "https://www.hyperpolystudios.com/",
-   "name": "Hyperpoly Studios",
-   "publisher": {
-    "@id": "https://www.hyperpolystudios.com/#organization"
-   },
-   "inLanguage": "en"
-  },
-  {
-   "@type": "WebPage",
-   "@id": "https://www.hyperpolystudios.com/#webpage",
-   "url": "https://www.hyperpolystudios.com/",
-   "name": "Hyperpoly Studios | YouTube Automation, Game Development & SaaS",
-   "description": "Hyperpoly Studios is an independent studio running faceless YouTube automation channels, developing mobile games for the App Store and Google Play, and building SaaS products.",
-   "isPartOf": {
-    "@id": "https://www.hyperpolystudios.com/#website"
-   },
-   "about": {
-    "@id": "https://www.hyperpolystudios.com/#organization"
-   },
-   "primaryImageOfPage": {
-    "@type": "ImageObject",
-    "url": "https://www.hyperpolystudios.com/og-image.jpg"
-   },
-   "inLanguage": "en"
-  }
- ]
-}
-</script>
-<style>
-/* Layout: single centered column. Hero pairs the headline with a static low-poly "hyperpoly" mesh; services are a pure-CSS sticky stack; footer ends on a faceted wordmark. Only motion: the orbit rings around the hero mark. */
-:root{
-  color-scheme:dark;
-  --bg:#0f0d0c; --surface:#181513; --surface-2:#1f1b18;
-  --fg:#efe9e3; --muted:#9a918a; --line:#2b2623; --accent:#e8935a; --ok:#8fbf7f;
-  --font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --nav-h:4rem;
-  --gut:max(16px, 3vw);
-}
-*{box-sizing:border-box}
-img{max-width:100%}
-[hidden]{display:none!important}
-/* Fluid base size: 16px up to ~1500px wide, growing to 20px at 2500px */
-html{font-size:clamp(16px, calc(10px + .4vw), 20px);scrollbar-width:thin;scrollbar-color:#3a332e var(--bg)}
-::-webkit-scrollbar{width:8px}
-::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:#3a332e;border-radius:99px}
-::-webkit-scrollbar-thumb:hover{background:var(--accent)}
-body{margin:0;background:var(--bg);color:var(--fg);font:1rem/1.6 var(--font);-webkit-font-smoothing:antialiased}
-a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-[id]{scroll-margin-top:calc(var(--nav-h) + 16px)}
-.wrap{max-width:clamp(1120px, 88vw, 2200px);margin:0 auto;padding-left:max(var(--gut),env(safe-area-inset-left,0px));padding-right:max(var(--gut),env(safe-area-inset-right,0px))}
-.mono{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+      /* Fluid base size: 16px up to ~1500px wide, growing to 20px at 2500px */
+      html {
+        font-size: clamp(16px, calc(10px + 0.4vw), 20px);
+        scrollbar-width: thin;
+        scrollbar-color: #3a332e var(--bg);
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #3a332e;
+        border-radius: 99px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent);
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font: 1rem/1.6 var(--font);
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+        border-radius: 4px;
+      }
+      [id] {
+        scroll-margin-top: calc(var(--nav-h) + 16px);
+      }
+      .wrap {
+        max-width: clamp(1120px, 88vw, 2200px);
+        margin: 0 auto;
+        padding-left: max(var(--gut), env(safe-area-inset-left, 0px));
+        padding-right: max(var(--gut), env(safe-area-inset-right, 0px));
+      }
+      .mono {
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
 
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:1.5rem;height:var(--nav-h)}
-.brand{display:flex;align-items:center;gap:10px;font:700 1.05rem/1 var(--display);text-decoration:none;letter-spacing:-.01em}
-.brand img{width:1.9rem;height:1.9rem;display:block;mix-blend-mode:lighten}
-.links{display:flex;gap:1.75rem;margin-left:auto}
-.links a{text-decoration:none;color:var(--muted);font-size:.92rem}
-.links a:hover{color:var(--fg)}
-@media (max-width:640px){.links{display:none}}
+      header {
+        position: sticky;
+        top: env(safe-area-inset-top, 0px);
+        z-index: 10;
+        background: var(--bg);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        height: var(--nav-h);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font: 700 1.05rem/1 var(--display);
+        text-decoration: none;
+        letter-spacing: -0.01em;
+      }
+      .brand img {
+        width: 1.9rem;
+        height: 1.9rem;
+        display: block;
+        mix-blend-mode: lighten;
+      }
+      .links {
+        display: flex;
+        gap: 1.75rem;
+        margin-left: auto;
+      }
+      .links a {
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .links a:hover {
+        color: var(--fg);
+      }
+      @media (max-width: 640px) {
+        .links {
+          display: none;
+        }
+      }
 
-/* ---------- Hero ---------- */
-.hero{padding-block:1.75rem 0;overflow-x:clip}
-.meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem;color:var(--muted);padding-bottom:1.25rem;border-bottom:1px solid var(--line)}
-.status{display:flex;align-items:center;gap:8px}
-.status i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 18%,transparent)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(1.5rem,4vw,6rem);align-items:center;padding-block:clamp(3rem,6vw,7rem)}
-h1{font:800 clamp(2.6rem,5.8vw,6.6rem)/.96 var(--display);font-variation-settings:"opsz" 96;letter-spacing:-.04em;margin:0 0 1.5rem;text-wrap:balance}
-h1 .soft{color:var(--muted)}
-.hero p.lede{color:var(--muted);font-size:1.15rem;max-width:46ch;margin:0 0 2rem}
-.actions{display:flex;flex-wrap:wrap;gap:.65rem}
-.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:.95rem;padding:.8rem 1.3rem;border-radius:99px;background:var(--fg);color:var(--bg);border:0;cursor:pointer;font-family:inherit}
-.btn:hover{background:var(--accent)}
-.btn.line{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
-.btn.line:hover{box-shadow:inset 0 0 0 1px var(--fg);background:transparent}
-.figure{position:relative;margin:0;display:grid;place-items:center;justify-self:end;width:100%;max-width:56rem;aspect-ratio:1}
-/* Orbit field: hairline orbits painted once, bodies redrawn each frame, gentle sway on the compositor */
-.orbit{position:absolute;inset:0;z-index:0;pointer-events:none;will-change:transform;animation:sway 14s ease-in-out infinite alternate}
-.orbit canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-@keyframes sway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
-@media (prefers-reduced-motion:reduce){.orbit{animation:none}}
-.figure img{position:relative;z-index:1;width:56%;max-width:100%;height:auto;aspect-ratio:1;display:block;mix-blend-mode:lighten;
-  -webkit-mask-image:radial-gradient(closest-side,#000 82%,transparent);mask-image:radial-gradient(closest-side,#000 82%,transparent)}
-.figure figcaption{display:flex;justify-content:space-between;gap:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
-@media (max-width:760px){
-  .hero-grid{grid-template-columns:1fr}
-  .figure{max-width:320px}
-}
+      /* ---------- Hero ---------- */
+      .hero {
+        padding-block: 1.75rem 0;
+        overflow-x: clip;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.5rem 1.5rem;
+        color: var(--muted);
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid var(--line);
+      }
+      .status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .status i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--ok);
+        box-shadow: 0 0 0 4px color-mix(in srgb, var(--ok) 18%, transparent);
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        gap: clamp(1.5rem, 4vw, 6rem);
+        align-items: center;
+        padding-block: clamp(3rem, 6vw, 7rem);
+      }
+      h1 {
+        font: 800 clamp(2.6rem, 5.8vw, 6.6rem)/0.96 var(--display);
+        font-variation-settings: "opsz" 96;
+        letter-spacing: -0.04em;
+        margin: 0 0 1.5rem;
+        text-wrap: balance;
+      }
+      h1 .soft {
+        color: var(--muted);
+      }
+      .hero p.lede {
+        color: var(--muted);
+        font-size: 1.15rem;
+        max-width: 46ch;
+        margin: 0 0 2rem;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.8rem 1.3rem;
+        border-radius: 99px;
+        background: var(--fg);
+        color: var(--bg);
+        border: 0;
+        cursor: pointer;
+        font-family: inherit;
+      }
+      .btn:hover {
+        background: var(--accent);
+      }
+      .btn.line {
+        background: transparent;
+        color: var(--fg);
+        box-shadow: inset 0 0 0 1px var(--line);
+      }
+      .btn.line:hover {
+        box-shadow: inset 0 0 0 1px var(--fg);
+        background: transparent;
+      }
+      .figure {
+        position: relative;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        justify-self: end;
+        width: 100%;
+        max-width: 56rem;
+        aspect-ratio: 1;
+      }
+      /* Orbit field: hairline orbits painted once, bodies redrawn each frame, gentle sway on the compositor */
+      .orbit {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        will-change: transform;
+        animation: sway 14s ease-in-out infinite alternate;
+      }
+      .orbit canvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      @keyframes sway {
+        from {
+          transform: rotate(-3deg);
+        }
+        to {
+          transform: rotate(3deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .orbit {
+          animation: none;
+        }
+      }
+      .figure img {
+        position: relative;
+        z-index: 1;
+        width: 56%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        display: block;
+        mix-blend-mode: lighten;
+        -webkit-mask-image: radial-gradient(
+          closest-side,
+          #000 82%,
+          transparent
+        );
+        mask-image: radial-gradient(closest-side, #000 82%, transparent);
+      }
+      .figure figcaption {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+        padding-top: 10px;
+      }
+      @media (max-width: 760px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .figure {
+          max-width: 320px;
+        }
+      }
 
-/* Desktop and large screens: give the HP mark and its orbit field more room */
-@media (min-width:1024px){
-  .hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);padding-block:clamp(2rem,4vw,5rem)}
-  .figure{width:min(110%,84vh);max-width:none;margin-right:-6%}
-}
+      /* Desktop and large screens: give the HP mark and its orbit field more room */
+      @media (min-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+          padding-block: clamp(2rem, 4vw, 5rem);
+        }
+        .figure {
+          width: min(110%, 84vh);
+          max-width: none;
+          margin-right: -6%;
+        }
+      }
 
-/* Division index */
-.index{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.index a{display:grid;gap:.4rem;padding:1.4rem 1.5rem 1.5rem;text-decoration:none;border-left:1px solid var(--line);min-width:0}
-.index a:first-child{border-left:0;padding-left:0}
-.index a:hover .name{color:var(--accent)}
-.index .code{color:var(--accent)}
-.index .name{font:700 1.25rem/1.15 var(--display);letter-spacing:-.01em}
-.index .fig{color:var(--muted);font-size:.92rem}
-.index .fig b{color:var(--fg);font:600 1rem var(--mono);font-variant-numeric:tabular-nums}
-@media (max-width:760px){
-  .index{grid-template-columns:1fr}
-  .index a,.index a:first-child{border-left:0;border-top:1px solid var(--line);padding:1.1rem 0}
-  .index a:first-child{border-top:0}
-}
+      /* Division index */
+      .index {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .index a {
+        display: grid;
+        gap: 0.4rem;
+        padding: 1.4rem 1.5rem 1.5rem;
+        text-decoration: none;
+        border-left: 1px solid var(--line);
+        min-width: 0;
+      }
+      .index a:first-child {
+        border-left: 0;
+        padding-left: 0;
+      }
+      .index a:hover .name {
+        color: var(--accent);
+      }
+      .index .code {
+        color: var(--accent);
+      }
+      .index .name {
+        font: 700 1.25rem/1.15 var(--display);
+        letter-spacing: -0.01em;
+      }
+      .index .fig {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .index .fig b {
+        color: var(--fg);
+        font: 600 1rem var(--mono);
+        font-variant-numeric: tabular-nums;
+      }
+      @media (max-width: 760px) {
+        .index {
+          grid-template-columns: 1fr;
+        }
+        .index a,
+        .index a:first-child {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+          padding: 1.1rem 0;
+        }
+        .index a:first-child {
+          border-top: 0;
+        }
+      }
 
-h2{font:700 clamp(1.7rem,3vw,3.4rem)/1.08 var(--display);letter-spacing:-.03em;margin:0 0 12px}
-.sub{color:var(--muted);margin:0 0 2.5rem;max-width:52ch}
+      h2 {
+        font: 700 clamp(1.7rem, 3vw, 3.4rem)/1.08 var(--display);
+        letter-spacing: -0.03em;
+        margin: 0 0 12px;
+      }
+      .sub {
+        color: var(--muted);
+        margin: 0 0 2.5rem;
+        max-width: 52ch;
+      }
 
-/* ---------- Diagonal card stack: each card lands over the last, leaving only tilted top edges ---------- */
-#services{padding-block:6rem}
-.stack{display:flex;flex-direction:column;gap:22vh;padding-bottom:12vh;
-  --card-h:min(clamp(24rem,58vh,36rem), calc(100vh - 12rem))}
-.slot{--tint:var(--surface);--edge:var(--accent);--glow:var(--accent);--r:0deg;
-  position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--nav-h) + 1.5rem + var(--i) * 1.1rem)}
-.card{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,4vw,6rem);
-  min-height:var(--card-h);padding:clamp(1.75rem,3vw,3.5rem);border-radius:1.75rem;overflow:hidden;
-  background:
-    linear-gradient(118deg,rgba(255,255,255,.07) 0%,rgba(255,255,255,0) 32%),
-    radial-gradient(55% 85% at 90% 12%,color-mix(in srgb,var(--glow) 16%,transparent),transparent 70%),
-    radial-gradient(45% 70% at 0% 100%,color-mix(in srgb,var(--glow) 14%,transparent),transparent 70%),
-    linear-gradient(105deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 70%,var(--bg)) 50%,color-mix(in srgb,var(--tint) 28%,var(--bg)) 100%);
-  border:1px solid color-mix(in srgb,var(--edge) 22%,transparent);
-  box-shadow:inset 0 1px 0 color-mix(in srgb,var(--edge) 55%,transparent),0 -1.25rem 2.5rem -1rem rgba(0,0,0,.7);
-  transform:rotate(var(--r));transform-origin:50% 0;will-change:transform;backface-visibility:hidden;contain:layout paint}
-.card > *{position:relative;z-index:1}
-.card{grid-template-columns:minmax(0,min(46%,38rem));align-content:space-between}
-.card > .media{position:absolute;inset:0 0 0 auto;width:62%;z-index:0;pointer-events:none;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 34%);mask-image:linear-gradient(90deg,transparent 0%,#000 34%)}
-.card > .media img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(1.08) brightness(.95)}
-.card > .media::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,var(--tint) 0%,color-mix(in srgb,var(--tint) 0%,transparent) 48%),
-             linear-gradient(0deg,color-mix(in srgb,var(--tint) 45%,transparent),transparent 32%),
-             color-mix(in srgb,var(--tint) 12%,transparent)}
-.card ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:1.5rem;align-self:end;margin-top:2rem}
-.card > .shade{position:absolute;inset:0;z-index:2;background:#000;opacity:0;pointer-events:none;will-change:opacity}
-.label{color:var(--edge);margin:0 0 1rem}
-.card h3{font:700 clamp(1.6rem,2.4vw,3rem)/1.08 var(--display);letter-spacing:-.025em;margin:0 0 .9rem;text-wrap:balance}
-.card p{color:color-mix(in srgb,var(--fg) 90%,transparent);margin:0;max-width:42ch}
-.card ul{list-style:none;margin:0;padding:0;align-self:end;border-top:1px solid color-mix(in srgb,var(--fg) 16%,transparent)}
-.card li{padding:.75rem 0;border-bottom:1px solid color-mix(in srgb,var(--fg) 16%,transparent);font-size:.95rem}
-@media (max-width:760px),(max-height:560px){
-  .stack{gap:1rem;padding-bottom:0}
-  .slot{position:relative;top:auto}
-  .card{grid-template-columns:1fr;min-height:0;transform:none!important}
-  .card > .media{position:relative;inset:auto;width:auto;height:12rem;margin:calc(-1 * clamp(1.75rem,3vw,3.5rem)) calc(-1 * clamp(1.75rem,3vw,3.5rem)) .5rem}
-  .card > .media{-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent)}
-  .card > .media::after{background:linear-gradient(0deg,var(--tint) 0%,transparent 60%),color-mix(in srgb,var(--tint) 24%,transparent)}
-}
-@media (max-width:520px){.card ul{grid-template-columns:1fr}}
+      /* ---------- Diagonal card stack: each card lands over the last, leaving only tilted top edges ---------- */
+      #services {
+        padding-block: 6rem;
+      }
+      .stack {
+        display: flex;
+        flex-direction: column;
+        gap: 22vh;
+        padding-bottom: 12vh;
+        --card-h: min(clamp(24rem, 58vh, 36rem), calc(100vh - 12rem));
+      }
+      .slot {
+        --tint: var(--surface);
+        --edge: var(--accent);
+        --glow: var(--accent);
+        --r: 0deg;
+        position: sticky;
+        top: calc(
+          env(safe-area-inset-top, 0px) + var(--nav-h) + 1.5rem + var(--i) *
+            1.1rem
+        );
+      }
+      .card {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(2rem, 4vw, 6rem);
+        min-height: var(--card-h);
+        padding: clamp(1.75rem, 3vw, 3.5rem);
+        border-radius: 1.75rem;
+        overflow: hidden;
+        background:
+          linear-gradient(
+            118deg,
+            rgba(255, 255, 255, 0.07) 0%,
+            rgba(255, 255, 255, 0) 32%
+          ),
+          radial-gradient(
+            55% 85% at 90% 12%,
+            color-mix(in srgb, var(--glow) 16%, transparent),
+            transparent 70%
+          ),
+          radial-gradient(
+            45% 70% at 0% 100%,
+            color-mix(in srgb, var(--glow) 14%, transparent),
+            transparent 70%
+          ),
+          linear-gradient(
+            105deg,
+            var(--tint) 0%,
+            color-mix(in srgb, var(--tint) 70%, var(--bg)) 50%,
+            color-mix(in srgb, var(--tint) 28%, var(--bg)) 100%
+          );
+        border: 1px solid color-mix(in srgb, var(--edge) 22%, transparent);
+        box-shadow:
+          inset 0 1px 0 color-mix(in srgb, var(--edge) 55%, transparent),
+          0 -1.25rem 2.5rem -1rem rgba(0, 0, 0, 0.7);
+        transform: rotate(var(--r));
+        transform-origin: 50% 0;
+        will-change: transform;
+        backface-visibility: hidden;
+        contain: layout paint;
+      }
+      .card > * {
+        position: relative;
+        z-index: 1;
+      }
+      .card {
+        grid-template-columns: minmax(0, min(46%, 38rem));
+        align-content: space-between;
+      }
+      .card > .media {
+        position: absolute;
+        inset: 0 0 0 auto;
+        width: 62%;
+        z-index: 0;
+        pointer-events: none;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 34%);
+        mask-image: linear-gradient(90deg, transparent 0%, #000 34%);
+      }
+      .card > .media img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.08) brightness(0.95);
+      }
+      .card > .media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            90deg,
+            var(--tint) 0%,
+            color-mix(in srgb, var(--tint) 0%, transparent) 48%
+          ),
+          linear-gradient(
+            0deg,
+            color-mix(in srgb, var(--tint) 45%, transparent),
+            transparent 32%
+          ),
+          color-mix(in srgb, var(--tint) 12%, transparent);
+      }
+      .card ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 1.5rem;
+        align-self: end;
+        margin-top: 2rem;
+      }
+      .card > .shade {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        background: #000;
+        opacity: 0;
+        pointer-events: none;
+        will-change: opacity;
+      }
+      .label {
+        color: var(--edge);
+        margin: 0 0 1rem;
+      }
+      .card h3 {
+        font: 700 clamp(1.6rem, 2.4vw, 3rem)/1.08 var(--display);
+        letter-spacing: -0.025em;
+        margin: 0 0 0.9rem;
+        text-wrap: balance;
+      }
+      .card p {
+        color: color-mix(in srgb, var(--fg) 90%, transparent);
+        margin: 0;
+        max-width: 42ch;
+      }
+      .card ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        align-self: end;
+        border-top: 1px solid color-mix(in srgb, var(--fg) 16%, transparent);
+      }
+      .card li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--fg) 16%, transparent);
+        font-size: 0.95rem;
+      }
+      @media (max-width: 760px), (max-height: 560px) {
+        .stack {
+          gap: 1rem;
+          padding-bottom: 0;
+        }
+        .slot {
+          position: relative;
+          top: auto;
+        }
+        .card {
+          grid-template-columns: 1fr;
+          min-height: 0;
+          transform: none !important;
+        }
+        .card > .media {
+          position: relative;
+          inset: auto;
+          width: auto;
+          height: 12rem;
+          margin: calc(-1 * clamp(1.75rem, 3vw, 3.5rem))
+            calc(-1 * clamp(1.75rem, 3vw, 3.5rem)) 0.5rem;
+        }
+        .card > .media {
+          -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent);
+          mask-image: linear-gradient(180deg, #000 55%, transparent);
+        }
+        .card > .media::after {
+          background:
+            linear-gradient(0deg, var(--tint) 0%, transparent 60%),
+            color-mix(in srgb, var(--tint) 24%, transparent);
+        }
+      }
+      @media (max-width: 520px) {
+        .card ul {
+          grid-template-columns: 1fr;
+        }
+      }
 
-#contact{padding-block:6rem;border-top:1px solid var(--line)}
-.mail{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem}
-.mail code{font:500 1.05rem/1 var(--mono);padding:.85rem 1rem;border-radius:.75rem;background:var(--surface);border:1px solid var(--line);user-select:all;word-break:break-all}
-.copyable{cursor:copy}
-.toast{position:fixed;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:20;
-  font:500 .85rem/1 var(--font);padding:.75rem 1.15rem;border-radius:99px;background:var(--fg);color:var(--bg)}
+      #contact {
+        padding-block: 6rem;
+        border-top: 1px solid var(--line);
+      }
+      .mail {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .mail code {
+        font: 500 1.05rem/1 var(--mono);
+        padding: 0.85rem 1rem;
+        border-radius: 0.75rem;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        user-select: all;
+        word-break: break-all;
+      }
+      .copyable {
+        cursor: copy;
+      }
+      .toast {
+        position: fixed;
+        left: 50%;
+        bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+        transform: translateX(-50%);
+        z-index: 20;
+        font: 500 0.85rem/1 var(--font);
+        padding: 0.75rem 1.15rem;
+        border-radius: 99px;
+        background: var(--fg);
+        color: var(--bg);
+      }
 
-/* ---------- Footer ---------- */
-footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
-.foot-top{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:2rem;padding-block:4rem 3rem}
-.fh{margin:0 0 .9rem;color:var(--muted);font:500 .76rem/1.4 var(--mono);letter-spacing:.08em}
-.foot-top ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
-.foot-top a{text-decoration:none;color:var(--fg);font-size:.95rem}
-.foot-top a:hover{color:var(--accent)}
-.foot-pitch p{font:700 1.6rem/1.15 var(--display);letter-spacing:-.02em;margin:0 0 1rem;max-width:14ch}
-.foot-pitch .muted{color:var(--muted);font:400 .92rem/1.5 var(--font);max-width:32ch;margin:0}
-@media (max-width:860px){.foot-top{grid-template-columns:repeat(2,minmax(0,1fr))}.foot-pitch{grid-column:1/-1}}
-@media (max-width:420px){.foot-top{grid-template-columns:1fr}}
-.wordmark{display:block;text-align:center;font:800 clamp(3.4rem,16.4vw,30rem)/.78 var(--display);font-variation-settings:"opsz" 96;
-  letter-spacing:-.055em;white-space:nowrap;margin:0;padding-top:.06em;user-select:none;
-  color:transparent;background:linear-gradient(180deg,#f2b98d,#7a3f22 70%,#2a1a12);background-size:cover;background-position:center;
-  -webkit-background-clip:text;background-clip:text}
-.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem;padding-block:1.25rem;border-top:1px solid var(--line);color:var(--muted)}
-.foot-bottom a{text-decoration:none}
-.foot-bottom a:hover{color:var(--fg)}
-.skip{position:absolute;left:-9999px;top:0}.skip:focus{left:1rem;top:1rem;z-index:100;background:var(--fg);color:var(--bg);padding:.6rem 1rem;border-radius:99px}
+      /* ---------- Footer ---------- */
+      footer {
+        border-top: 1px solid var(--line);
+        background: #0b0a09;
+        overflow: hidden;
+      }
+      .foot-top {
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+        padding-block: 4rem 3rem;
+      }
+      .fh {
+        margin: 0 0 0.9rem;
+        color: var(--muted);
+        font: 500 0.76rem/1.4 var(--mono);
+        letter-spacing: 0.08em;
+      }
+      .foot-top ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 0.5rem;
+      }
+      .foot-top a {
+        text-decoration: none;
+        color: var(--fg);
+        font-size: 0.95rem;
+      }
+      .foot-top a:hover {
+        color: var(--accent);
+      }
+      .foot-pitch p {
+        font: 700 1.6rem/1.15 var(--display);
+        letter-spacing: -0.02em;
+        margin: 0 0 1rem;
+        max-width: 14ch;
+      }
+      .foot-pitch .muted {
+        color: var(--muted);
+        font: 400 0.92rem/1.5 var(--font);
+        max-width: 32ch;
+        margin: 0;
+      }
+      @media (max-width: 860px) {
+        .foot-top {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .foot-pitch {
+          grid-column: 1/-1;
+        }
+      }
+      @media (max-width: 420px) {
+        .foot-top {
+          grid-template-columns: 1fr;
+        }
+      }
+      .wordmark {
+        display: block;
+        text-align: center;
+        font: 800 clamp(3.4rem, 16.4vw, 30rem)/0.78 var(--display);
+        font-variation-settings: "opsz" 96;
+        letter-spacing: -0.055em;
+        white-space: nowrap;
+        margin: 0;
+        padding-top: 0.06em;
+        user-select: none;
+        color: transparent;
+        background: linear-gradient(180deg, #f2b98d, #7a3f22 70%, #2a1a12);
+        background-size: cover;
+        background-position: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+      .foot-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding-block: 1.25rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+      .foot-bottom a {
+        text-decoration: none;
+      }
+      .foot-bottom a:hover {
+        color: var(--fg);
+      }
+      .skip {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+      }
+      .skip:focus {
+        left: 1rem;
+        top: 1rem;
+        z-index: 100;
+        background: var(--fg);
+        color: var(--bg);
+        padding: 0.6rem 1rem;
+        border-radius: 99px;
+      }
 
-/* ---------- Intro: plays on arrival while fonts and images load behind it, then lifts away ---------- */
-.intro-screen{display:none}
-html.intro:not(.intro-reveal){overflow:hidden}
-html.intro .intro-screen{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--bg);
-  padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px));
-  will-change:transform}
-.intro-stage{display:grid;justify-items:center;text-align:center}
-/* letters travel as a wave: each one rises in while the ones behind it fade out, across both words */
-.intro-word{display:flex;flex-wrap:wrap;justify-content:center;column-gap:.3em;row-gap:.05em;margin:0;
-  font:800 clamp(2.6rem,8.4vw,7rem)/1 var(--display);font-variation-settings:"opsz" 96;letter-spacing:-.035em}
-.intro-word .w{display:flex;overflow:hidden;padding-block:.12em}
-.intro-word .w2{color:var(--accent)}
-.intro-word .w span{display:inline-block;opacity:0;will-change:transform,opacity;
-  animation:intro-wave 2.4s calc(var(--n) * .1s) cubic-bezier(.2,.7,.2,1) infinite}
-.intro-screen.is-ready .intro-word .w span{animation:intro-settle .65s calc(var(--n) * .03s) cubic-bezier(.2,.7,.2,1) both}
-@keyframes intro-wave{
-  0%{opacity:0;transform:translateY(80%);filter:blur(6px)}
-  11%{opacity:1;transform:none;filter:blur(0)}
-  33%{opacity:1;transform:none;filter:blur(0)}
-  46%,100%{opacity:0;transform:translateY(-80%);filter:blur(6px)}}
-@keyframes intro-settle{from{opacity:0;transform:translateY(80%);filter:blur(6px)}to{opacity:1;transform:none;filter:blur(0)}}
-.intro-progress{position:absolute;left:50%;bottom:calc(2.5rem + env(safe-area-inset-bottom,0px));width:min(16rem,62vw);transform:translateX(-50%);display:grid;gap:.6rem}
-.intro-bar{height:2px;border-radius:2px;background:var(--line);overflow:hidden}
-.intro-bar i{display:block;height:100%;transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform .4s ease;
-  background:linear-gradient(90deg,#7a3f22,var(--accent),#f6cda8)}
-.intro-pct{display:flex;justify-content:space-between;color:var(--muted);font-variant-numeric:tabular-nums}
-.intro-pct b{font-weight:500;color:var(--fg)}
-.intro-screen.is-leaving .intro-stage,.intro-screen.is-leaving .intro-progress{animation:intro-fade-up .55s cubic-bezier(.4,0,.2,1) forwards}
-.intro-screen.is-leaving{animation:intro-lift .95s .3s cubic-bezier(.76,0,.24,1) forwards}
-@keyframes intro-fade-up{to{opacity:0;transform:translateY(-1.5rem) scale(.97)}}
-@keyframes intro-lift{to{transform:translateY(-100%)}}
-/* hero content rises in as the intro lifts */
-html.intro:not(.intro-reveal) :is(.hero .meta,.hero h1,.hero .lede,.hero .actions,.hero .index,.figure){opacity:0}
-html.intro-reveal .hero .meta{animation:hero-in .9s .45s cubic-bezier(.2,.7,.2,1) both}
-html.intro-reveal .hero h1{animation:hero-in 1s .55s cubic-bezier(.2,.7,.2,1) both}
-html.intro-reveal .hero .lede{animation:hero-in 1s .68s cubic-bezier(.2,.7,.2,1) both}
-html.intro-reveal .hero .actions{animation:hero-in 1s .8s cubic-bezier(.2,.7,.2,1) both}
-html.intro-reveal .hero .index{animation:hero-in 1s .92s cubic-bezier(.2,.7,.2,1) both}
-html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) both}
-@keyframes hero-in{from{opacity:0;transform:translateY(1.75rem)}to{opacity:1;transform:none}}
-@keyframes hero-mark{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){
-  .intro-word .w span,.intro-screen.is-ready .intro-word .w span{animation:none;opacity:1}
-  .intro-screen.is-leaving{animation:intro-fade .35s forwards}
-  .intro-screen.is-leaving .intro-stage,.intro-screen.is-leaving .intro-progress{animation:none}
-  html.intro-reveal :is(.hero .meta,.hero h1,.hero .lede,.hero .actions,.hero .index,.figure){animation:none}
-}
-@keyframes intro-fade{to{opacity:0}}
-</style>
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<script>
-  // Intro screen: turned on before the first paint; a safety timer lifts it even if the page script never runs
-  document.documentElement.classList.add('intro');
-  setTimeout(function () {
-    var r = document.documentElement;
-    if (r.classList.contains('intro')) { r.classList.add('intro-reveal'); r.classList.remove('intro'); var s = document.querySelector('.intro-screen'); if (s) s.remove(); }
-  }, 10000);
-</script>
-<div class="intro-screen" role="status" aria-live="polite" aria-label="Loading Hyperpoly Studios">
-  <div class="intro-stage">
-    <p class="intro-word" aria-hidden="true"><span class="w w1"><span style="--n:0">H</span><span style="--n:1">Y</span><span style="--n:2">P</span><span style="--n:3">E</span><span style="--n:4">R</span><span style="--n:5">P</span><span style="--n:6">O</span><span style="--n:7">L</span><span style="--n:8">Y</span></span><span class="w w2"><span style="--n:9">S</span><span style="--n:10">T</span><span style="--n:11">U</span><span style="--n:12">D</span><span style="--n:13">I</span><span style="--n:14">O</span><span style="--n:15">S</span></span></p>
-  </div>
-  <div class="intro-progress" aria-hidden="true">
-    <div class="intro-bar"><i></i></div>
-    <div class="intro-pct mono"><span>Loading</span><b>0%</b></div>
-  </div>
-</div>
-
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Hyperpoly Studios home">
-      <img src="hp-icon.png" width="56" height="56" alt="" decoding="async">
-      Hyperpoly
-    </a>
-    <nav class="links" aria-label="Sections">
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-  <section class="hero" id="top" aria-labelledby="hero-title">
-    <div class="wrap">
-      <div class="meta mono">
-        <span>Hyperpoly Studios · Independent studio</span>
-        <span class="status"><i></i>Taking new projects for Q4 2026</span>
+      /* ---------- Intro: plays on arrival while fonts and images load behind it, then lifts away ---------- */
+      .intro-screen {
+        display: none;
+      }
+      html.intro:not(.intro-reveal) {
+        overflow: hidden;
+      }
+      html.intro .intro-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: grid;
+        place-items: center;
+        background: var(--bg);
+        padding: env(safe-area-inset-top, 0px)
+          max(16px, env(safe-area-inset-right, 0px))
+          env(safe-area-inset-bottom, 0px)
+          max(16px, env(safe-area-inset-left, 0px));
+        will-change: transform;
+      }
+      .intro-stage {
+        display: grid;
+        justify-items: center;
+        text-align: center;
+      }
+      /* letters travel as a wave: each one rises in while the ones behind it fade out, across both words */
+      .intro-word {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 0.3em;
+        row-gap: 0.05em;
+        margin: 0;
+        font: 800 clamp(2.6rem, 8.4vw, 7rem)/1 var(--display);
+        font-variation-settings: "opsz" 96;
+        letter-spacing: -0.035em;
+      }
+      .intro-word .w {
+        display: flex;
+        overflow: hidden;
+        padding-block: 0.12em;
+      }
+      .intro-word .w2 {
+        color: var(--accent);
+      }
+      .intro-word .w span {
+        display: inline-block;
+        opacity: 0;
+        will-change: transform, opacity;
+        animation: intro-wave 2.4s calc(var(--n) * 0.1s)
+          cubic-bezier(0.2, 0.7, 0.2, 1) infinite;
+      }
+      .intro-screen.is-ready .intro-word .w span {
+        animation: intro-settle 0.65s calc(var(--n) * 0.03s)
+          cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      @keyframes intro-wave {
+        0% {
+          opacity: 0;
+          transform: translateY(80%);
+          filter: blur(6px);
+        }
+        11% {
+          opacity: 1;
+          transform: none;
+          filter: blur(0);
+        }
+        33% {
+          opacity: 1;
+          transform: none;
+          filter: blur(0);
+        }
+        46%,
+        100% {
+          opacity: 0;
+          transform: translateY(-80%);
+          filter: blur(6px);
+        }
+      }
+      @keyframes intro-settle {
+        from {
+          opacity: 0;
+          transform: translateY(80%);
+          filter: blur(6px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+          filter: blur(0);
+        }
+      }
+      .intro-progress {
+        position: absolute;
+        left: 50%;
+        bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+        width: min(16rem, 62vw);
+        transform: translateX(-50%);
+        display: grid;
+        gap: 0.6rem;
+      }
+      .intro-bar {
+        height: 2px;
+        border-radius: 2px;
+        background: var(--line);
+        overflow: hidden;
+      }
+      .intro-bar i {
+        display: block;
+        height: 100%;
+        transform-origin: 0 50%;
+        transform: scaleX(var(--p, 0));
+        transition: transform 0.4s ease;
+        background: linear-gradient(90deg, #7a3f22, var(--accent), #f6cda8);
+      }
+      .intro-pct {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+      .intro-pct b {
+        font-weight: 500;
+        color: var(--fg);
+      }
+      .intro-screen.is-leaving .intro-stage,
+      .intro-screen.is-leaving .intro-progress {
+        animation: intro-fade-up 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      }
+      .intro-screen.is-leaving {
+        animation: intro-lift 0.95s 0.3s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+      }
+      @keyframes intro-fade-up {
+        to {
+          opacity: 0;
+          transform: translateY(-1.5rem) scale(0.97);
+        }
+      }
+      @keyframes intro-lift {
+        to {
+          transform: translateY(-100%);
+        }
+      }
+      /* hero content rises in as the intro lifts */
+      html.intro:not(.intro-reveal)
+        :is(
+          .hero .meta,
+          .hero h1,
+          .hero .lede,
+          .hero .actions,
+          .hero .index,
+          .figure
+        ) {
+        opacity: 0;
+      }
+      html.intro-reveal .hero .meta {
+        animation: hero-in 0.9s 0.45s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      html.intro-reveal .hero h1 {
+        animation: hero-in 1s 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      html.intro-reveal .hero .lede {
+        animation: hero-in 1s 0.68s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      html.intro-reveal .hero .actions {
+        animation: hero-in 1s 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      html.intro-reveal .hero .index {
+        animation: hero-in 1s 0.92s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      html.intro-reveal .figure {
+        animation: hero-mark 1.3s 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      @keyframes hero-in {
+        from {
+          opacity: 0;
+          transform: translateY(1.75rem);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes hero-mark {
+        from {
+          opacity: 0;
+          transform: scale(0.92);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .intro-word .w span,
+        .intro-screen.is-ready .intro-word .w span {
+          animation: none;
+          opacity: 1;
+        }
+        .intro-screen.is-leaving {
+          animation: intro-fade 0.35s forwards;
+        }
+        .intro-screen.is-leaving .intro-stage,
+        .intro-screen.is-leaving .intro-progress {
+          animation: none;
+        }
+        html.intro-reveal
+          :is(
+            .hero .meta,
+            .hero h1,
+            .hero .lede,
+            .hero .actions,
+            .hero .index,
+            .figure
+          ) {
+          animation: none;
+        }
+      }
+      @keyframes intro-fade {
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <script>
+      // Intro screen: turned on before the first paint; a safety timer lifts it even if the page script never runs
+      document.documentElement.classList.add("intro");
+      setTimeout(function () {
+        var r = document.documentElement;
+        if (r.classList.contains("intro")) {
+          r.classList.add("intro-reveal");
+          r.classList.remove("intro");
+          var s = document.querySelector(".intro-screen");
+          if (s) s.remove();
+        }
+      }, 10000);
+    </script>
+    <div
+      class="intro-screen"
+      role="status"
+      aria-live="polite"
+      aria-label="Loading Hyperpoly Studios"
+    >
+      <div class="intro-stage">
+        <p class="intro-word" aria-hidden="true">
+          <span class="w w1"
+            ><span style="--n: 0">H</span><span style="--n: 1">Y</span
+            ><span style="--n: 2">P</span><span style="--n: 3">E</span
+            ><span style="--n: 4">R</span><span style="--n: 5">P</span
+            ><span style="--n: 6">O</span><span style="--n: 7">L</span
+            ><span style="--n: 8">Y</span></span
+          ><span class="w w2"
+            ><span style="--n: 9">S</span><span style="--n: 10">T</span
+            ><span style="--n: 11">U</span><span style="--n: 12">D</span
+            ><span style="--n: 13">I</span><span style="--n: 14">O</span
+            ><span style="--n: 15">S</span></span
+          >
+        </p>
       </div>
+      <div class="intro-progress" aria-hidden="true">
+        <div class="intro-bar"><i></i></div>
+        <div class="intro-pct mono"><span>Loading</span><b>0%</b></div>
+      </div>
+    </div>
 
-      <div class="hero-grid">
-        <div>
-          <h1 id="hero-title">Channels, games and software. <span class="soft">Built by one studio.</span></h1>
-          <p class="lede">We run automated YouTube channels, develop mobile games and build SaaS products, with one team and shared tools across all three.</p>
-          <div class="actions">
-            <a class="btn" href="#services">Our services</a>
-            <a class="btn line" href="#contact">Start a project</a>
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#top" aria-label="Hyperpoly Studios home">
+          <img
+            src="hp-icon.png"
+            width="56"
+            height="56"
+            alt=""
+            decoding="async"
+          />
+          Hyperpoly
+        </a>
+        <nav class="links" aria-label="Sections">
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="wrap">
+          <div class="meta mono">
+            <span>Hyperpoly Studios · Independent studio</span>
+            <span class="status"><i></i>Taking new projects for Q4 2026</span>
+          </div>
+
+          <div class="hero-grid">
+            <div>
+              <h1 id="hero-title">
+                Channels, games and software.
+                <span class="soft">Built by one studio.</span>
+              </h1>
+              <p class="lede">
+                We run automated YouTube channels, develop mobile games and
+                build SaaS products, with one team and shared tools across all
+                three.
+              </p>
+              <div class="actions">
+                <a class="btn" href="#services">Our services</a>
+                <a class="btn line" href="#contact">Start a project</a>
+              </div>
+            </div>
+            <figure class="figure">
+              <div class="orbit" aria-hidden="true">
+                <canvas class="orbit-rings"></canvas
+                ><canvas class="orbit-bodies"></canvas>
+              </div>
+              <img
+                src="hp-mark.jpg"
+                width="900"
+                height="900"
+                alt="Hyperpoly Studios HP monogram, faceted low-poly letters lit in warm orange"
+                decoding="async"
+                fetchpriority="high"
+                loading="eager"
+              />
+            </figure>
+          </div>
+
+          <nav class="index" aria-label="Divisions">
+            <a href="#youtube"
+              ><span class="code mono">YT</span
+              ><span class="name">YouTube Automation</span
+              ><span class="fig"><b>29</b> channels operated</span></a
+            >
+            <a href="#games"
+              ><span class="code mono">GD</span
+              ><span class="name">Game Development</span
+              ><span class="fig"><b>17</b> games shipped</span></a
+            >
+            <a href="#saas"
+              ><span class="code mono">SA</span
+              ><span class="name">SaaS Products</span
+              ><span class="fig"><b>43</b> products live</span></a
+            >
+          </nav>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="wrap">
+          <h2>What we do</h2>
+          <p class="sub">
+            Five ways we work with creators, players and businesses.
+          </p>
+          <div class="stack">
+            <article
+              class="slot"
+              id="youtube"
+              style="
+                --i: 0;
+                --tint: #5c1612;
+                --edge: #ffab96;
+                --glow: #c4442c;
+                --r: -0.6deg;
+              "
+            >
+              <div class="card">
+                <div class="media">
+                  <img
+                    src="img/yt.jpg"
+                    width="1400"
+                    height="1037"
+                    alt="Video editing desk with a channel video open on the timeline"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div>
+                  <p class="label mono">YouTube Automation</p>
+                  <h3>Faceless channels, run end to end.</h3>
+                  <p>
+                    Niche research, scripts, voiceover, editing and uploads. You
+                    own the channel and the revenue.
+                  </p>
+                </div>
+                <ul>
+                  <li>Niche &amp; keyword research</li>
+                  <li>Scripts &amp; voiceover</li>
+                  <li>Editing &amp; thumbnails</li>
+                  <li>Upload scheduling &amp; SEO</li>
+                </ul>
+                <div class="shade" aria-hidden="true"></div>
+              </div>
+            </article>
+
+            <article
+              class="slot"
+              id="games"
+              style="
+                --i: 1;
+                --tint: #573411;
+                --edge: #f1c47e;
+                --glow: #c98a2e;
+                --r: 0.5deg;
+              "
+            >
+              <div class="card">
+                <div class="media">
+                  <img
+                    src="img/games.jpg"
+                    width="1400"
+                    height="1037"
+                    alt="Hands holding a smartphone, playing a colourful mobile game"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div>
+                  <p class="label mono">Game Development</p>
+                  <h3>Mobile games for the App Store and Google Play.</h3>
+                  <p>
+                    We design, build and launch original mobile games for iPhone
+                    and Android, from first prototype to store launch and live
+                    updates.
+                  </p>
+                </div>
+                <ul>
+                  <li>Unity &amp; Godot for mobile</li>
+                  <li>Game design &amp; prototyping</li>
+                  <li>3D &amp; 2D game art</li>
+                  <li>App Store &amp; Google Play launch</li>
+                </ul>
+                <div class="shade" aria-hidden="true"></div>
+              </div>
+            </article>
+
+            <article
+              class="slot"
+              id="saas"
+              style="
+                --i: 2;
+                --tint: #4c1533;
+                --edge: #f3abc9;
+                --glow: #b23f7a;
+                --r: -0.4deg;
+              "
+            >
+              <div class="card">
+                <div class="media">
+                  <img
+                    src="img/saas.jpg"
+                    width="1400"
+                    height="1037"
+                    alt="Analytics dashboard with charts on a dark screen"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div>
+                  <p class="label mono">SaaS Products</p>
+                  <h3>Software with billing from day one.</h3>
+                  <p>
+                    We build our own SaaS tools and partner with founders to
+                    design, launch and grow theirs.
+                  </p>
+                </div>
+                <ul>
+                  <li>Product discovery</li>
+                  <li>MVP design &amp; build</li>
+                  <li>Stripe subscriptions</li>
+                  <li>Analytics &amp; growth</li>
+                </ul>
+                <div class="shade" aria-hidden="true"></div>
+              </div>
+            </article>
+
+            <article
+              class="slot"
+              id="creative"
+              style="
+                --i: 3;
+                --tint: #231c52;
+                --edge: #bdb6ff;
+                --glow: #5d52d6;
+                --r: 0.6deg;
+              "
+            >
+              <div class="card">
+                <div class="media">
+                  <img
+                    src="img/creative.jpg"
+                    width="1400"
+                    height="1037"
+                    alt="Videographer filming with a cinema camera under blue light"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div>
+                  <p class="label mono">Creative Production</p>
+                  <h3>Visuals for every project.</h3>
+                  <p>
+                    The in-house team behind our channels and games, available
+                    for client work.
+                  </p>
+                </div>
+                <ul>
+                  <li>Video editing</li>
+                  <li>3D modelling &amp; animation</li>
+                  <li>Thumbnails &amp; key art</li>
+                  <li>Brand identity</li>
+                </ul>
+                <div class="shade" aria-hidden="true"></div>
+              </div>
+            </article>
+
+            <article
+              class="slot"
+              id="growth"
+              style="
+                --i: 4;
+                --tint: #0f3b33;
+                --edge: #93e2cb;
+                --glow: #2a9a80;
+                --r: -0.5deg;
+              "
+            >
+              <div class="card">
+                <div class="media">
+                  <img
+                    src="img/growth.jpg"
+                    width="1400"
+                    height="1037"
+                    alt="Team presentation in a bright studio office"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div>
+                  <p class="label mono">Growth &amp; Consulting</p>
+                  <h3>Advice from people who run the numbers.</h3>
+                  <p>
+                    Audits and strategy for channels, games and apps, based on
+                    what works in our own projects.
+                  </p>
+                </div>
+                <ul>
+                  <li>Channel audits</li>
+                  <li>Monetization strategy</li>
+                  <li>Launch planning</li>
+                  <li>Analytics setup</li>
+                </ul>
+                <div class="shade" aria-hidden="true"></div>
+              </div>
+            </article>
           </div>
         </div>
-        <figure class="figure">
-          <div class="orbit" aria-hidden="true"><canvas class="orbit-rings"></canvas><canvas class="orbit-bodies"></canvas></div>
-          <img src="hp-mark.jpg" width="900" height="900" alt="Hyperpoly Studios HP monogram, faceted low-poly letters lit in warm orange" decoding="async" fetchpriority="high" loading="eager">
-        </figure>
+      </section>
+
+      <section id="contact">
+        <div class="wrap">
+          <h2>Start a project</h2>
+          <p class="sub">
+            Email us with which service fits and a short note about your idea.
+          </p>
+          <div class="mail">
+            <code id="email" class="copyable" title="Double-click to copy"
+              >hyperpolystudios@gmail.com</code
+            >
+            <button class="btn line" id="copy" type="button">Copy email</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap foot-top">
+        <div class="foot-pitch">
+          <p>Have an idea worth building?</p>
+          <p class="muted">
+            We reply to every enquiry within one working hour.
+          </p>
+        </div>
+        <div>
+          <h2 class="fh mono">Services</h2>
+          <ul>
+            <li><a href="#youtube">YouTube Automation</a></li>
+            <li><a href="#games">Game Development</a></li>
+            <li><a href="#saas">SaaS Products</a></li>
+            <li><a href="#creative">Creative Production</a></li>
+            <li><a href="#growth">Growth &amp; Consulting</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="fh mono">Studio</h2>
+          <ul>
+            <li><a href="#services">What we do</a></li>
+            <li><a href="#contact">Start a project</a></li>
+            <li><a href="#top">Back to top ↑</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="fh mono">Contact</h2>
+          <ul>
+            <li>
+              <span
+                class="copyable"
+                title="Double-click to copy"
+                style="user-select: all; word-break: break-all"
+                >hyperpolystudios@gmail.com</span
+              >
+            </li>
+            <li style="color: var(--muted); font-size: 0.92rem">
+              Replies within 1 working hour
+            </li>
+          </ul>
+        </div>
       </div>
-
-      <nav class="index" aria-label="Divisions">
-        <a href="#youtube"><span class="code mono">YT</span><span class="name">YouTube Automation</span><span class="fig"><b>29</b> channels operated</span></a>
-        <a href="#games"><span class="code mono">GD</span><span class="name">Game Development</span><span class="fig"><b>17</b> games shipped</span></a>
-        <a href="#saas"><span class="code mono">SA</span><span class="name">SaaS Products</span><span class="fig"><b>43</b> products live</span></a>
-      </nav>
-    </div>
-  </section>
-
-  <section id="services">
-    <div class="wrap">
-      <h2>What we do</h2>
-      <p class="sub">Five ways we work with creators, players and businesses.</p>
-      <div class="stack">
-        <article class="slot" id="youtube" style="--i:0;--tint:#5c1612;--edge:#ffab96;--glow:#c4442c;--r:-.6deg"><div class="card">
-          <div class="media"><img src="img/yt.jpg" width="1400" height="1037" alt="Video editing desk with a channel video open on the timeline" loading="lazy" decoding="async"></div>
-          <div>
-            <p class="label mono">YouTube Automation</p>
-            <h3>Faceless channels, run end to end.</h3>
-            <p>Niche research, scripts, voiceover, editing and uploads. You own the channel and the revenue.</p>
-          </div>
-          <ul><li>Niche &amp; keyword research</li><li>Scripts &amp; voiceover</li><li>Editing &amp; thumbnails</li><li>Upload scheduling &amp; SEO</li></ul><div class="shade" aria-hidden="true"></div>
-        </div></article>
-
-        <article class="slot" id="games" style="--i:1;--tint:#573411;--edge:#f1c47e;--glow:#c98a2e;--r:.5deg"><div class="card">
-          <div class="media"><img src="img/games.jpg" width="1400" height="1037" alt="Hands holding a smartphone, playing a colourful mobile game" loading="lazy" decoding="async"></div>
-          <div>
-            <p class="label mono">Game Development</p>
-            <h3>Mobile games for the App Store and Google Play.</h3>
-            <p>We design, build and launch original mobile games for iPhone and Android, from first prototype to store launch and live updates.</p>
-          </div>
-          <ul><li>Unity &amp; Godot for mobile</li><li>Game design &amp; prototyping</li><li>3D &amp; 2D game art</li><li>App Store &amp; Google Play launch</li></ul><div class="shade" aria-hidden="true"></div>
-        </div></article>
-
-        <article class="slot" id="saas" style="--i:2;--tint:#4c1533;--edge:#f3abc9;--glow:#b23f7a;--r:-.4deg"><div class="card">
-          <div class="media"><img src="img/saas.jpg" width="1400" height="1037" alt="Analytics dashboard with charts on a dark screen" loading="lazy" decoding="async"></div>
-          <div>
-            <p class="label mono">SaaS Products</p>
-            <h3>Software with billing from day one.</h3>
-            <p>We build our own SaaS tools and partner with founders to design, launch and grow theirs.</p>
-          </div>
-          <ul><li>Product discovery</li><li>MVP design &amp; build</li><li>Stripe subscriptions</li><li>Analytics &amp; growth</li></ul><div class="shade" aria-hidden="true"></div>
-        </div></article>
-
-        <article class="slot" id="creative" style="--i:3;--tint:#231c52;--edge:#bdb6ff;--glow:#5d52d6;--r:.6deg"><div class="card">
-          <div class="media"><img src="img/creative.jpg" width="1400" height="1037" alt="Videographer filming with a cinema camera under blue light" loading="lazy" decoding="async"></div>
-          <div>
-            <p class="label mono">Creative Production</p>
-            <h3>Visuals for every project.</h3>
-            <p>The in-house team behind our channels and games, available for client work.</p>
-          </div>
-          <ul><li>Video editing</li><li>3D modelling &amp; animation</li><li>Thumbnails &amp; key art</li><li>Brand identity</li></ul><div class="shade" aria-hidden="true"></div>
-        </div></article>
-
-        <article class="slot" id="growth" style="--i:4;--tint:#0f3b33;--edge:#93e2cb;--glow:#2a9a80;--r:-.5deg"><div class="card">
-          <div class="media"><img src="img/growth.jpg" width="1400" height="1037" alt="Team presentation in a bright studio office" loading="lazy" decoding="async"></div>
-          <div>
-            <p class="label mono">Growth &amp; Consulting</p>
-            <h3>Advice from people who run the numbers.</h3>
-            <p>Audits and strategy for channels, games and apps, based on what works in our own projects.</p>
-          </div>
-          <ul><li>Channel audits</li><li>Monetization strategy</li><li>Launch planning</li><li>Analytics setup</li></ul><div class="shade" aria-hidden="true"></div>
-        </div></article>
+      <p class="wordmark" id="wordmark" aria-hidden="true">HYPERPOLY</p>
+      <div class="wrap foot-bottom mono">
+        <span>© 2026 Hyperpoly Studios</span>
+        <span>YT · GD · SA</span>
+        <a href="#top">Back to top ↑</a>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <section id="contact">
-    <div class="wrap">
-      <h2>Start a project</h2>
-      <p class="sub">Email us with which service fits and a short note about your idea.</p>
-      <div class="mail">
-        <code id="email" class="copyable" title="Double-click to copy">hyperpolystudios@gmail.com</code>
-        <button class="btn line" id="copy" type="button">Copy email</button>
-      </div>
-    </div>
-  </section>
-</main>
+    <script>
+      (() => {
+        /* Copy email */
+        const EMAIL = "hyperpolystudios@gmail.com";
+        const btn = document.getElementById("copy");
+        let toast = null,
+          toastTimer = 0,
+          btnTimer = 0;
+        const notify = (msg) => {
+          if (!toast) {
+            toast = document.createElement("div");
+            toast.className = "toast";
+            toast.setAttribute("role", "status");
+            document.body.appendChild(toast);
+          }
+          toast.textContent = msg;
+          toast.hidden = false;
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(() => {
+            toast.hidden = true;
+          }, 1800);
+        };
+        const selectText = (el) => {
+          const r = document.createRange();
+          r.selectNodeContents(el);
+          const s = getSelection();
+          s.removeAllRanges();
+          s.addRange(r);
+        };
+        const copied = () => {
+          btn.textContent = "Copied";
+          clearTimeout(btnTimer);
+          btnTimer = setTimeout(() => {
+            btn.textContent = "Copy email";
+          }, 1800);
+          notify("Email copied");
+        };
+        // Copy must run inside the click / double-click handler so the browser allows it
+        const copyEmail = (el) => {
+          const legacy = () => {
+            selectText(el);
+            let ok = false;
+            try {
+              ok = document.execCommand("copy");
+            } catch (err) {}
+            ok ? copied() : notify("Email selected, press Ctrl+C to copy");
+          };
+          try {
+            navigator.clipboard.writeText(EMAIL).then(copied, legacy);
+          } catch (err) {
+            legacy();
+          }
+        };
+        btn.addEventListener("click", () =>
+          copyEmail(document.getElementById("email")),
+        );
+        document
+          .querySelectorAll(".copyable")
+          .forEach((el) =>
+            el.addEventListener("dblclick", () => copyEmail(el)),
+          );
 
-<footer>
-  <div class="wrap foot-top">
-    <div class="foot-pitch">
-      <p>Have an idea worth building?</p>
-      <p class="muted">We reply to every enquiry within one working hour.</p>
-    </div>
-    <div>
-      <h2 class="fh mono">Services</h2>
-      <ul><li><a href="#youtube">YouTube Automation</a></li><li><a href="#games">Game Development</a></li><li><a href="#saas">SaaS Products</a></li><li><a href="#creative">Creative Production</a></li><li><a href="#growth">Growth &amp; Consulting</a></li></ul>
-    </div>
-    <div>
-      <h2 class="fh mono">Studio</h2>
-      <ul><li><a href="#services">What we do</a></li><li><a href="#contact">Start a project</a></li><li><a href="#top">Back to top ↑</a></li></ul>
-    </div>
-    <div>
-      <h2 class="fh mono">Contact</h2>
-      <ul><li><span class="copyable" title="Double-click to copy" style="user-select:all;word-break:break-all">hyperpolystudios@gmail.com</span></li><li style="color:var(--muted);font-size:.92rem">Replies within 1 working hour</li></ul>
-    </div>
-  </div>
-  <p class="wordmark" id="wordmark" aria-hidden="true">HYPERPOLY</p>
-  <div class="wrap foot-bottom mono">
-    <span>© 2026 Hyperpoly Studios</span>
-    <span>YT · GD · SA</span>
-    <a href="#top">Back to top ↑</a>
-  </div>
-</footer>
+        /* Shared facet shading: dark ember → accent → light apricot */
+        const stops = [
+          [42, 26, 18],
+          [122, 63, 34],
+          [232, 147, 90],
+          [246, 205, 168],
+        ];
+        const shade = (v) => {
+          v = Math.min(1, Math.max(0, v)) * (stops.length - 1);
+          const i = Math.min(stops.length - 2, Math.floor(v)),
+            f = v - i,
+            a = stops[i],
+            b = stops[i + 1];
+          return `rgb(${a.map((c, k) => Math.round(c + (b[k] - c) * f)).join(",")})`;
+        };
+        const rng = (seed) => () =>
+          (seed = (seed * 16807) % 2147483647) / 2147483647;
 
-<script>
-(() => {
-  /* Copy email */
-  const EMAIL = 'hyperpolystudios@gmail.com';
-  const btn = document.getElementById('copy');
-  let toast = null, toastTimer = 0, btnTimer = 0;
-  const notify = msg => {
-    if (!toast) { toast = document.createElement('div'); toast.className = 'toast'; toast.setAttribute('role', 'status'); document.body.appendChild(toast); }
-    toast.textContent = msg; toast.hidden = false;
-    clearTimeout(toastTimer); toastTimer = setTimeout(() => { toast.hidden = true; }, 1800);
-  };
-  const selectText = el => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
-  const copied = () => {
-    btn.textContent = 'Copied'; clearTimeout(btnTimer); btnTimer = setTimeout(() => { btn.textContent = 'Copy email'; }, 1800);
-    notify('Email copied');
-  };
-  // Copy must run inside the click / double-click handler so the browser allows it
-  const copyEmail = el => {
-    const legacy = () => {
-      selectText(el);
-      let ok = false; try { ok = document.execCommand('copy'); } catch (err) {}
-      ok ? copied() : notify('Email selected, press Ctrl+C to copy');
-    };
-    try { navigator.clipboard.writeText(EMAIL).then(copied, legacy); } catch (err) { legacy(); }
-  };
-  btn.addEventListener('click', () => copyEmail(document.getElementById('email')));
-  document.querySelectorAll('.copyable').forEach(el => el.addEventListener('dblclick', () => copyEmail(el)));
+        /* Footer wordmark: letters filled with a faceted texture */
+        const paintWordmark = () => {
+          const cv = document.createElement("canvas"),
+            W = 1600,
+            H = 420,
+            step = 70,
+            rnd = rng(5);
+          cv.width = W;
+          cv.height = H;
+          const ctx = cv.getContext("2d"),
+            cols = Math.ceil(W / step) + 1,
+            rows = Math.ceil(H / step) + 1,
+            g = [];
+          for (let j = 0; j <= rows; j++) {
+            g[j] = [];
+            for (let i = 0; i <= cols; i++) {
+              const jx = i && i < cols ? (rnd() - 0.5) * step * 0.7 : 0,
+                jy = j && j < rows ? (rnd() - 0.5) * step * 0.7 : 0;
+              g[j][i] = [i * step + jx, j * step + jy];
+            }
+          }
+          for (let j = 0; j < rows; j++)
+            for (let i = 0; i < cols; i++) {
+              const a = g[j][i],
+                b = g[j][i + 1],
+                c = g[j + 1][i],
+                d = g[j + 1][i + 1];
+              [
+                [a, b, c],
+                [b, d, c],
+              ].forEach((t) => {
+                const yMid = (t[0][1] + t[1][1] + t[2][1]) / 3;
+                ctx.beginPath();
+                ctx.moveTo(...t[0]);
+                ctx.lineTo(...t[1]);
+                ctx.lineTo(...t[2]);
+                ctx.closePath();
+                ctx.fillStyle = shade(
+                  0.95 - (yMid / H) * 0.8 + (rnd() - 0.5) * 0.35,
+                );
+                ctx.fill();
+              });
+            }
+          try {
+            document.getElementById("wordmark").style.backgroundImage =
+              `url(${cv.toDataURL("image/png")})`;
+          } catch (err) {}
+        };
 
-  /* Shared facet shading: dark ember → accent → light apricot */
-  const stops = [[42, 26, 18], [122, 63, 34], [232, 147, 90], [246, 205, 168]];
-  const shade = v => {
-    v = Math.min(1, Math.max(0, v)) * (stops.length - 1);
-    const i = Math.min(stops.length - 2, Math.floor(v)), f = v - i, a = stops[i], b = stops[i + 1];
-    return `rgb(${a.map((c, k) => Math.round(c + (b[k] - c) * f)).join(',')})`;
-  };
-  const rng = seed => () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+        paintWordmark();
 
-  /* Footer wordmark: letters filled with a faceted texture */
-  const paintWordmark = () => {
-    const cv = document.createElement('canvas'), W = 1600, H = 420, step = 70, rnd = rng(5);
-    cv.width = W; cv.height = H;
-    const ctx = cv.getContext('2d'), cols = Math.ceil(W / step) + 1, rows = Math.ceil(H / step) + 1, g = [];
-    for (let j = 0; j <= rows; j++) { g[j] = []; for (let i = 0; i <= cols; i++) {
-      const jx = i && i < cols ? (rnd() - 0.5) * step * 0.7 : 0, jy = j && j < rows ? (rnd() - 0.5) * step * 0.7 : 0;
-      g[j][i] = [i * step + jx, j * step + jy];
-    } }
-    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
-      const a = g[j][i], b = g[j][i + 1], c = g[j + 1][i], d = g[j + 1][i + 1];
-      [[a, b, c], [b, d, c]].forEach(t => {
-        const yMid = (t[0][1] + t[1][1] + t[2][1]) / 3;
-        ctx.beginPath(); ctx.moveTo(...t[0]); ctx.lineTo(...t[1]); ctx.lineTo(...t[2]); ctx.closePath();
-        ctx.fillStyle = shade(0.95 - (yMid / H) * 0.8 + (rnd() - 0.5) * 0.35); ctx.fill();
-      });
-    }
-    try { document.getElementById('wordmark').style.backgroundImage = `url(${cv.toDataURL('image/png')})`; } catch (err) {}
-  };
-
-  paintWordmark();
-
-  /* Diagonal card stack: the incoming card tilts in and settles; covered cards shrink back and dim.
+        /* Diagonal card stack: the incoming card tilts in and settles; covered cards shrink back and dim.
      Card positions are worked out from scrollY alone, so a scroll frame does no layout reads, and only
      transform/opacity change (both handled by the compositor). */
-  const stackEl = document.querySelector('.stack');
-  const slots = [...stackEl.querySelectorAll('.slot')];
-  const faces = slots.map(s => s.querySelector('.card'));
-  const shades = faces.map(f => f.querySelector('.shade'));
-  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let tops = [], rests = [], flow = [], heights = [], sticky = true, queued = false;
-  let lastTf = [], lastOp = [];
-  const measure = () => {
-    sticky = getComputedStyle(slots[0]).position === 'sticky';
-    const cs = getComputedStyle(stackEl), gap = parseFloat(cs.rowGap) || 0;
-    let y = stackEl.getBoundingClientRect().top + scrollY + (parseFloat(cs.paddingTop) || 0);
-    slots.forEach((s, i) => {
-      const ss = getComputedStyle(s);
-      tops[i] = parseFloat(ss.top) || 0;
-      rests[i] = parseFloat(ss.getPropertyValue('--r')) || 0;
-      heights[i] = s.offsetHeight;
-      flow[i] = y; y += heights[i] + gap;     // where the card sits before it sticks
-    });
-    lastTf = []; lastOp = [];
-  };
-  const update = () => {
-    queued = false;
-    if (!sticky) {
-      faces.forEach((f, i) => { f.style.transform = ''; shades[i].style.opacity = ''; });
-      lastTf = []; lastOp = []; return;
-    }
-    const sy = scrollY, vh = innerHeight;
-    const left = flow.map((f, i) => Math.max(0, f - sy - tops[i]));   // px each card still travels before it sticks
-    for (let i = 0; i < slots.length; i++) {
-      const t = Math.min(1, left[i] / (vh * .7));
-      let depth = 0;
-      for (let j = i + 1; j < slots.length; j++) depth += Math.min(1, Math.max(0, 1 - left[j] / heights[i]));
-      const rot = reduceMotion ? rests[i] : rests[i] + t * 3.5;
-      const tiltX = reduceMotion ? 0 : t * 7;
-      const scale = 1 - Math.min(depth, 4) * .025;
-      const tf = `perspective(1800px) rotateX(${tiltX.toFixed(3)}deg) rotate(${rot.toFixed(3)}deg) scale(${scale.toFixed(4)})`;
-      if (tf !== lastTf[i]) { faces[i].style.transform = tf; lastTf[i] = tf; }
-      const op = Math.min(depth * .1, .3).toFixed(3);
-      if (op !== lastOp[i]) { shades[i].style.opacity = op; lastOp[i] = op; }
-    }
-  };
-  const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
-  addEventListener('scroll', queue, { passive: true });
-  const remeasure = () => { measure(); update(); };
-  addEventListener('resize', remeasure);
-  if ('ResizeObserver' in window) new ResizeObserver(remeasure).observe(stackEl);   // fonts loading, content changes
-  addEventListener('load', remeasure);
-  measure(); update();
+        const stackEl = document.querySelector(".stack");
+        const slots = [...stackEl.querySelectorAll(".slot")];
+        const faces = slots.map((s) => s.querySelector(".card"));
+        const shades = faces.map((f) => f.querySelector(".shade"));
+        const reduceMotion = matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        let tops = [],
+          rests = [],
+          flow = [],
+          heights = [],
+          sticky = true,
+          queued = false;
+        let lastTf = [],
+          lastOp = [];
+        const measure = () => {
+          sticky = getComputedStyle(slots[0]).position === "sticky";
+          const cs = getComputedStyle(stackEl),
+            gap = parseFloat(cs.rowGap) || 0;
+          let y =
+            stackEl.getBoundingClientRect().top +
+            scrollY +
+            (parseFloat(cs.paddingTop) || 0);
+          slots.forEach((s, i) => {
+            const ss = getComputedStyle(s);
+            tops[i] = parseFloat(ss.top) || 0;
+            rests[i] = parseFloat(ss.getPropertyValue("--r")) || 0;
+            heights[i] = s.offsetHeight;
+            flow[i] = y;
+            y += heights[i] + gap; // where the card sits before it sticks
+          });
+          lastTf = [];
+          lastOp = [];
+        };
+        const update = () => {
+          queued = false;
+          if (!sticky) {
+            faces.forEach((f, i) => {
+              f.style.transform = "";
+              shades[i].style.opacity = "";
+            });
+            lastTf = [];
+            lastOp = [];
+            return;
+          }
+          const sy = scrollY,
+            vh = innerHeight;
+          const left = flow.map((f, i) => Math.max(0, f - sy - tops[i])); // px each card still travels before it sticks
+          for (let i = 0; i < slots.length; i++) {
+            const t = Math.min(1, left[i] / (vh * 0.7));
+            let depth = 0;
+            for (let j = i + 1; j < slots.length; j++)
+              depth += Math.min(1, Math.max(0, 1 - left[j] / heights[i]));
+            const rot = reduceMotion ? rests[i] : rests[i] + t * 3.5;
+            const tiltX = reduceMotion ? 0 : t * 7;
+            const scale = 1 - Math.min(depth, 4) * 0.025;
+            const tf = `perspective(1800px) rotateX(${tiltX.toFixed(3)}deg) rotate(${rot.toFixed(3)}deg) scale(${scale.toFixed(4)})`;
+            if (tf !== lastTf[i]) {
+              faces[i].style.transform = tf;
+              lastTf[i] = tf;
+            }
+            const op = Math.min(depth * 0.1, 0.3).toFixed(3);
+            if (op !== lastOp[i]) {
+              shades[i].style.opacity = op;
+              lastOp[i] = op;
+            }
+          }
+        };
+        const queue = () => {
+          if (!queued) {
+            queued = true;
+            requestAnimationFrame(update);
+          }
+        };
+        addEventListener("scroll", queue, { passive: true });
+        const remeasure = () => {
+          measure();
+          update();
+        };
+        addEventListener("resize", remeasure);
+        if ("ResizeObserver" in window)
+          new ResizeObserver(remeasure).observe(stackEl); // fonts loading, content changes
+        addEventListener("load", remeasure);
+        measure();
+        update();
 
-  /* Orbit field: a few hundred hairline orbits on one diagonal, each carrying a body that wanders along it:
+        /* Orbit field: a few hundred hairline orbits on one diagonal, each carrying a body that wanders along it:
      stars, gold, platinum, crystal, ruby, sapphire, emerald, amethyst, small ringed planets and comets.
      The engine below runs in a background worker (OffscreenCanvas) when the browser supports it, so nothing
      on the page can slow it down; otherwise it runs here. Orbits are painted once, bodies come from
      pre-rendered sprites, and the slow sway of the whole field is a CSS animation on the compositor. */
-  const ORBIT_ENGINE = function (rctx, bctx, mkCanvas, opts) {
-    const TAU = Math.PI * 2;
-    const CLEAR = .275, EDGE = .488, TILT = -32 * Math.PI / 180, SPREAD = 11 * Math.PI / 180;
-    const rand = (a, b) => a + Math.random() * (b - a);
-    const ringStyles = ['rgba(246,205,168,.20)', 'rgba(232,147,90,.17)', 'rgba(200,105,58,.15)', 'rgba(246,205,168,.08)', 'rgba(232,147,90,.07)'];
-    /* ---- sprites, drawn once: each body is pre-rendered with its glow baked in ---- */
-    const SP = 96, R = SP * .16;                       // sprite size and body radius inside it (glow fills the rest)
-    const painters = {
-      ball: cols => g => {
-        const gr = g.createRadialGradient(-R * .35, -R * .4, R * .05, 0, 0, R);
-        gr.addColorStop(0, cols[0]); gr.addColorStop(.35, cols[1]); gr.addColorStop(.8, cols[2]); gr.addColorStop(1, cols[3]);
-        g.fillStyle = gr; g.beginPath(); g.arc(0, 0, R, 0, TAU); g.fill();
-        g.fillStyle = 'rgba(255,255,255,.8)'; g.beginPath(); g.ellipse(-R * .38, -R * .42, R * .2, R * .12, -.6, 0, TAU); g.fill();
-      },
-      gem: (sides, cols, stretch = 1) => g => {
-        const pts = Array.from({ length: sides }, (_, i) => { const a = -Math.PI / 2 + i * TAU / sides; return [Math.cos(a) * R, Math.sin(a) * R * stretch]; });
-        const cx = -R * .12, cy = -R * .15 * stretch;  // off-centre table gives the facets their sparkle
-        pts.forEach((p, i) => {
-          const q = pts[(i + 1) % sides];
-          g.beginPath(); g.moveTo(cx, cy); g.lineTo(p[0], p[1]); g.lineTo(q[0], q[1]); g.closePath();
-          const lit = .5 + .5 * Math.cos(Math.atan2((p[1] + q[1]) / 2, (p[0] + q[0]) / 2) + 2.36);   // light from the top left
-          g.fillStyle = lit > .66 ? cols[0] : lit > .3 ? cols[1] : cols[2]; g.fill();
-        });
-        g.beginPath(); pts.forEach((p, i) => { const x = cx + (p[0] - cx) * .42, y = cy + (p[1] - cy) * .42; i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.closePath();
-        g.globalAlpha = .5; g.fillStyle = cols[0]; g.fill(); g.globalAlpha = 1;
-        g.strokeStyle = 'rgba(255,255,255,.6)'; g.lineWidth = SP * .008;
-        g.beginPath(); pts.forEach((p, i) => i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1])); g.closePath(); g.stroke();
-      },
-      flare: (core, ray) => g => {
-        const gr = g.createRadialGradient(0, 0, 0, 0, 0, R * .7);
-        gr.addColorStop(0, '#ffffff'); gr.addColorStop(.35, core); gr.addColorStop(1, 'rgba(0,0,0,0)');
-        g.fillStyle = gr; g.beginPath(); g.arc(0, 0, R * .7, 0, TAU); g.fill();
-        g.fillStyle = ray;
-        g.beginPath(); g.ellipse(0, 0, R * .09, R * 1.9, 0, 0, TAU); g.fill();
-        g.beginPath(); g.ellipse(0, 0, R * 1.9, R * .09, 0, 0, TAU); g.fill();
-      },
-      planet: () => g => {
-        g.strokeStyle = 'rgba(246,205,168,.9)'; g.lineWidth = SP * .018;
-        g.beginPath(); g.ellipse(0, 0, R * 1.55, R * .44, -.38, Math.PI, TAU); g.stroke();          // far side of the ring
-        painters.ball(['#fff0d6', '#f2b27a', '#b4562b', '#3a160a'])(g);
-        g.fillStyle = 'rgba(122,63,34,.35)'; g.fillRect(-R * .95, -R * .12, R * 1.9, R * .18);    // a band
-        g.beginPath(); g.ellipse(0, 0, R * 1.55, R * .44, -.38, 0, Math.PI); g.stroke();           // near side
-      }
-    };
-    const make = (paint, rgb, ga) => {
-      const c = mkCanvas(SP, SP);
-      const g = c.getContext('2d'); g.translate(SP / 2, SP / 2);
-      if (rgb) {
-        const gr = g.createRadialGradient(0, 0, 0, 0, 0, SP / 2);
-        gr.addColorStop(0, `rgba(${rgb},${ga})`); gr.addColorStop(.2, `rgba(${rgb},${ga * .45})`); gr.addColorStop(.55, `rgba(${rgb},${ga * .1})`); gr.addColorStop(1, `rgba(${rgb},0)`);
-        g.fillStyle = gr; g.fillRect(-SP / 2, -SP / 2, SP, SP);
-      }
-      paint(g); return c;
-    };
-    const sparkle = make(painters.flare('#eaf7ff', 'rgba(235,248,255,.85)'));
-    // weight = how common; size = body radius in CSS px
-    const TYPES = [
-      { w: 42, size: [.45, 1.15], body: make(painters.flare('#ffe2bf', 'rgba(255,236,214,.7)'), '255,214,170', .35), twinkle: 1 },     // star
-      { w: 12, size: [1.7, 2.9],  body: make(painters.ball(['#fff6cf', '#f5c451', '#a86d12', '#4d2e05']), '255,196,80', .45) },         // gold
-      { w: 10, size: [1.5, 2.7],  body: make(painters.ball(['#ffffff', '#e3e7ec', '#9ca3ad', '#3e434a']), '220,232,255', .32) },        // platinum
-      { w: 9,  size: [2.2, 3.4],  body: make(painters.gem(4, ['#ffffff', '#d4f1ff', '#79b0d4'], 1.45), '190,235,255', .45), spin: 1, sparkle: 1 }, // crystal
-      { w: 8,  size: [2, 3.2],    body: make(painters.gem(6, ['#ff9bb0', '#d1123f', '#6e0019']), '255,40,90', .5), spin: 1 },              // ruby
-      { w: 4,  size: [2, 3],      body: make(painters.gem(5, ['#b3cfff', '#2357db', '#0a1f6b']), '70,130,255', .45), spin: 1 },            // sapphire
-      { w: 3,  size: [2, 3],      body: make(painters.gem(8, ['#aaffd2', '#13a45c', '#03492a'], .8), '50,240,150', .4), spin: 1 },         // emerald
-      { w: 3,  size: [2, 3],      body: make(painters.gem(6, ['#eecdff', '#9a45dc', '#4a1678'], 1.25), '190,120,255', .45), spin: 1 },     // amethyst
-      { w: 2,  size: [4, 5.4],    body: make(painters.planet(), '255,160,90', .32) },                                                     // ringed planet
-      { w: 5,  size: [1.1, 1.7],  body: make(painters.flare('#d8ecff', 'rgba(220,236,255,.8)'), '180,215,255', .5), tail: 1 }               // comet
-    ];
-    const totalW = TYPES.reduce((a, t) => a + t.w, 0);
-    const pickType = () => { let x = Math.random() * totalW; for (const t of TYPES) { if ((x -= t.w) < 0) return t; } return TYPES[0]; };
+        const ORBIT_ENGINE = function (rctx, bctx, mkCanvas, opts) {
+          const TAU = Math.PI * 2;
+          const CLEAR = 0.275,
+            EDGE = 0.488,
+            TILT = (-32 * Math.PI) / 180,
+            SPREAD = (11 * Math.PI) / 180;
+          const rand = (a, b) => a + Math.random() * (b - a);
+          const ringStyles = [
+            "rgba(246,205,168,.20)",
+            "rgba(232,147,90,.17)",
+            "rgba(200,105,58,.15)",
+            "rgba(246,205,168,.08)",
+            "rgba(232,147,90,.07)",
+          ];
+          /* ---- sprites, drawn once: each body is pre-rendered with its glow baked in ---- */
+          const SP = 96,
+            R = SP * 0.16; // sprite size and body radius inside it (glow fills the rest)
+          const painters = {
+            ball: (cols) => (g) => {
+              const gr = g.createRadialGradient(
+                -R * 0.35,
+                -R * 0.4,
+                R * 0.05,
+                0,
+                0,
+                R,
+              );
+              gr.addColorStop(0, cols[0]);
+              gr.addColorStop(0.35, cols[1]);
+              gr.addColorStop(0.8, cols[2]);
+              gr.addColorStop(1, cols[3]);
+              g.fillStyle = gr;
+              g.beginPath();
+              g.arc(0, 0, R, 0, TAU);
+              g.fill();
+              g.fillStyle = "rgba(255,255,255,.8)";
+              g.beginPath();
+              g.ellipse(-R * 0.38, -R * 0.42, R * 0.2, R * 0.12, -0.6, 0, TAU);
+              g.fill();
+            },
+            gem:
+              (sides, cols, stretch = 1) =>
+              (g) => {
+                const pts = Array.from({ length: sides }, (_, i) => {
+                  const a = -Math.PI / 2 + (i * TAU) / sides;
+                  return [Math.cos(a) * R, Math.sin(a) * R * stretch];
+                });
+                const cx = -R * 0.12,
+                  cy = -R * 0.15 * stretch; // off-centre table gives the facets their sparkle
+                pts.forEach((p, i) => {
+                  const q = pts[(i + 1) % sides];
+                  g.beginPath();
+                  g.moveTo(cx, cy);
+                  g.lineTo(p[0], p[1]);
+                  g.lineTo(q[0], q[1]);
+                  g.closePath();
+                  const lit =
+                    0.5 +
+                    0.5 *
+                      Math.cos(
+                        Math.atan2((p[1] + q[1]) / 2, (p[0] + q[0]) / 2) + 2.36,
+                      ); // light from the top left
+                  g.fillStyle =
+                    lit > 0.66 ? cols[0] : lit > 0.3 ? cols[1] : cols[2];
+                  g.fill();
+                });
+                g.beginPath();
+                pts.forEach((p, i) => {
+                  const x = cx + (p[0] - cx) * 0.42,
+                    y = cy + (p[1] - cy) * 0.42;
+                  i ? g.lineTo(x, y) : g.moveTo(x, y);
+                });
+                g.closePath();
+                g.globalAlpha = 0.5;
+                g.fillStyle = cols[0];
+                g.fill();
+                g.globalAlpha = 1;
+                g.strokeStyle = "rgba(255,255,255,.6)";
+                g.lineWidth = SP * 0.008;
+                g.beginPath();
+                pts.forEach((p, i) =>
+                  i ? g.lineTo(p[0], p[1]) : g.moveTo(p[0], p[1]),
+                );
+                g.closePath();
+                g.stroke();
+              },
+            flare: (core, ray) => (g) => {
+              const gr = g.createRadialGradient(0, 0, 0, 0, 0, R * 0.7);
+              gr.addColorStop(0, "#ffffff");
+              gr.addColorStop(0.35, core);
+              gr.addColorStop(1, "rgba(0,0,0,0)");
+              g.fillStyle = gr;
+              g.beginPath();
+              g.arc(0, 0, R * 0.7, 0, TAU);
+              g.fill();
+              g.fillStyle = ray;
+              g.beginPath();
+              g.ellipse(0, 0, R * 0.09, R * 1.9, 0, 0, TAU);
+              g.fill();
+              g.beginPath();
+              g.ellipse(0, 0, R * 1.9, R * 0.09, 0, 0, TAU);
+              g.fill();
+            },
+            planet: () => (g) => {
+              g.strokeStyle = "rgba(246,205,168,.9)";
+              g.lineWidth = SP * 0.018;
+              g.beginPath();
+              g.ellipse(0, 0, R * 1.55, R * 0.44, -0.38, Math.PI, TAU);
+              g.stroke(); // far side of the ring
+              painters.ball(["#fff0d6", "#f2b27a", "#b4562b", "#3a160a"])(g);
+              g.fillStyle = "rgba(122,63,34,.35)";
+              g.fillRect(-R * 0.95, -R * 0.12, R * 1.9, R * 0.18); // a band
+              g.beginPath();
+              g.ellipse(0, 0, R * 1.55, R * 0.44, -0.38, 0, Math.PI);
+              g.stroke(); // near side
+            },
+          };
+          const make = (paint, rgb, ga) => {
+            const c = mkCanvas(SP, SP);
+            const g = c.getContext("2d");
+            g.translate(SP / 2, SP / 2);
+            if (rgb) {
+              const gr = g.createRadialGradient(0, 0, 0, 0, 0, SP / 2);
+              gr.addColorStop(0, `rgba(${rgb},${ga})`);
+              gr.addColorStop(0.2, `rgba(${rgb},${ga * 0.45})`);
+              gr.addColorStop(0.55, `rgba(${rgb},${ga * 0.1})`);
+              gr.addColorStop(1, `rgba(${rgb},0)`);
+              g.fillStyle = gr;
+              g.fillRect(-SP / 2, -SP / 2, SP, SP);
+            }
+            paint(g);
+            return c;
+          };
+          const sparkle = make(
+            painters.flare("#eaf7ff", "rgba(235,248,255,.85)"),
+          );
+          // weight = how common; size = body radius in CSS px
+          const TYPES = [
+            {
+              w: 42,
+              size: [0.45, 1.15],
+              body: make(
+                painters.flare("#ffe2bf", "rgba(255,236,214,.7)"),
+                "255,214,170",
+                0.35,
+              ),
+              twinkle: 1,
+            }, // star
+            {
+              w: 12,
+              size: [1.7, 2.9],
+              body: make(
+                painters.ball(["#fff6cf", "#f5c451", "#a86d12", "#4d2e05"]),
+                "255,196,80",
+                0.45,
+              ),
+            }, // gold
+            {
+              w: 10,
+              size: [1.5, 2.7],
+              body: make(
+                painters.ball(["#ffffff", "#e3e7ec", "#9ca3ad", "#3e434a"]),
+                "220,232,255",
+                0.32,
+              ),
+            }, // platinum
+            {
+              w: 9,
+              size: [2.2, 3.4],
+              body: make(
+                painters.gem(4, ["#ffffff", "#d4f1ff", "#79b0d4"], 1.45),
+                "190,235,255",
+                0.45,
+              ),
+              spin: 1,
+              sparkle: 1,
+            }, // crystal
+            {
+              w: 8,
+              size: [2, 3.2],
+              body: make(
+                painters.gem(6, ["#ff9bb0", "#d1123f", "#6e0019"]),
+                "255,40,90",
+                0.5,
+              ),
+              spin: 1,
+            }, // ruby
+            {
+              w: 4,
+              size: [2, 3],
+              body: make(
+                painters.gem(5, ["#b3cfff", "#2357db", "#0a1f6b"]),
+                "70,130,255",
+                0.45,
+              ),
+              spin: 1,
+            }, // sapphire
+            {
+              w: 3,
+              size: [2, 3],
+              body: make(
+                painters.gem(8, ["#aaffd2", "#13a45c", "#03492a"], 0.8),
+                "50,240,150",
+                0.4,
+              ),
+              spin: 1,
+            }, // emerald
+            {
+              w: 3,
+              size: [2, 3],
+              body: make(
+                painters.gem(6, ["#eecdff", "#9a45dc", "#4a1678"], 1.25),
+                "190,120,255",
+                0.45,
+              ),
+              spin: 1,
+            }, // amethyst
+            {
+              w: 2,
+              size: [4, 5.4],
+              body: make(painters.planet(), "255,160,90", 0.32),
+            }, // ringed planet
+            {
+              w: 5,
+              size: [1.1, 1.7],
+              body: make(
+                painters.flare("#d8ecff", "rgba(220,236,255,.8)"),
+                "180,215,255",
+                0.5,
+              ),
+              tail: 1,
+            }, // comet
+          ];
+          const totalW = TYPES.reduce((a, t) => a + t.w, 0);
+          const pickType = () => {
+            let x = Math.random() * totalW;
+            for (const t of TYPES) {
+              if ((x -= t.w) < 0) return t;
+            }
+            return TYPES[0];
+          };
 
-    /* ---- orbits ---- */
-    const maxRx = (ry, phi) => {
-      const c2 = Math.cos(phi) ** 2, s2 = Math.sin(phi) ** 2; let best = Infinity;
-      if (c2 > 1e-6) best = Math.min(best, Math.sqrt(Math.max(0, (EDGE * EDGE - ry * ry * s2) / c2)));
-      if (s2 > 1e-6) best = Math.min(best, Math.sqrt(Math.max(0, (EDGE * EDGE - ry * ry * c2) / s2)));
-      return best;
-    };
-    let S = 0, dpr = 1, rings = [];
-    const build = () => {
-      const n = Math.round(Math.min(480, Math.max(160, S * .75)));
-      rings = Array.from({ length: n }, () => {
-        const phi = TILT + rand(-SPREAD, SPREAD);
-        const ryF = rand(CLEAR + .005, CLEAR + .07);
-        const top = Math.max(ryF * 1.1, maxRx(ryF, phi));
-        const rxF = ryF * 1.1 + (top - ryF * 1.1) * Math.sqrt(Math.random());
-        const type = pickType();
-        return {
-          rx: rxF * S, ry: ryF * S, phi, cp: Math.cos(phi), sp: Math.sin(phi),
-          style: (Math.random() * ringStyles.length) | 0, type, size: rand(type.size[0], type.size[1]),
-          rot: rand(0, TAU), spin: type.spin ? rand(.4, 1.6) * (Math.random() < .5 ? -1 : 1) : 0, ph: rand(0, TAU), tw: rand(1.5, 4),
-          t: rand(0, TAU), v: 0, target: 0, next: 0
+          /* ---- orbits ---- */
+          const maxRx = (ry, phi) => {
+            const c2 = Math.cos(phi) ** 2,
+              s2 = Math.sin(phi) ** 2;
+            let best = Infinity;
+            if (c2 > 1e-6)
+              best = Math.min(
+                best,
+                Math.sqrt(Math.max(0, (EDGE * EDGE - ry * ry * s2) / c2)),
+              );
+            if (s2 > 1e-6)
+              best = Math.min(
+                best,
+                Math.sqrt(Math.max(0, (EDGE * EDGE - ry * ry * c2) / s2)),
+              );
+            return best;
+          };
+          let S = 0,
+            dpr = 1,
+            rings = [];
+          const build = () => {
+            const n = Math.round(Math.min(480, Math.max(160, S * 0.75)));
+            rings = Array.from({ length: n }, () => {
+              const phi = TILT + rand(-SPREAD, SPREAD);
+              const ryF = rand(CLEAR + 0.005, CLEAR + 0.07);
+              const top = Math.max(ryF * 1.1, maxRx(ryF, phi));
+              const rxF =
+                ryF * 1.1 + (top - ryF * 1.1) * Math.sqrt(Math.random());
+              const type = pickType();
+              return {
+                rx: rxF * S,
+                ry: ryF * S,
+                phi,
+                cp: Math.cos(phi),
+                sp: Math.sin(phi),
+                style: (Math.random() * ringStyles.length) | 0,
+                type,
+                size: rand(type.size[0], type.size[1]),
+                rot: rand(0, TAU),
+                spin: type.spin
+                  ? rand(0.4, 1.6) * (Math.random() < 0.5 ? -1 : 1)
+                  : 0,
+                ph: rand(0, TAU),
+                tw: rand(1.5, 4),
+                t: rand(0, TAU),
+                v: 0,
+                target: 0,
+                next: 0,
+              };
+            });
+          };
+          const drawRings = () => {
+            const c = S / 2;
+            rctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            rctx.clearRect(0, 0, S, S);
+            rctx.lineWidth = 0.35;
+            for (let k = 0; k < ringStyles.length; k++) {
+              rctx.beginPath();
+              for (const r of rings)
+                if (r.style === k) {
+                  rctx.moveTo(c + r.rx * r.cp, c + r.rx * r.sp);
+                  rctx.ellipse(c, c, r.rx, r.ry, r.phi, 0, TAU);
+                }
+              rctx.strokeStyle = ringStyles[k];
+              rctx.stroke();
+            }
+          };
+
+          /* ---- bodies, every frame ---- */
+          let clock = 0;
+          const step = (dt) => {
+            clock += dt;
+            for (const r of rings) {
+              if (clock >= r.next) {
+                // new random speed; about a third of the time it turns around
+                const keep =
+                  Math.sign(r.target) || (Math.random() < 0.5 ? -1 : 1);
+                r.target =
+                  (Math.random() < 0.3 ? -keep : keep) * rand(0.12, 1.5);
+                r.next = clock + rand(1, 4.5);
+              }
+              r.v += (r.target - r.v) * (1 - Math.exp(-dt * 1.5));
+              r.t += r.v * dt;
+              r.rot += r.spin * dt;
+            }
+          };
+          const drawBodies = () => {
+            const c = S / 2,
+              g = bctx;
+            g.setTransform(dpr, 0, 0, dpr, 0, 0);
+            g.globalAlpha = 1;
+            g.globalCompositeOperation = "source-over";
+            g.clearRect(0, 0, S, S);
+            for (const r of rings) {
+              const ct = Math.cos(r.t),
+                st = Math.sin(r.t),
+                lx = r.rx * ct,
+                ly = r.ry * st;
+              r.x = c + lx * r.cp - ly * r.sp;
+              r.y = c + lx * r.sp + ly * r.cp;
+              r.depth = 0.5 + 0.5 * st; // near half of the orbit is larger and brighter
+            }
+            g.globalCompositeOperation = "lighter";
+            for (const r of rings) {
+              // comet tails
+              if (!r.type.tail) continue;
+              let tx = -r.rx * Math.sin(r.t),
+                ty = r.ry * Math.cos(r.t);
+              const wx = tx * r.cp - ty * r.sp,
+                wy = tx * r.sp + ty * r.cp,
+                len = Math.hypot(wx, wy) || 1,
+                dir = r.v < 0 ? 1 : -1;
+              const L = (8 + Math.abs(r.v) * 26) * (0.8 + 0.4 * r.depth),
+                ex = r.x + (wx / len) * dir * L,
+                ey = r.y + (wy / len) * dir * L;
+              const gr = g.createLinearGradient(r.x, r.y, ex, ey);
+              gr.addColorStop(0, "rgba(200,228,255,.7)");
+              gr.addColorStop(1, "rgba(200,228,255,0)");
+              g.strokeStyle = gr;
+              g.lineWidth = r.size * 1.1;
+              g.lineCap = "round";
+              g.beginPath();
+              g.moveTo(r.x, r.y);
+              g.lineTo(ex, ey);
+              g.stroke();
+            }
+            g.globalCompositeOperation = "source-over";
+            for (const r of rings) {
+              // bodies (glow is part of the sprite)
+              const k = 0.78 + 0.44 * r.depth,
+                s = r.size * k * (SP / R);
+              const tw = r.type.twinkle
+                ? 0.55 + 0.45 * Math.sin(clock * r.tw + r.ph)
+                : 1;
+              g.globalAlpha = (0.6 + 0.4 * r.depth) * tw;
+              if (r.spin) {
+                const cr = Math.cos(r.rot) * dpr,
+                  sr = Math.sin(r.rot) * dpr;
+                g.setTransform(cr, sr, -sr, cr, r.x * dpr, r.y * dpr);
+                g.drawImage(r.type.body, -s / 2, -s / 2, s, s);
+                g.setTransform(dpr, 0, 0, dpr, 0, 0);
+              } else {
+                g.drawImage(r.type.body, r.x - s / 2, r.y - s / 2, s, s);
+              }
+            }
+            g.globalCompositeOperation = "lighter";
+            for (const r of rings) {
+              // crystal sparkle
+              if (!r.type.sparkle) continue;
+              const tw = Math.max(0, Math.sin(clock * r.tw * 1.3 + r.ph));
+              if (tw < 0.05) continue;
+              const s = r.size * 3.2 * (SP / R) * (0.6 + 0.4 * tw) * 0.5;
+              g.globalAlpha = tw * 0.9;
+              g.drawImage(sparkle, r.x - s / 2, r.y - s / 2, s, s);
+            }
+            g.globalAlpha = 1;
+            g.globalCompositeOperation = "source-over";
+          };
+
+          let visible = true,
+            running = false,
+            last = 0;
+          const frame = (now) => {
+            if (!visible || opts.reduce) {
+              running = false;
+              last = 0;
+              return;
+            }
+            opts.raf(frame);
+            const dt = last ? Math.min((now - last) / 1000, 0.1) : 0;
+            last = now;
+            if (!S) return;
+            step(dt);
+            drawBodies();
+          };
+          const kick = () => {
+            if (!running && visible && !opts.reduce) {
+              running = true;
+              opts.raf(frame);
+            }
+          };
+          return {
+            resize(w, ratio) {
+              if (!w) return;
+              dpr = ratio;
+              for (const cv of [rctx.canvas, bctx.canvas]) {
+                cv.width = Math.round(w * dpr);
+                cv.height = Math.round(w * dpr);
+              }
+              if (rings.length && S) {
+                const k = w / S;
+                rings.forEach((r) => {
+                  r.rx *= k;
+                  r.ry *= k;
+                });
+              }
+              S = w;
+              if (!rings.length) {
+                build();
+                step(0);
+              }
+              drawRings();
+              drawBodies();
+              kick();
+            },
+            setVisible(v) {
+              visible = v;
+              kick();
+            },
+          };
         };
-      });
-    };
-    const drawRings = () => {
-      const c = S / 2;
-      rctx.setTransform(dpr, 0, 0, dpr, 0, 0); rctx.clearRect(0, 0, S, S); rctx.lineWidth = .35;
-      for (let k = 0; k < ringStyles.length; k++) {
-        rctx.beginPath();
-        for (const r of rings) if (r.style === k) { rctx.moveTo(c + r.rx * r.cp, c + r.rx * r.sp); rctx.ellipse(c, c, r.rx, r.ry, r.phi, 0, TAU); }
-        rctx.strokeStyle = ringStyles[k]; rctx.stroke();
-      }
-    };
 
-    /* ---- bodies, every frame ---- */
-    let clock = 0;
-    const step = dt => {
-      clock += dt;
-      for (const r of rings) {
-        if (clock >= r.next) {                        // new random speed; about a third of the time it turns around
-          const keep = Math.sign(r.target) || (Math.random() < .5 ? -1 : 1);
-          r.target = (Math.random() < .3 ? -keep : keep) * rand(.12, 1.5);
-          r.next = clock + rand(1, 4.5);
-        }
-        r.v += (r.target - r.v) * (1 - Math.exp(-dt * 1.5));
-        r.t += r.v * dt;
-        r.rot += r.spin * dt;
-      }
-    };
-    const drawBodies = () => {
-      const c = S / 2, g = bctx;
-      g.setTransform(dpr, 0, 0, dpr, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
-      g.clearRect(0, 0, S, S);
-      for (const r of rings) {
-        const ct = Math.cos(r.t), st = Math.sin(r.t), lx = r.rx * ct, ly = r.ry * st;
-        r.x = c + lx * r.cp - ly * r.sp; r.y = c + lx * r.sp + ly * r.cp;
-        r.depth = .5 + .5 * st;                       // near half of the orbit is larger and brighter
-      }
-      g.globalCompositeOperation = 'lighter';
-      for (const r of rings) {                        // comet tails
-        if (!r.type.tail) continue;
-        let tx = -r.rx * Math.sin(r.t), ty = r.ry * Math.cos(r.t);
-        const wx = tx * r.cp - ty * r.sp, wy = tx * r.sp + ty * r.cp, len = Math.hypot(wx, wy) || 1, dir = r.v < 0 ? 1 : -1;
-        const L = (8 + Math.abs(r.v) * 26) * (.8 + .4 * r.depth), ex = r.x + wx / len * dir * L, ey = r.y + wy / len * dir * L;
-        const gr = g.createLinearGradient(r.x, r.y, ex, ey);
-        gr.addColorStop(0, 'rgba(200,228,255,.7)'); gr.addColorStop(1, 'rgba(200,228,255,0)');
-        g.strokeStyle = gr; g.lineWidth = r.size * 1.1; g.lineCap = 'round';
-        g.beginPath(); g.moveTo(r.x, r.y); g.lineTo(ex, ey); g.stroke();
-      }
-      g.globalCompositeOperation = 'source-over';
-      for (const r of rings) {                        // bodies (glow is part of the sprite)
-        const k = .78 + .44 * r.depth, s = r.size * k * (SP / R);
-        const tw = r.type.twinkle ? .55 + .45 * Math.sin(clock * r.tw + r.ph) : 1;
-        g.globalAlpha = (.6 + .4 * r.depth) * tw;
-        if (r.spin) {
-          const cr = Math.cos(r.rot) * dpr, sr = Math.sin(r.rot) * dpr;
-          g.setTransform(cr, sr, -sr, cr, r.x * dpr, r.y * dpr);
-          g.drawImage(r.type.body, -s / 2, -s / 2, s, s);
-          g.setTransform(dpr, 0, 0, dpr, 0, 0);
-        } else {
-          g.drawImage(r.type.body, r.x - s / 2, r.y - s / 2, s, s);
-        }
-      }
-      g.globalCompositeOperation = 'lighter';
-      for (const r of rings) {                        // crystal sparkle
-        if (!r.type.sparkle) continue;
-        const tw = Math.max(0, Math.sin(clock * r.tw * 1.3 + r.ph));
-        if (tw < .05) continue;
-        const s = r.size * 3.2 * (SP / R) * (.6 + .4 * tw) * .5;
-        g.globalAlpha = tw * .9;
-        g.drawImage(sparkle, r.x - s / 2, r.y - s / 2, s, s);
-      }
-      g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
-    };
-
-    let visible = true, running = false, last = 0;
-    const frame = now => {
-      if (!visible || opts.reduce) { running = false; last = 0; return; }
-      opts.raf(frame);
-      const dt = last ? Math.min((now - last) / 1000, .1) : 0; last = now;
-      if (!S) return;
-      step(dt); drawBodies();
-    };
-    const kick = () => { if (!running && visible && !opts.reduce) { running = true; opts.raf(frame); } };
-    return {
-      resize(w, ratio) {
-        if (!w) return;
-        dpr = ratio;
-        for (const cv of [rctx.canvas, bctx.canvas]) { cv.width = Math.round(w * dpr); cv.height = Math.round(w * dpr); }
-        if (rings.length && S) { const k = w / S; rings.forEach(r => { r.rx *= k; r.ry *= k; }); }
-        S = w;
-        if (!rings.length) { build(); step(0); }
-        drawRings(); drawBodies(); kick();
-      },
-      setVisible(v) { visible = v; kick(); }
-    };
-  };
-
-  const orbitWrap = document.querySelector('.orbit');
-  const ringCv = orbitWrap && orbitWrap.querySelector('.orbit-rings');
-  const bodyCv = orbitWrap && orbitWrap.querySelector('.orbit-bodies');
-  if (ringCv && bodyCv && ringCv.getContext) {
-    let api = null, pending = null;
-    const size = () => [orbitWrap.clientWidth, Math.min(devicePixelRatio || 1, 2)];
-    const startLocal = () => {
-      const local = ORBIT_ENGINE(ringCv.getContext('2d'), bodyCv.getContext('2d'),
-        (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; },
-        { reduce: reduceMotion, raf: f => requestAnimationFrame(f) });
-      api = { resize: (w, r) => local.resize(w, r), vis: v => local.setVisible(v) };
-      api.resize(...size());
-    };
-    const startWorker = () => {
-      const code = `const ENGINE = ${ORBIT_ENGINE.toString()};
+        const orbitWrap = document.querySelector(".orbit");
+        const ringCv = orbitWrap && orbitWrap.querySelector(".orbit-rings");
+        const bodyCv = orbitWrap && orbitWrap.querySelector(".orbit-bodies");
+        if (ringCv && bodyCv && ringCv.getContext) {
+          let api = null,
+            pending = null;
+          const size = () => [
+            orbitWrap.clientWidth,
+            Math.min(devicePixelRatio || 1, 2),
+          ];
+          const startLocal = () => {
+            const local = ORBIT_ENGINE(
+              ringCv.getContext("2d"),
+              bodyCv.getContext("2d"),
+              (w, h) => {
+                const c = document.createElement("canvas");
+                c.width = w;
+                c.height = h;
+                return c;
+              },
+              { reduce: reduceMotion, raf: (f) => requestAnimationFrame(f) },
+            );
+            api = {
+              resize: (w, r) => local.resize(w, r),
+              vis: (v) => local.setVisible(v),
+            };
+            api.resize(...size());
+          };
+          const startWorker = () => {
+            const code = `const ENGINE = ${ORBIT_ENGINE.toString()};
         let e = null;
         const raf = self.requestAnimationFrame ? f => self.requestAnimationFrame(f) : f => setTimeout(() => f(performance.now()), 16);
         onmessage = ev => {
@@ -869,65 +2234,146 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
           else if (e && m.type === 'size') e.resize(m.w, m.dpr);
           else if (e && m.type === 'vis') e.setVisible(m.v);
         };`;
-      let worker;
-      try { worker = new Worker(URL.createObjectURL(new Blob([code], { type: 'text/javascript' }))); } catch (err) { startLocal(); return; }
-      // only hand the canvases over once the worker has answered, so a blocked worker never leaves them blank
-      const fallback = setTimeout(() => { worker.terminate(); startLocal(); }, 1500);
-      worker.onerror = () => { clearTimeout(fallback); worker.terminate(); if (!api) startLocal(); };
-      worker.onmessage = ev => {
-        if (ev.data !== 'pong' || api) return;
-        clearTimeout(fallback);
-        try {
-          const r = ringCv.transferControlToOffscreen(), b = bodyCv.transferControlToOffscreen();
-          const [w, dpr] = size();
-          worker.postMessage({ type: 'init', rings: r, bodies: b, reduce: reduceMotion, w, dpr }, [r, b]);
-          api = { resize: (w, d) => worker.postMessage({ type: 'size', w, dpr: d }), vis: v => worker.postMessage({ type: 'vis', v }) };
-        } catch (err) { worker.terminate(); startLocal(); }
-      };
-      worker.postMessage({ type: 'ping' });
-    };
-    if (typeof Worker !== 'undefined' && 'OffscreenCanvas' in window && ringCv.transferControlToOffscreen) startWorker(); else startLocal();
-    const onResize = () => { if (api) api.resize(...size()); };
-    if ('ResizeObserver' in window) new ResizeObserver(onResize).observe(orbitWrap); else addEventListener('resize', onResize);
-    let inView = true;
-    const sendVis = () => { if (api) api.vis(inView && !document.hidden); };
-    new IntersectionObserver(es => { inView = es[0].isIntersecting; sendVis(); }).observe(orbitWrap);
-    document.addEventListener('visibilitychange', sendVis);
-  }
+            let worker;
+            try {
+              worker = new Worker(
+                URL.createObjectURL(
+                  new Blob([code], { type: "text/javascript" }),
+                ),
+              );
+            } catch (err) {
+              startLocal();
+              return;
+            }
+            // only hand the canvases over once the worker has answered, so a blocked worker never leaves them blank
+            const fallback = setTimeout(() => {
+              worker.terminate();
+              startLocal();
+            }, 1500);
+            worker.onerror = () => {
+              clearTimeout(fallback);
+              worker.terminate();
+              if (!api) startLocal();
+            };
+            worker.onmessage = (ev) => {
+              if (ev.data !== "pong" || api) return;
+              clearTimeout(fallback);
+              try {
+                const r = ringCv.transferControlToOffscreen(),
+                  b = bodyCv.transferControlToOffscreen();
+                const [w, dpr] = size();
+                worker.postMessage(
+                  {
+                    type: "init",
+                    rings: r,
+                    bodies: b,
+                    reduce: reduceMotion,
+                    w,
+                    dpr,
+                  },
+                  [r, b],
+                );
+                api = {
+                  resize: (w, d) =>
+                    worker.postMessage({ type: "size", w, dpr: d }),
+                  vis: (v) => worker.postMessage({ type: "vis", v }),
+                };
+              } catch (err) {
+                worker.terminate();
+                startLocal();
+              }
+            };
+            worker.postMessage({ type: "ping" });
+          };
+          if (
+            typeof Worker !== "undefined" &&
+            "OffscreenCanvas" in window &&
+            ringCv.transferControlToOffscreen
+          )
+            startWorker();
+          else startLocal();
+          const onResize = () => {
+            if (api) api.resize(...size());
+          };
+          if ("ResizeObserver" in window)
+            new ResizeObserver(onResize).observe(orbitWrap);
+          else addEventListener("resize", onResize);
+          let inView = true;
+          const sendVis = () => {
+            if (api) api.vis(inView && !document.hidden);
+          };
+          new IntersectionObserver((es) => {
+            inView = es[0].isIntersecting;
+            sendVis();
+          }).observe(orbitWrap);
+          document.addEventListener("visibilitychange", sendVis);
+        }
 
-  /* Intro: a letter wave runs while fonts and every image (card photos included) to load and decode behind the screen,
+        /* Intro: a letter wave runs while fonts and every image (card photos included) to load and decode behind the screen,
      plays for at least a couple of seconds, then lifts away. Never waits longer than 8 seconds. */
-  const introEl = document.querySelector('.intro-screen');
-  const rootEl = document.documentElement;
-  if (introEl && rootEl.classList.contains('intro')) {
-    const MIN = reduceMotion ? 700 : 2400, MAX = 8000;   // 2.4s = one full pass of the letter wave
-    const bar = introEl.querySelector('.intro-bar i'), pctEl = introEl.querySelector('.intro-pct b');
-    const pageImgs = [...document.images].filter(i => !introEl.contains(i));
-    pageImgs.forEach(i => { i.loading = 'eager'; });
-    const loaded = img => (img.complete && img.naturalWidth ? Promise.resolve() : new Promise(res => {
-      img.addEventListener('load', res, { once: true }); img.addEventListener('error', res, { once: true });
-    })).then(() => (img.decode ? img.decode().catch(() => {}) : null));
-    const jobs = pageImgs.map(loaded);
-    if (document.fonts && document.fonts.ready) jobs.push(document.fonts.ready);
-    let done = 0;
-    const show = p => { bar.style.setProperty('--p', p.toFixed(3)); pctEl.textContent = Math.round(p * 100) + '%'; };
-    jobs.forEach(j => j.then(() => { done++; show(done / jobs.length); }));
-    show(jobs.length ? 0 : 1);
-    const ready = Promise.race([Promise.all(jobs), new Promise(r => setTimeout(r, MAX))]);
-    const played = new Promise(r => setTimeout(r, MIN));
-    Promise.all([ready, played]).then(() => {
-      show(1);
-      introEl.classList.add('is-ready');                  // the whole name settles into view
-      setTimeout(() => {
-        rootEl.classList.add('intro-reveal');
-        introEl.classList.add('is-leaving');
-        const finish = () => { if (!introEl.isConnected) return; introEl.remove(); rootEl.classList.remove('intro'); };
-        introEl.addEventListener('animationend', e => { if (e.target === introEl) finish(); });
-        setTimeout(finish, 1700);
-      }, reduceMotion ? 150 : 1150);
-    });
-  }
-})();
-</script>
-</body>
+        const introEl = document.querySelector(".intro-screen");
+        const rootEl = document.documentElement;
+        if (introEl && rootEl.classList.contains("intro")) {
+          const MIN = reduceMotion ? 700 : 2400,
+            MAX = 8000; // 2.4s = one full pass of the letter wave
+          const bar = introEl.querySelector(".intro-bar i"),
+            pctEl = introEl.querySelector(".intro-pct b");
+          const pageImgs = [...document.images].filter(
+            (i) => !introEl.contains(i),
+          );
+          pageImgs.forEach((i) => {
+            i.loading = "eager";
+          });
+          const loaded = (img) =>
+            (img.complete && img.naturalWidth
+              ? Promise.resolve()
+              : new Promise((res) => {
+                  img.addEventListener("load", res, { once: true });
+                  img.addEventListener("error", res, { once: true });
+                })
+            ).then(() => (img.decode ? img.decode().catch(() => {}) : null));
+          const jobs = pageImgs.map(loaded);
+          if (document.fonts && document.fonts.ready)
+            jobs.push(document.fonts.ready);
+          let done = 0;
+          const show = (p) => {
+            bar.style.setProperty("--p", p.toFixed(3));
+            pctEl.textContent = Math.round(p * 100) + "%";
+          };
+          jobs.forEach((j) =>
+            j.then(() => {
+              done++;
+              show(done / jobs.length);
+            }),
+          );
+          show(jobs.length ? 0 : 1);
+          const ready = Promise.race([
+            Promise.all(jobs),
+            new Promise((r) => setTimeout(r, MAX)),
+          ]);
+          const played = new Promise((r) => setTimeout(r, MIN));
+          Promise.all([ready, played]).then(() => {
+            show(1);
+            introEl.classList.add("is-ready"); // the whole name settles into view
+            setTimeout(
+              () => {
+                rootEl.classList.add("intro-reveal");
+                introEl.classList.add("is-leaving");
+                const finish = () => {
+                  if (!introEl.isConnected) return;
+                  introEl.remove();
+                  rootEl.classList.remove("intro");
+                };
+                introEl.addEventListener("animationend", (e) => {
+                  if (e.target === introEl) finish();
+                });
+                setTimeout(finish, 1700);
+              },
+              reduceMotion ? 150 : 1150,
+            );
+          });
+        }
+      })();
+    </script>
+  </body>
 </html>
