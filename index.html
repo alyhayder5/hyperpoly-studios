@@ -40,7 +40,7 @@
 <link rel="manifest" href="/site.webmanifest">
 
 <!-- Performance -->
-<link rel="preload" as="image" href="hp-mark.webp" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="hp-mark.jpg" type="image/jpeg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -238,8 +238,8 @@ h1 .soft{color:var(--muted)}
 
 /* Desktop and large screens: give the HP mark and its orbit field more room */
 @media (min-width:1024px){
-  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);padding-block:clamp(2rem,4vw,5rem)}
-  .figure{width:min(122%,96vh);max-width:none;margin-right:-14%}
+  .hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(0,1fr);padding-block:clamp(2rem,4vw,5rem)}
+  .figure{width:min(110%,84vh);max-width:none;margin-right:-6%}
 }
 
 /* Division index */
@@ -328,14 +328,101 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
 .foot-bottom a{text-decoration:none}
 .foot-bottom a:hover{color:var(--fg)}
 .skip{position:absolute;left:-9999px;top:0}.skip:focus{left:1rem;top:1rem;z-index:100;background:var(--fg);color:var(--bg);padding:.6rem 1rem;border-radius:99px}
+
+/* ---------- Intro: plays on arrival while fonts and images load behind it, then lifts away ---------- */
+.intro-screen{display:none}
+html.intro:not(.intro-reveal){overflow:hidden}
+html.intro .intro-screen{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:var(--bg);
+  padding:env(safe-area-inset-top,0px) max(16px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(16px,env(safe-area-inset-left,0px));
+  will-change:transform}
+.intro-stage{display:grid;justify-items:center;gap:1.1rem;text-align:center}
+.intro-mark{position:relative;width:clamp(10rem,26vmin,17rem);aspect-ratio:1;margin-block:clamp(2.8rem,7.6vmin,5rem)}
+.intro-mark img{position:absolute;inset:18%;width:64%;height:64%;object-fit:cover;mix-blend-mode:lighten;
+  -webkit-mask-image:radial-gradient(closest-side,#000 82%,transparent);mask-image:radial-gradient(closest-side,#000 82%,transparent);
+  animation:intro-mark 1.2s .1s cubic-bezier(.2,.7,.2,1) both}
+.intro-mark svg{position:absolute;inset:-28%;width:156%;height:156%;overflow:visible}
+.intro-spin{transform-box:view-box;transform-origin:0 0;animation:intro-spin 9s linear infinite}
+.intro-ring{fill:none;stroke-width:.55;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;
+  animation:intro-ring 1.6s calc(.25s + var(--d)) cubic-bezier(.6,.1,.2,1) forwards}
+.intro-dot{opacity:0;animation:intro-in .5s 1.3s ease forwards}
+.intro-word{display:flex;margin:0;overflow:hidden;padding-block:.08em;
+  font:800 clamp(2.2rem,6.4vw,4.6rem)/1 var(--display);font-variation-settings:"opsz" 96;letter-spacing:-.035em}
+.intro-word span{display:inline-block;animation:intro-letter .8s calc(.6s + var(--n) * .055s) cubic-bezier(.2,.7,.2,1) both}
+.intro-sub{margin:0;color:var(--accent);letter-spacing:.6em;padding-left:.6em;animation:intro-sub 1.1s 1.15s cubic-bezier(.2,.7,.2,1) both}
+.intro-progress{position:absolute;left:50%;bottom:calc(2.5rem + env(safe-area-inset-bottom,0px));width:min(16rem,62vw);transform:translateX(-50%);display:grid;gap:.6rem}
+.intro-bar{height:2px;border-radius:2px;background:var(--line);overflow:hidden}
+.intro-bar i{display:block;height:100%;transform-origin:0 50%;transform:scaleX(var(--p,0));transition:transform .4s ease;
+  background:linear-gradient(90deg,#7a3f22,var(--accent),#f6cda8)}
+.intro-pct{display:flex;justify-content:space-between;color:var(--muted);font-variant-numeric:tabular-nums}
+.intro-pct b{font-weight:500;color:var(--fg)}
+.intro-screen.is-leaving .intro-stage,.intro-screen.is-leaving .intro-progress{animation:intro-fade-up .55s cubic-bezier(.4,0,.2,1) forwards}
+.intro-screen.is-leaving{animation:intro-lift .95s .3s cubic-bezier(.76,0,.24,1) forwards}
+@keyframes intro-mark{from{opacity:0;transform:scale(.8);filter:blur(12px) brightness(1.8)}to{opacity:1;transform:none;filter:none}}
+@keyframes intro-spin{to{transform:rotate(360deg)}}
+@keyframes intro-ring{to{stroke-dashoffset:0}}
+@keyframes intro-in{to{opacity:1}}
+@keyframes intro-letter{from{transform:translateY(105%);opacity:0}to{transform:none;opacity:1}}
+@keyframes intro-sub{from{opacity:0;letter-spacing:.15em}to{opacity:1;letter-spacing:.6em}}
+@keyframes intro-fade-up{to{opacity:0;transform:translateY(-1.5rem) scale(.97)}}
+@keyframes intro-lift{to{transform:translateY(-100%)}}
+/* hero content rises in as the intro lifts */
+html.intro:not(.intro-reveal) :is(.hero .meta,.hero h1,.hero .lede,.hero .actions,.hero .index,.figure){opacity:0}
+html.intro-reveal .hero .meta{animation:hero-in .9s .45s cubic-bezier(.2,.7,.2,1) both}
+html.intro-reveal .hero h1{animation:hero-in 1s .55s cubic-bezier(.2,.7,.2,1) both}
+html.intro-reveal .hero .lede{animation:hero-in 1s .68s cubic-bezier(.2,.7,.2,1) both}
+html.intro-reveal .hero .actions{animation:hero-in 1s .8s cubic-bezier(.2,.7,.2,1) both}
+html.intro-reveal .hero .index{animation:hero-in 1s .92s cubic-bezier(.2,.7,.2,1) both}
+html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes hero-in{from{opacity:0;transform:translateY(1.75rem)}to{opacity:1;transform:none}}
+@keyframes hero-mark{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .intro-mark img,.intro-ring,.intro-dot,.intro-word span,.intro-sub,.intro-spin{animation:none;opacity:1;stroke-dashoffset:0}
+  .intro-screen.is-leaving{animation:intro-fade .35s forwards}
+  .intro-screen.is-leaving .intro-stage,.intro-screen.is-leaving .intro-progress{animation:none}
+  html.intro-reveal :is(.hero .meta,.hero h1,.hero .lede,.hero .actions,.hero .index,.figure){animation:none}
+}
+@keyframes intro-fade{to{opacity:0}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<script>
+  // Intro screen: turned on before the first paint; a safety timer lifts it even if the page script never runs
+  document.documentElement.classList.add('intro');
+  setTimeout(function () {
+    var r = document.documentElement;
+    if (r.classList.contains('intro')) { r.classList.add('intro-reveal'); r.classList.remove('intro'); var s = document.querySelector('.intro-screen'); if (s) s.remove(); }
+  }, 10000);
+</script>
+<div class="intro-screen" role="status" aria-live="polite" aria-label="Loading Hyperpoly Studios">
+  <div class="intro-stage">
+    <div class="intro-mark">
+      <svg viewBox="-60 -60 120 120" aria-hidden="true" focusable="false">
+        <g class="intro-spin"><g transform="rotate(-32)">
+          <path class="intro-ring" d="M52 0A52 27 0 1 1 -52 0A52 27 0 1 1 52 0" pathLength="1" stroke="rgba(246,205,168,.75)" style="--d:0.0s"/>
+          <path class="intro-ring" d="M56 0A56 31 0 1 1 -56 0A56 31 0 1 1 56 0" pathLength="1" stroke="rgba(232,147,90,.7)" style="--d:0.14s"/>
+          <path class="intro-ring" d="M58 0A58 34 0 1 1 -58 0A58 34 0 1 1 58 0" pathLength="1" stroke="rgba(200,105,58,.6)" style="--d:0.28s"/>
+          <circle class="intro-dot" r="1.9" fill="#f5c451"><animateMotion dur="3.4s" begin="0s" repeatCount="indefinite" path="M52 0A52 27 0 1 1 -52 0A52 27 0 1 1 52 0"/></circle>
+          <circle class="intro-dot" r="1.9" fill="#ff5c7a"><animateMotion dur="4.6s" begin="-1.2s" repeatCount="indefinite" path="M56 0A56 31 0 1 1 -56 0A56 31 0 1 1 56 0"/></circle>
+          <circle class="intro-dot" r="1.9" fill="#bfe9ff"><animateMotion dur="5.8s" begin="-2.3s" repeatCount="indefinite" path="M58 0A58 34 0 1 1 -58 0A58 34 0 1 1 58 0"/></circle>
+          <circle class="intro-dot" r="1.9" fill="#e3e7ec"><animateMotion dur="3.4s" begin="-1.7s" repeatCount="indefinite" path="M52 0A52 27 0 1 1 -52 0A52 27 0 1 1 52 0"/></circle>
+        </g></g>
+      </svg>
+      <img src="hp-mark.jpg" width="900" height="900" alt="">
+    </div>
+    <p class="intro-word" aria-hidden="true"><span style="--n:0">H</span><span style="--n:1">Y</span><span style="--n:2">P</span><span style="--n:3">E</span><span style="--n:4">R</span><span style="--n:5">P</span><span style="--n:6">O</span><span style="--n:7">L</span><span style="--n:8">Y</span></p>
+    <p class="intro-sub mono" aria-hidden="true">Studios</p>
+  </div>
+  <div class="intro-progress" aria-hidden="true">
+    <div class="intro-bar"><i></i></div>
+    <div class="intro-pct mono"><span>Loading</span><b>0%</b></div>
+  </div>
+</div>
+
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Hyperpoly Studios home">
-      <img src="hp-icon.webp" width="56" height="56" alt="" decoding="async">
+      <img src="hp-icon.png" width="56" height="56" alt="" decoding="async">
       Hyperpoly
     </a>
     <nav class="links" aria-label="Sections">
@@ -364,7 +451,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
         </div>
         <figure class="figure">
           <div class="orbit" aria-hidden="true"><canvas class="orbit-rings"></canvas><canvas class="orbit-bodies"></canvas></div>
-          <img src="hp-mark.webp" width="900" height="900" alt="Hyperpoly Studios HP monogram, faceted low-poly letters lit in warm orange" decoding="async" fetchpriority="high" loading="eager">
+          <img src="hp-mark.jpg" width="900" height="900" alt="Hyperpoly Studios HP monogram, faceted low-poly letters lit in warm orange" decoding="async" fetchpriority="high" loading="eager">
         </figure>
       </div>
 
@@ -382,7 +469,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
       <p class="sub">Five ways we work with creators, players and businesses.</p>
       <div class="stack">
         <article class="slot" id="youtube" style="--i:0;--tint:#5c1612;--edge:#ffab96;--glow:#c4442c;--r:-.6deg"><div class="card">
-          <div class="media"><img src="img/yt.webp" width="1400" height="1037" alt="Video editing desk with a channel video open on the timeline" loading="lazy" decoding="async"></div>
+          <div class="media"><img src="img/yt.jpg" width="1400" height="1037" alt="Video editing desk with a channel video open on the timeline" loading="lazy" decoding="async"></div>
           <div>
             <p class="label mono">YouTube Automation</p>
             <h3>Faceless channels, run end to end.</h3>
@@ -392,7 +479,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
         </div></article>
 
         <article class="slot" id="games" style="--i:1;--tint:#573411;--edge:#f1c47e;--glow:#c98a2e;--r:.5deg"><div class="card">
-          <div class="media"><img src="img/games.webp" width="1400" height="1037" alt="Player enjoying a mobile game on his smartphone" loading="lazy" decoding="async"></div>
+          <div class="media"><img src="img/games.jpg" width="1400" height="1037" alt="Hands holding a smartphone, playing a colourful mobile game" loading="lazy" decoding="async"></div>
           <div>
             <p class="label mono">Game Development</p>
             <h3>Mobile games for the App Store and Google Play.</h3>
@@ -402,7 +489,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
         </div></article>
 
         <article class="slot" id="saas" style="--i:2;--tint:#4c1533;--edge:#f3abc9;--glow:#b23f7a;--r:-.4deg"><div class="card">
-          <div class="media"><img src="img/saas.webp" width="1400" height="1037" alt="Analytics dashboard with charts on a dark screen" loading="lazy" decoding="async"></div>
+          <div class="media"><img src="img/saas.jpg" width="1400" height="1037" alt="Analytics dashboard with charts on a dark screen" loading="lazy" decoding="async"></div>
           <div>
             <p class="label mono">SaaS Products</p>
             <h3>Software with billing from day one.</h3>
@@ -412,7 +499,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
         </div></article>
 
         <article class="slot" id="creative" style="--i:3;--tint:#231c52;--edge:#bdb6ff;--glow:#5d52d6;--r:.6deg"><div class="card">
-          <div class="media"><img src="img/creative.webp" width="1400" height="1037" alt="Videographer filming with a cinema camera under blue light" loading="lazy" decoding="async"></div>
+          <div class="media"><img src="img/creative.jpg" width="1400" height="1037" alt="Videographer filming with a cinema camera under blue light" loading="lazy" decoding="async"></div>
           <div>
             <p class="label mono">Creative Production</p>
             <h3>Visuals for every project.</h3>
@@ -422,7 +509,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
         </div></article>
 
         <article class="slot" id="growth" style="--i:4;--tint:#0f3b33;--edge:#93e2cb;--glow:#2a9a80;--r:-.5deg"><div class="card">
-          <div class="media"><img src="img/growth.webp" width="1400" height="1037" alt="Team presentation in a bright studio office" loading="lazy" decoding="async"></div>
+          <div class="media"><img src="img/growth.jpg" width="1400" height="1037" alt="Team presentation in a bright studio office" loading="lazy" decoding="async"></div>
           <div>
             <p class="label mono">Growth &amp; Consulting</p>
             <h3>Advice from people who run the numbers.</h3>
@@ -826,6 +913,38 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
     const sendVis = () => { if (api) api.vis(inView && !document.hidden); };
     new IntersectionObserver(es => { inView = es[0].isIntersecting; sendVis(); }).observe(orbitWrap);
     document.addEventListener('visibilitychange', sendVis);
+  }
+
+  /* Intro: waits for fonts and every image (card photos included) to load and decode behind the screen,
+     plays for at least a couple of seconds, then lifts away. Never waits longer than 8 seconds. */
+  const introEl = document.querySelector('.intro-screen');
+  const rootEl = document.documentElement;
+  if (introEl && rootEl.classList.contains('intro')) {
+    const MIN = reduceMotion ? 700 : 2700, MAX = 8000;
+    const bar = introEl.querySelector('.intro-bar i'), pctEl = introEl.querySelector('.intro-pct b');
+    const pageImgs = [...document.images].filter(i => !introEl.contains(i));
+    pageImgs.forEach(i => { i.loading = 'eager'; });
+    const loaded = img => (img.complete && img.naturalWidth ? Promise.resolve() : new Promise(res => {
+      img.addEventListener('load', res, { once: true }); img.addEventListener('error', res, { once: true });
+    })).then(() => (img.decode ? img.decode().catch(() => {}) : null));
+    const jobs = pageImgs.map(loaded);
+    if (document.fonts && document.fonts.ready) jobs.push(document.fonts.ready);
+    let done = 0;
+    const show = p => { bar.style.setProperty('--p', p.toFixed(3)); pctEl.textContent = Math.round(p * 100) + '%'; };
+    jobs.forEach(j => j.then(() => { done++; show(done / jobs.length); }));
+    show(jobs.length ? 0 : 1);
+    const ready = Promise.race([Promise.all(jobs), new Promise(r => setTimeout(r, MAX))]);
+    const played = new Promise(r => setTimeout(r, MIN));
+    Promise.all([ready, played]).then(() => {
+      show(1);
+      setTimeout(() => {
+        rootEl.classList.add('intro-reveal');
+        introEl.classList.add('is-leaving');
+        const finish = () => { if (!introEl.isConnected) return; introEl.remove(); rootEl.classList.remove('intro'); };
+        introEl.addEventListener('animationend', e => { if (e.target === introEl) finish(); });
+        setTimeout(finish, 1700);
+      }, 350);
+    });
   }
 })();
 </script>
