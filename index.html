@@ -351,43 +351,41 @@ html.intro .intro-screen{position:fixed;inset:0;z-index:100;display:grid;place-i
 .intro-word .w span{display:inline-block;opacity:0;will-change:transform,opacity;
   animation:intro-wave 2.4s calc(var(--n) * .1s) cubic-bezier(.2,.7,.2,1) infinite}
 .intro-screen.is-ready .intro-word .w span{animation:intro-settle .65s calc(var(--n) * .03s) cubic-bezier(.2,.7,.2,1) both}
-/* 3D rope lettering on a glossy floor: one pre-rendered image cut into letters, plain text until it arrives.
-   A wave runs along the name: each letter springs up like stretched rope while its reflection stretches down to match. */
+/* 3D rope lettering on a glossy floor: one pre-rendered image cut into letters, hidden until it arrives.
+   The letters travel as a wave: each one rises out of the floor while its reflection sinks away beneath it,
+   then drifts up and fades as the next arrives. When loading finishes the whole name settles in. */
+.intro-word:not(.has-wool):not(.no-wool){visibility:hidden}
+.intro-word .w span i{display:none}
 .intro-word.has-wool{font-size:min(11.6vw,12.5rem);column-gap:0;row-gap:0;letter-spacing:0;padding-bottom:calc(var(--rh) * 1em)}
-.intro-word.has-wool .w{overflow:visible;padding-block:0;position:relative}
-/* the resting reflection is one seamless strip per word; each letter's own reflection only shows while it stretches */
-.intro-word.has-wool .w::before{content:"";position:absolute;left:0;right:0;top:calc(var(--lh) * 1em);height:calc(var(--rh) * 1em);
-  background:url(intro-rope.jpg) calc(var(--x0) * -1em) calc(var(--lh) * -1em) / calc(var(--sw) * 1em) calc(var(--sh) * 1em) no-repeat;
-  -webkit-mask-image:linear-gradient(#000 20%,transparent);mask-image:linear-gradient(#000 20%,transparent);animation:rope-in .8s .2s both}
-.intro-word.has-wool .w span{position:relative;width:calc(var(--w) * 1em);height:calc(var(--lh) * 1em);color:transparent;opacity:1;
-  animation:rope-in .8s calc(var(--n) * .045s) cubic-bezier(.2,.7,.2,1) both}
-.intro-word.has-wool .w span::before,.intro-word.has-wool .w span::after{content:"";position:absolute;left:-1px;right:-1px;
-  background:url(intro-rope.jpg) no-repeat;background-size:calc(var(--sw) * 1em) calc(var(--sh) * 1em);will-change:transform}
-.intro-word.has-wool .w span::before{top:0;height:100%;background-position:calc(var(--x) * -1em + 1px) 0;transform-origin:50% 100%;
-  animation:rope-hop 2.4s calc(.85s + var(--n) * .075s) ease-in-out infinite}
-.intro-word.has-wool .w span::after{opacity:0;top:100%;height:calc(var(--rh) * 1em);background-position:calc(var(--x) * -1em + 1px) calc(var(--lh) * -1em);transform-origin:50% 0;
-  -webkit-mask-image:linear-gradient(#000 20%,transparent);mask-image:linear-gradient(#000 20%,transparent);
-  animation:rope-mirror 2.4s calc(.85s + var(--n) * .075s) ease-in-out infinite}
-.intro-screen.is-ready .intro-word.has-wool .w span{animation:rope-in .8s calc(var(--n) * .045s) cubic-bezier(.2,.7,.2,1) both}
+.intro-word.has-wool .w{overflow:visible;padding-block:0}
+.intro-word.has-wool .w span{position:relative;width:calc(var(--w) * 1em);height:calc(var(--lh) * 1em);color:transparent;opacity:1;animation:none}
+.intro-word.has-wool .w span i{display:block;position:absolute;left:-1px;right:-1px;overflow:hidden}
+.intro-word.has-wool .w span .up{bottom:0;height:calc(var(--lh) * 1.8em)}
+.intro-word.has-wool .w span .dn{top:100%;height:calc(var(--rh) * 1em);-webkit-mask-image:linear-gradient(#000 20%,transparent);mask-image:linear-gradient(#000 20%,transparent)}
+.intro-word.has-wool .w span b{position:absolute;left:0;right:0;opacity:0;will-change:transform,opacity;
+  background:url(intro-rope.jpg) no-repeat;background-size:calc(var(--sw) * 1em) calc(var(--sh) * 1em)}
+.intro-word.has-wool .w span .up b{bottom:0;height:calc(var(--lh) * 1em);background-position:calc(var(--x) * -1em + 1px) 0;
+  animation:rope-rise 2.4s calc(var(--n) * .1s) cubic-bezier(.2,.7,.2,1) infinite}
+.intro-word.has-wool .w span .dn b{top:0;height:calc(var(--rh) * 1em);background-position:calc(var(--x) * -1em + 1px) calc(var(--lh) * -1em);
+  animation:rope-sink 2.4s calc(var(--n) * .1s) cubic-bezier(.2,.7,.2,1) infinite}
+.intro-screen.is-ready .intro-word.has-wool .w span .up b{animation:rope-rise-settle .65s calc(var(--n) * .03s) cubic-bezier(.2,.7,.2,1) both}
+.intro-screen.is-ready .intro-word.has-wool .w span .dn b{animation:rope-sink-settle .65s calc(var(--n) * .03s) cubic-bezier(.2,.7,.2,1) both}
 @media (max-width:760px){
   .intro-word.has-wool{font-size:19.5vw;row-gap:.5em;padding-bottom:.5em}
-  .intro-word.has-wool .w span::after,.intro-word.has-wool .w::before{height:.45em}
+  .intro-word.has-wool .w span .dn{height:.45em}
 }
-@keyframes rope-in{from{opacity:0;transform:translateY(.12em)}to{opacity:1;transform:none}}
-@keyframes rope-hop{
-  0%{transform:none}
-  10%{transform:scaleY(1.17)}
-  19%{transform:scaleY(.93)}
-  26%{transform:scaleY(1.035)}
-  32%,100%{transform:none}}
-@keyframes rope-mirror{
-  0%{transform:none;opacity:0}
-  1%{opacity:1}
-  10%{transform:scaleY(1.17)}
-  19%{transform:scaleY(.93)}
-  26%{transform:scaleY(1.035)}
-  32%{transform:none;opacity:1}
-  33%,100%{transform:none;opacity:0}}
+@keyframes rope-rise{
+  0%{opacity:0;transform:translateY(1em)}
+  11%{opacity:1;transform:none}
+  33%{opacity:1;transform:none}
+  46%,100%{opacity:0;transform:translateY(-.5em)}}
+@keyframes rope-sink{
+  0%{opacity:0;transform:translateY(-1em)}
+  11%{opacity:1;transform:none}
+  33%{opacity:1;transform:none}
+  46%,100%{opacity:0;transform:translateY(.5em)}}
+@keyframes rope-rise-settle{from{opacity:0;transform:translateY(1em)}to{opacity:1;transform:none}}
+@keyframes rope-sink-settle{from{opacity:0;transform:translateY(-1em)}to{opacity:1;transform:none}}
 @keyframes intro-wave{
   0%{opacity:0;transform:translateY(80%);filter:blur(6px)}
   11%{opacity:1;transform:none;filter:blur(0)}
@@ -415,7 +413,7 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
 @keyframes hero-in{from{opacity:0;transform:translateY(1.75rem)}to{opacity:1;transform:none}}
 @keyframes hero-mark{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
-  .intro-word .w span,.intro-screen.is-ready .intro-word .w span,.intro-word.has-wool .w span::before,.intro-word.has-wool .w::before{animation:none;opacity:1}.intro-word.has-wool .w span::after{animation:none;opacity:0}
+  .intro-word .w span,.intro-screen.is-ready .intro-word .w span,.intro-word.has-wool .w span b,.intro-screen.is-ready .intro-word.has-wool .w span b{animation:none;opacity:1}
   .intro-screen.is-leaving{animation:intro-fade .35s forwards}
   .intro-screen.is-leaving .intro-stage,.intro-screen.is-leaving .intro-progress{animation:none}
   html.intro-reveal :is(.hero .meta,.hero h1,.hero .lede,.hero .actions,.hero .index,.figure){animation:none}
@@ -435,7 +433,7 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
 </script>
 <div class="intro-screen" role="status" aria-live="polite" aria-label="Loading Hyperpoly Studios">
   <div class="intro-stage">
-    <p class="intro-word" aria-hidden="true" style="--sw:7.5254;--sh:2.1966;--lh:1;--rh:1.1966"><span class="w w1" style="--x0:0"><span style="--n:0;--x:0.0000;--w:0.8678">H</span><span style="--n:1;--x:0.8678;--w:0.4542">Y</span><span style="--n:2;--x:1.3220;--w:0.4237">P</span><span style="--n:3;--x:1.7458;--w:0.4237">E</span><span style="--n:4;--x:2.1695;--w:0.4237">R</span><span style="--n:5;--x:2.5932;--w:0.4407">P</span><span style="--n:6;--x:3.0339;--w:0.5254">O</span><span style="--n:7;--x:3.5593;--w:0.2780">L</span><span style="--n:8;--x:3.8373;--w:0.4508">Y</span></span><span class="w w2" style="--x0:4.2881"><span style="--n:9;--x:4.2881;--w:0.5932">S</span><span style="--n:10;--x:4.8814;--w:0.4068">T</span><span style="--n:11;--x:5.2881;--w:0.4407">U</span><span style="--n:12;--x:5.7288;--w:0.4339">D</span><span style="--n:13;--x:6.1627;--w:0.2373">I</span><span style="--n:14;--x:6.4000;--w:0.5322">O</span><span style="--n:15;--x:6.9322;--w:0.5932">S</span></span></p>
+    <p class="intro-word" aria-hidden="true" style="--sw:7.5254;--sh:2.1966;--lh:1;--rh:1.1966"><span class="w w1"><span style="--n:0;--x:0.0000;--w:0.8678"><i class="up"><b></b></i><i class="dn"><b></b></i>H</span><span style="--n:1;--x:0.8678;--w:0.4542"><i class="up"><b></b></i><i class="dn"><b></b></i>Y</span><span style="--n:2;--x:1.3220;--w:0.4237"><i class="up"><b></b></i><i class="dn"><b></b></i>P</span><span style="--n:3;--x:1.7458;--w:0.4237"><i class="up"><b></b></i><i class="dn"><b></b></i>E</span><span style="--n:4;--x:2.1695;--w:0.4237"><i class="up"><b></b></i><i class="dn"><b></b></i>R</span><span style="--n:5;--x:2.5932;--w:0.4407"><i class="up"><b></b></i><i class="dn"><b></b></i>P</span><span style="--n:6;--x:3.0339;--w:0.5254"><i class="up"><b></b></i><i class="dn"><b></b></i>O</span><span style="--n:7;--x:3.5593;--w:0.2780"><i class="up"><b></b></i><i class="dn"><b></b></i>L</span><span style="--n:8;--x:3.8373;--w:0.4508"><i class="up"><b></b></i><i class="dn"><b></b></i>Y</span></span><span class="w w2"><span style="--n:9;--x:4.2881;--w:0.5932"><i class="up"><b></b></i><i class="dn"><b></b></i>S</span><span style="--n:10;--x:4.8814;--w:0.4068"><i class="up"><b></b></i><i class="dn"><b></b></i>T</span><span style="--n:11;--x:5.2881;--w:0.4407"><i class="up"><b></b></i><i class="dn"><b></b></i>U</span><span style="--n:12;--x:5.7288;--w:0.4339"><i class="up"><b></b></i><i class="dn"><b></b></i>D</span><span style="--n:13;--x:6.1627;--w:0.2373"><i class="up"><b></b></i><i class="dn"><b></b></i>I</span><span style="--n:14;--x:6.4000;--w:0.5322"><i class="up"><b></b></i><i class="dn"><b></b></i>O</span><span style="--n:15;--x:6.9322;--w:0.5932"><i class="up"><b></b></i><i class="dn"><b></b></i>S</span></span></p>
   </div>
   <div class="intro-progress" aria-hidden="true">
     <div class="intro-bar"><i></i></div>
@@ -444,7 +442,16 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
 </div>
 <script>
   // swap the plain letters for the hand-made wool lettering as soon as its image arrives
-  (function () { var w = document.querySelector('.intro-word'), i = new Image(); i.onload = function () { if (w) w.classList.add('has-wool'); }; i.src = 'intro-rope.jpg'; })();
+  // the name stays hidden until its rope image is ready, so the plain text never flashes first;
+  // plain text only shows if the image fails or takes longer than 2.5s
+  (function () {
+    var w = document.querySelector('.intro-word'), i = new Image();
+    if (!w) return;
+    var wool = function () { w.classList.add('has-wool'); w.classList.remove('no-wool'); };
+    var plain = function () { if (!w.classList.contains('has-wool')) w.classList.add('no-wool'); };
+    i.onload = wool; i.onerror = plain; i.src = 'intro-rope.jpg';
+    if (i.complete && i.naturalWidth) wool(); else setTimeout(plain, 2500);
+  })();
 </script>
 
 <header>
