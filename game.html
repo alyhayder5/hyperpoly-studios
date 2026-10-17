@@ -619,7 +619,7 @@ const RIVAL_NAMES = {
   boy: ['Glam Bella', 'Sassy Mia', 'Diva Zara', 'Lash Lily', 'Sparkle Sana', 'Queen Kiki', 'Fancy Fiona', 'Posh Priya', 'Glossy Gia', 'Lavish Luna']     // rivals for a boy crush
 };
 const RIVAL_TINTS = ['#f2a93b', '#2fa36b', '#8e5bd6', '#e8742c', '#1fa6a0', '#b8c22e'];   // gold, green, purple, orange, teal, lime: never your crush's pink or blue
-let lastThief = null;
+let lastThief = null, lastLoss = null;   // what took the last heart: 'fall', 'hit' or 'rival'
 // the grab is played as a short slow-motion scene with the camera pushed in
 let scene = null, zoomK = 0;
 const focus = { x: 0, y: 0 };
@@ -900,7 +900,7 @@ function update(dt) {
   cam.y += (ty - cam.y) * (1 - Math.pow(.08, dt));
 }
 function loseLife(fell, msg) {
-  lives--; sfx.hurt(); updateHud();
+  lives--; lastLoss = fell ? 'fall' : 'hit'; sfx.hurt(); updateHud();
   if (lives <= 0) { finish(false); return; }
   toast(msg || (fell ? 'Watch your step' : 'Ouch'));
   if (fell) reset(false); else player.hurt = 1.2;
@@ -911,8 +911,9 @@ function finish(won) {
   const t = Math.round(time), mm = Math.floor(t / 60), ss = String(t % 60).padStart(2, '0');
   let best = null;
   try { best = JSON.parse(localStorage.getItem('lr-best2') || 'null'); if (won && (!best || coins > best.coins || (coins === best.coins && t < best.t))) { best = { coins, t }; localStorage.setItem('lr-best2', JSON.stringify(best)); } } catch (e) {}
-  $('endKicker').textContent = won ? 'All five zones cleared' : `Out of hearts in zone ${zone + 1}`;
-  $('endTitle').textContent = won ? `You and ${crushName} made it!` : `Oops, ${crushName} left you`;
+  const fellFor = !won && lastLoss === 'fall';   // the last heart went down a gap
+  $('endKicker').textContent = won ? 'All five zones cleared' : fellFor ? `You fell for ${crushName}` : `Out of hearts in zone ${zone + 1}`;
+  $('endTitle').textContent = won ? `You and ${crushName} made it!` : fellFor ? `Maybe you truly love ${crushGender === 'boy' ? 'him' : 'her'}?` : `Oops, ${crushName} left you`;
   $('endCoins').textContent = `${coins}/${totalCoins}`;
   $('endTime').textContent = `${mm}:${ss}`;
   $('endBest').textContent = best ? `${best.coins}/${totalCoins}` : '–';
@@ -947,7 +948,7 @@ function updateScene(dt) {
       burst(P.x - kdir * 8, P.y - 26, '#ffd27a', 10); sfx.stomp();
       particles.push({ heart: true, x: P.x, y: P.y - 60, vx: kdir * 30, vy: -240, g: 760, t: 0, life: 1.7, r: 1, rot: rand(-.3, .3) });
       floaters.push({ x: P.x, y: P.y - 76, t: 0, text: 'Oof!' });
-      lives--; sfx.hurt(); updateHud();
+      lives--; lastLoss = 'rival'; sfx.hurt(); updateHud();
       if (lives <= 0) { lives = 0; s.final = true; } else toast(`${e.name} knocked you out!`);
     }
     if (s.pt > .4) { s.phase = 'approach'; s.pt = 0; }
