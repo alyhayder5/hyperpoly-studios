@@ -40,7 +40,7 @@
 <link rel="manifest" href="/site.webmanifest">
 
 <!-- Performance -->
-<link rel="preload" as="image" href="intro-wool.jpg" type="image/jpeg" fetchpriority="high">
+<link rel="preload" as="image" href="intro-rope.jpg" type="image/jpeg" fetchpriority="high">
 <link rel="preload" as="image" href="hp-mark.jpg" type="image/jpeg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -208,6 +208,12 @@ header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:va
 .links a{text-decoration:none;color:var(--muted);font-size:.92rem}
 .links a:hover{color:var(--fg)}
 @media (max-width:640px){.links{display:none}}
+.nav-play{display:inline-flex;align-items:center;gap:.45rem;margin-left:1.5rem;text-decoration:none;font-weight:600;font-size:.88rem;
+  padding:.5rem .95rem;border-radius:99px;color:var(--fg);background:color-mix(in srgb,var(--accent) 16%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 55%,transparent)}
+.nav-play svg{width:1.15rem;height:1.15rem;color:var(--accent)}
+.nav-play:hover{background:var(--accent);color:#16110e}
+.nav-play:hover svg{color:#16110e}
+@media (max-width:640px){.nav-play{margin-left:auto}}
 
 /* ---------- Hero ---------- */
 .hero{padding-block:1.75rem 0;overflow-x:clip}
@@ -345,12 +351,43 @@ html.intro .intro-screen{position:fixed;inset:0;z-index:100;display:grid;place-i
 .intro-word .w span{display:inline-block;opacity:0;will-change:transform,opacity;
   animation:intro-wave 2.4s calc(var(--n) * .1s) cubic-bezier(.2,.7,.2,1) infinite}
 .intro-screen.is-ready .intro-word .w span{animation:intro-settle .65s calc(var(--n) * .03s) cubic-bezier(.2,.7,.2,1) both}
-/* 3D wool lettering: pre-rendered yarn-wrapped letters from one image, plain text until it arrives */
-.intro-word.has-wool{font-size:clamp(3rem,8.6vw,10rem);column-gap:.32em}
-.intro-word.has-wool .w{padding-block:.06em}
-.intro-word.has-wool .w span{width:calc(var(--w) * 1em);height:calc(var(--sh) * 1em);color:transparent;
-  background:url(intro-wool.jpg) calc(var(--x) * -1em) 0 / calc(var(--sw) * 1em) calc(var(--sh) * 1em) no-repeat}
-@media (max-width:760px){.intro-word.has-wool{font-size:14.5vw}}
+/* 3D rope lettering on a glossy floor: one pre-rendered image cut into letters, plain text until it arrives.
+   A wave runs along the name: each letter springs up like stretched rope while its reflection stretches down to match. */
+.intro-word.has-wool{font-size:min(11.6vw,12.5rem);column-gap:0;row-gap:0;letter-spacing:0;padding-bottom:calc(var(--rh) * 1em)}
+.intro-word.has-wool .w{overflow:visible;padding-block:0;position:relative}
+/* the resting reflection is one seamless strip per word; each letter's own reflection only shows while it stretches */
+.intro-word.has-wool .w::before{content:"";position:absolute;left:0;right:0;top:calc(var(--lh) * 1em);height:calc(var(--rh) * 1em);
+  background:url(intro-rope.jpg) calc(var(--x0) * -1em) calc(var(--lh) * -1em) / calc(var(--sw) * 1em) calc(var(--sh) * 1em) no-repeat;
+  -webkit-mask-image:linear-gradient(#000 20%,transparent);mask-image:linear-gradient(#000 20%,transparent);animation:rope-in .8s .2s both}
+.intro-word.has-wool .w span{position:relative;width:calc(var(--w) * 1em);height:calc(var(--lh) * 1em);color:transparent;opacity:1;
+  animation:rope-in .8s calc(var(--n) * .045s) cubic-bezier(.2,.7,.2,1) both}
+.intro-word.has-wool .w span::before,.intro-word.has-wool .w span::after{content:"";position:absolute;left:-1px;right:-1px;
+  background:url(intro-rope.jpg) no-repeat;background-size:calc(var(--sw) * 1em) calc(var(--sh) * 1em);will-change:transform}
+.intro-word.has-wool .w span::before{top:0;height:100%;background-position:calc(var(--x) * -1em + 1px) 0;transform-origin:50% 100%;
+  animation:rope-hop 2.4s calc(.85s + var(--n) * .075s) ease-in-out infinite}
+.intro-word.has-wool .w span::after{opacity:0;top:100%;height:calc(var(--rh) * 1em);background-position:calc(var(--x) * -1em + 1px) calc(var(--lh) * -1em);transform-origin:50% 0;
+  -webkit-mask-image:linear-gradient(#000 20%,transparent);mask-image:linear-gradient(#000 20%,transparent);
+  animation:rope-mirror 2.4s calc(.85s + var(--n) * .075s) ease-in-out infinite}
+.intro-screen.is-ready .intro-word.has-wool .w span{animation:rope-in .8s calc(var(--n) * .045s) cubic-bezier(.2,.7,.2,1) both}
+@media (max-width:760px){
+  .intro-word.has-wool{font-size:19.5vw;row-gap:.5em;padding-bottom:.5em}
+  .intro-word.has-wool .w span::after,.intro-word.has-wool .w::before{height:.45em}
+}
+@keyframes rope-in{from{opacity:0;transform:translateY(.12em)}to{opacity:1;transform:none}}
+@keyframes rope-hop{
+  0%{transform:none}
+  10%{transform:scaleY(1.17)}
+  19%{transform:scaleY(.93)}
+  26%{transform:scaleY(1.035)}
+  32%,100%{transform:none}}
+@keyframes rope-mirror{
+  0%{transform:none;opacity:0}
+  1%{opacity:1}
+  10%{transform:scaleY(1.17)}
+  19%{transform:scaleY(.93)}
+  26%{transform:scaleY(1.035)}
+  32%{transform:none;opacity:1}
+  33%,100%{transform:none;opacity:0}}
 @keyframes intro-wave{
   0%{opacity:0;transform:translateY(80%);filter:blur(6px)}
   11%{opacity:1;transform:none;filter:blur(0)}
@@ -378,7 +415,7 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
 @keyframes hero-in{from{opacity:0;transform:translateY(1.75rem)}to{opacity:1;transform:none}}
 @keyframes hero-mark{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){
-  .intro-word .w span,.intro-screen.is-ready .intro-word .w span{animation:none;opacity:1}
+  .intro-word .w span,.intro-screen.is-ready .intro-word .w span,.intro-word.has-wool .w span::before,.intro-word.has-wool .w::before{animation:none;opacity:1}.intro-word.has-wool .w span::after{animation:none;opacity:0}
   .intro-screen.is-leaving{animation:intro-fade .35s forwards}
   .intro-screen.is-leaving .intro-stage,.intro-screen.is-leaving .intro-progress{animation:none}
   html.intro-reveal :is(.hero .meta,.hero h1,.hero .lede,.hero .actions,.hero .index,.figure){animation:none}
@@ -398,7 +435,7 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
 </script>
 <div class="intro-screen" role="status" aria-live="polite" aria-label="Loading Hyperpoly Studios">
   <div class="intro-stage">
-    <p class="intro-word" aria-hidden="true" style="--sw:7.5667;--sh:0.7667"><span class="w w1"><span style="--n:0;--x:0.0000;--w:0.6367">H</span><span style="--n:1;--x:0.6367;--w:0.6467">Y</span><span style="--n:2;--x:1.2833;--w:0.6033">P</span><span style="--n:3;--x:1.8867;--w:0.5467">E</span><span style="--n:4;--x:2.4333;--w:0.6300">R</span><span style="--n:5;--x:1.2833;--w:0.6033">P</span><span style="--n:6;--x:3.0633;--w:0.6733">O</span><span style="--n:7;--x:3.7367;--w:0.4867">L</span><span style="--n:8;--x:0.6367;--w:0.6467">Y</span></span><span class="w w2"><span style="--n:9;--x:4.2233;--w:0.6133">S</span><span style="--n:10;--x:4.8367;--w:0.5567">T</span><span style="--n:11;--x:5.3933;--w:0.6267">U</span><span style="--n:12;--x:6.0200;--w:0.6333">D</span><span style="--n:13;--x:6.6533;--w:0.2400">I</span><span style="--n:14;--x:6.8933;--w:0.6733">O</span><span style="--n:15;--x:4.2233;--w:0.6133">S</span></span></p>
+    <p class="intro-word" aria-hidden="true" style="--sw:7.5254;--sh:2.1966;--lh:1;--rh:1.1966"><span class="w w1" style="--x0:0"><span style="--n:0;--x:0.0000;--w:0.8678">H</span><span style="--n:1;--x:0.8678;--w:0.4542">Y</span><span style="--n:2;--x:1.3220;--w:0.4237">P</span><span style="--n:3;--x:1.7458;--w:0.4237">E</span><span style="--n:4;--x:2.1695;--w:0.4237">R</span><span style="--n:5;--x:2.5932;--w:0.4407">P</span><span style="--n:6;--x:3.0339;--w:0.5254">O</span><span style="--n:7;--x:3.5593;--w:0.2780">L</span><span style="--n:8;--x:3.8373;--w:0.4508">Y</span></span><span class="w w2" style="--x0:4.2881"><span style="--n:9;--x:4.2881;--w:0.5932">S</span><span style="--n:10;--x:4.8814;--w:0.4068">T</span><span style="--n:11;--x:5.2881;--w:0.4407">U</span><span style="--n:12;--x:5.7288;--w:0.4339">D</span><span style="--n:13;--x:6.1627;--w:0.2373">I</span><span style="--n:14;--x:6.4000;--w:0.5322">O</span><span style="--n:15;--x:6.9322;--w:0.5932">S</span></span></p>
   </div>
   <div class="intro-progress" aria-hidden="true">
     <div class="intro-bar"><i></i></div>
@@ -407,7 +444,7 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
 </div>
 <script>
   // swap the plain letters for the hand-made wool lettering as soon as its image arrives
-  (function () { var w = document.querySelector('.intro-word'), i = new Image(); i.onload = function () { if (w) w.classList.add('has-wool'); }; i.src = 'intro-wool.jpg'; })();
+  (function () { var w = document.querySelector('.intro-word'), i = new Image(); i.onload = function () { if (w) w.classList.add('has-wool'); }; i.src = 'intro-rope.jpg'; })();
 </script>
 
 <header>
@@ -420,6 +457,7 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
+    <a class="nav-play" href="game.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10a4 4 0 0 1 4 4v1.5a3.5 3.5 0 0 1-6.3 2.1L13.5 14h-3l-1.2 1.6A3.5 3.5 0 0 1 3 13.5V12a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7.5 10.5v3M6 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.1" fill="currentColor"/><circle cx="17.6" cy="13" r="1.1" fill="currentColor"/></svg>Play our game</a>
   </div>
 </header>
 
@@ -536,7 +574,7 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
     </div>
     <div>
       <h2 class="fh mono">Studio</h2>
-      <ul><li><a href="#services">What we do</a></li><li><a href="#contact">Start a project</a></li><li><a href="#top">Back to top ↑</a></li></ul>
+      <ul><li><a href="#services">What we do</a></li><li><a href="#contact">Start a project</a></li><li><a href="game.html">Play Lantern Run</a></li><li><a href="#top">Back to top ↑</a></li></ul>
     </div>
     <div>
       <h2 class="fh mono">Contact</h2>
