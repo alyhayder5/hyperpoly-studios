@@ -913,7 +913,7 @@ function finish(won) {
   try { best = JSON.parse(localStorage.getItem('lr-best2') || 'null'); if (won && (!best || coins > best.coins || (coins === best.coins && t < best.t))) { best = { coins, t }; localStorage.setItem('lr-best2', JSON.stringify(best)); } } catch (e) {}
   const fellFor = !won && lastLoss === 'fall';   // the last heart went down a gap
   $('endKicker').textContent = won ? 'All five zones cleared' : fellFor ? `You fell for ${crushName}` : `Out of hearts in zone ${zone + 1}`;
-  $('endTitle').textContent = won ? `You and ${crushName} made it!` : fellFor ? `Maybe you truly love ${crushGender === 'boy' ? 'him' : 'her'}?` : `Oops, ${crushName} left you`;
+  $('endTitle').textContent = won ? `You and ${crushName} made it!` : fellFor ? 'Game Over' : `Oops, ${crushName} left you`;
   $('endCoins').textContent = `${coins}/${totalCoins}`;
   $('endTime').textContent = `${mm}:${ss}`;
   $('endBest').textContent = best ? `${best.coins}/${totalCoins}` : '–';
