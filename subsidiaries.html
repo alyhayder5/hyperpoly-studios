@@ -111,7 +111,13 @@ h1{font:800 clamp(2.8rem,7vw,7.5rem)/.94 var(--display);font-variation-settings:
 .state.soon{color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
 .state.dev{color:var(--muted);background:color-mix(in srgb,var(--muted) 12%,transparent)}
 .sub h2{font:700 1.45rem/1.15 var(--display);letter-spacing:-.02em;margin:0 0 .3rem}
-.sub h2 a{text-decoration:none}.sub h2 a:hover{color:var(--accent)}
+.sub h2 a{text-decoration:none}
+/* whole card is clickable: the title link stretches over the card */
+.sub{position:relative}
+.sub h2 a::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:1}
+.sub h2 a:focus-visible{outline:none}
+.sub:has(h2 a:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
+.sub:hover h2 a,.sub:hover .visit{color:var(--accent)}
 .logo-link{display:block;border-radius:.95rem}
 .logo svg{width:100%;height:100%;display:block}
 .logo:has(svg){background:none;box-shadow:0 8px 20px -8px rgba(255,122,51,.45)}
