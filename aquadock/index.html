@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AquaDock – Mac-Style Dock, Launchpad &amp; New Tab for Chrome</title>
-<meta name="description" content="AquaDock turns Chrome’s New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Free, with an optional Pro tier.">
+<title>AquaDock – Free Mac-Style Dock, Launchpad &amp; New Tab for Chrome</title>
+<meta name="description" content="AquaDock is a free Chrome extension that turns your New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets, Workspaces and Focus timer.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.hyperpolystudios.com/aquadock/">
 <meta name="theme-color" content="#0f0d0c">
@@ -13,12 +13,12 @@
 <meta property="og:site_name" content="Hyperpoly Studios">
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://www.hyperpolystudios.com/aquadock/">
-<meta property="og:title" content="AquaDock – Mac-Style Dock, Launchpad &amp; New Tab for Chrome">
-<meta property="og:description" content="AquaDock turns Chrome’s New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Free, with an optional Pro tier.">
+<meta property="og:title" content="AquaDock – Free Mac-Style Dock, Launchpad &amp; New Tab for Chrome">
+<meta property="og:description" content="AquaDock is a free Chrome extension that turns your New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets, Workspaces and Focus timer.">
 <meta property="og:image" content="https://www.hyperpolystudios.com/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AquaDock – Mac-Style Dock, Launchpad &amp; New Tab for Chrome">
-<meta name="twitter:description" content="AquaDock turns Chrome’s New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Free, with an optional Pro tier.">
+<meta name="twitter:title" content="AquaDock – Free Mac-Style Dock, Launchpad &amp; New Tab for Chrome">
+<meta name="twitter:description" content="AquaDock is a free Chrome extension that turns your New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets, Workspaces and Focus timer.">
 <meta name="twitter:image" content="https://www.hyperpolystudios.com/og-image.jpg">
 <link rel="icon" href="../favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -42,21 +42,30 @@
    "@type": "SoftwareApplication",
    "@id": "https://www.hyperpolystudios.com/aquadock/#app",
    "name": "AquaDock",
-   "description": "AquaDock turns Chrome’s New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Free, with an optional Pro tier.",
+   "description": "AquaDock is a free Chrome extension that turns your New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets, Workspaces and Focus timer.",
    "url": "https://www.hyperpolystudios.com/aquadock/",
    "applicationCategory": "BrowserApplication",
    "applicationSubCategory": "Chrome extension",
    "operatingSystem": "Google Chrome",
    "inLanguage": "en",
    "image": "https://www.hyperpolystudios.com/img/aquadock-icon-512.png",
+   "softwareVersion": "0.7.16",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   },
    "featureList": [
-    "Magnifying Dock",
+    "A Dock that magnifies",
     "Launchpad",
     "Spotlight search",
+    "Calendar, Today and Weather",
+    "Focus & Sound",
     "Notes, To-Do and Calculator",
-    "Widgets",
-    "Desktops and Workspaces",
-    "Floating Dock on websites"
+    "Desktops and wallpapers",
+    "Workspaces",
+    "A Dock on any website"
    ],
    "publisher": {
     "@id": "https://www.hyperpolystudios.com/#organization"
@@ -174,7 +183,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09}
 .crumbs{display:flex;flex-wrap:wrap;gap:.5rem;color:var(--muted);margin:0 0 1.5rem}
 .crumbs a{text-decoration:none}.crumbs a:hover{color:var(--fg)}
 .ad-id{display:flex;align-items:center;gap:.9rem;margin:0 0 1.5rem}
-.ad-logo{width:3.6rem;height:3.6rem;flex:none;display:block;filter:drop-shadow(0 8px 22px rgba(60,170,255,.35))}
+.ad-logo{width:3.6rem;height:3.6rem;flex:none;display:block;filter:drop-shadow(0 8px 22px rgba(40,220,210,.3))}
 .wordmark{font:800 1.6rem/1 var(--display);letter-spacing:-.03em}
 .tagline{color:var(--muted);margin:.3rem 0 0}
 .ad-hero h1{font:800 clamp(2.4rem,5vw,5.4rem)/.98 var(--display);font-variation-settings:"opsz" 96;letter-spacing:-.04em;margin:0 0 1.25rem;text-wrap:balance}
@@ -193,7 +202,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09}
 .desk .search{position:absolute;left:30%;right:30%;top:45%;height:7%;border-radius:99px;background:rgba(255,255,255,.28);display:flex;align-items:center;padding:0 3%;opacity:.95}
 .desk .widget{position:absolute;right:4%;top:14%;width:20%;aspect-ratio:1;border-radius:14%;background:rgba(255,255,255,.22);padding:3%;display:grid;align-content:start;gap:6%;font-weight:700}
 .desk .widget i{display:block;height:7%;border-radius:9px;background:rgba(255,255,255,.55)}
-.desk .note{position:absolute;left:4%;top:16%;width:17%;aspect-ratio:1;border-radius:10%;background:#ffe27a;color:#4a3b00;padding:3%;font-weight:700;transform:rotate(-3deg)}
+.desk .note{position:absolute;left:4%;top:14%;width:17%;aspect-ratio:1;border-radius:14%;background:rgba(255,255,255,.9);color:#1d1d1f;padding:3%;font-weight:700;text-align:center;line-height:1.2;box-shadow:inset 0 .55em 0 #ff5a4f;padding-top:1.1em;font-size:.95em}
 .desk .dock{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);display:flex;align-items:flex-end;gap:.6em;padding:.6em .75em;border-radius:1.2em;background:rgba(255,255,255,.26);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
 .desk .dock b{display:block;width:3.2em;height:3.2em;border-radius:24%;box-shadow:0 4px 10px rgba(0,0,0,.18)}
 .desk .dock b.big{width:4.6em;height:4.6em}
@@ -208,13 +217,6 @@ footer{border-top:1px solid var(--line);background:#0b0a09}
 .features p{margin:0;color:var(--muted);font-size:.95rem}
 .features .ico{width:2.4rem;height:2.4rem;border-radius:.7rem;display:grid;place-items:center;margin-bottom:1.1rem;background:rgba(91,140,255,.16);color:#8fb0ff}
 .features .ico svg{width:1.3rem;height:1.3rem}
-.pro{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:0;padding:0;list-style:none;max-width:60rem}
-.pro li{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.25rem;border-radius:1rem;border:1px solid var(--line);background:var(--surface)}
-.pro .dot{width:2.2rem;height:2.2rem;flex:none;border-radius:.65rem;background:color-mix(in srgb,var(--tint) 22%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tint) 45%,transparent)}
-.pro b{display:block;font-weight:700}
-.pro small{color:var(--muted);font-size:.88rem}
-.pro .chip{margin-left:auto;font:500 .72rem/1 var(--mono);white-space:nowrap;padding:.45rem .6rem;border-radius:99px;background:rgba(255,255,255,.06)}
-.free-note{color:var(--muted);margin:1.5rem 0 0;max-width:60ch}
 .privacy-line{max-width:52rem;color:#d9d2cb;font-size:1.05rem}
 .endcta{padding-block:clamp(3.5rem,7vw,7rem);text-align:center}
 .endcta h2{font:800 clamp(2rem,4vw,4rem)/1 var(--display);letter-spacing:-.035em;margin:0 0 1rem}
@@ -223,7 +225,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09}
 .fine{color:var(--muted);font-size:.85rem;margin:2.5rem 0 0}
 @media (max-width:980px){.features{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){.ad-grid{grid-template-columns:1fr}}
-@media (max-width:760px){.features,.pro{grid-template-columns:1fr}}
+@media (max-width:760px){.features{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -250,14 +252,14 @@ footer{border-top:1px solid var(--line);background:#0b0a09}
         <div>
           <div class="ad-id"><img class="ad-logo" src="../img/aquadock-icon.png" width="256" height="256" alt="" decoding="async"><div><div class="wordmark">AquaDock</div><p class="tagline mono">Chrome extension</p></div></div>
           <h1>A Mac-style desktop in every new tab</h1>
-          <p class="lede">AquaDock turns Chrome’s New Tab page into a desktop with a menu bar, a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Your setup stays on your computer.</p>
-          <div class="cta"><span class="btn soon" aria-disabled="true">Coming soon to the Chrome Web Store</span><a class="btn line" href="#pro">See AquaDock Pro</a></div>
-          <ul class="facts" aria-label="At a glance"><li>Chrome</li><li>Free + Pro</li><li>No account</li><li>Stored on your device</li></ul>
+          <p class="lede">AquaDock turns Chrome’s New Tab page into a desktop with a menu bar, a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. It’s free, and your setup stays on your computer.</p>
+          <div class="cta"><span class="btn soon" aria-disabled="true">Coming soon to the Chrome Web Store</span><a class="btn line" href="../aquadock/privacy/">Privacy policy</a></div>
+          <ul class="facts" aria-label="At a glance"><li>Chrome</li><li>100% free</li><li>No account</li><li>No ads or tracking</li></ul>
         </div>
-        <figure class="desk" aria-label="Illustration of the AquaDock New Tab desktop: a menu bar, a large clock, a search bar, a sticky note, a widget and a Dock of colourful app icons">
+        <figure class="desk" aria-label="Illustration of the AquaDock New Tab desktop: a menu bar, a large clock, a search bar, a calendar, a weather card and a Dock of colourful app icons">
           <div class="bar" aria-hidden="true"><span>AquaDock</span><span>Apps</span><span>Desktops</span><span>Fri 9:41</span></div>
-          <div class="note" aria-hidden="true">Ship the pricing page</div>
-          <div class="widget" aria-hidden="true">Today<i></i><i style="width:70%"></i><i style="width:85%"></i></div>
+          <div class="note" aria-hidden="true">23<br>October</div>
+          <div class="widget" aria-hidden="true">Weather<span style="font:800 2.4em/1 var(--display)">18°</span><i style="width:70%"></i></div>
           <div class="clock" aria-hidden="true">9:41</div>
           <div class="date" aria-hidden="true">Friday, 23 October</div>
           <div class="search" aria-hidden="true">Search or type a website</div>
@@ -271,23 +273,21 @@ footer{border-top:1px solid var(--line);background:#0b0a09}
     <div class="wrap">
       <h2 id="f-title">Everything you open, one click away</h2>
       <p class="sub">Open a new tab and your apps, notes and tools are already there, laid out the way you like.</p>
-      <ul class="features"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="15" width="18" height="6" rx="2"/><rect x="6" y="10" width="4" height="4" rx="1"/><rect x="14" y="10" width="4" height="4" rx="1"/></svg></span><b>A Dock that magnifies</b><p>Pin your favourite sites. If a site is already open, AquaDock switches to that tab instead of opening a duplicate. Drag to rearrange, drag out to remove.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg></span><b>Launchpad</b><p>Every popular web app in one grid. One click pins it to your Dock.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><b>Spotlight search</b><p>Press Ctrl+K (⌘K on Mac) or just start typing to find apps, open tabs, addresses and quick sums, or search the web with your default engine.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2.5"/><path d="M4 9h16"/><path d="M8 13h5M8 16h8"/></svg></span><b>Mini apps and widgets</b><p>Notes, To-Do and a calculator open in movable windows. Add a clock, calendar or sticky note to the desktop.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="13" height="10" rx="2"/><path d="M8 19h11a2 2 0 0 0 2-2V9"/></svg></span><b>Desktops and Workspaces</b><p>Keep separate Docks and wallpapers for work, study and downtime, and save a window’s tabs to reopen them all later.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M8 17h8"/></svg></span><b>A Dock on any website</b><p>Optional Floating Dock slides up from the bottom of any page. Turn it off for sites where you don’t want it.</p></li></ul>
+      <ul class="features"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="15" width="18" height="6" rx="2"/><rect x="6" y="10" width="4" height="4" rx="1"/><rect x="14" y="10" width="4" height="4" rx="1"/></svg></span><b>A Dock that magnifies</b><p>Pin your favourite sites. If one is already open, AquaDock switches to that tab instead of opening a duplicate. Drag to rearrange; removed apps wait in Trash for seven days.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg></span><b>Launchpad</b><p>Popular web apps in one grid. One click pins any of them to your Dock, or add your own website with a custom icon.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><b>Spotlight search</b><p>Press Ctrl+K (⌘K on Mac) or just start typing to find apps, open tabs and addresses, do quick sums, or search the web with your default search engine.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2.5"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><b>Calendar, Today and Weather</b><p>Add reminders to any date, keep today’s tasks in view, and see a five-day forecast for the city you choose.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4l2.5 2M9.5 3h5"/></svg></span><b>Focus &amp; Sound</b><p>A focus and break timer that plays rain, white noise or your own music while you work.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span><b>Notes, To-Do and Calculator</b><p>Small apps that open in movable windows right on your desktop.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="13" height="10" rx="2"/><path d="M8 19h11a2 2 0 0 0 2-2V9"/></svg></span><b>Desktops and wallpapers</b><p>Separate Docks and wallpapers for work, study and downtime. Pick a built-in wallpaper or use your own photos.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><b>Workspaces</b><p>Save a window’s tabs as a project and reopen them all in one click. Earlier versions are kept, and optional recovery snapshots protect your open tabs.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7 8v8"/></svg></span><b>A Dock on any website</b><p>Turn on Floating Dock and it slides out from the left edge of any page. Hide it on sites where you don’t want it.</p></li></ul>
     </div>
   </section>
 
-  <section class="sect" id="pro" aria-labelledby="p-title">
+  <section class="sect" aria-labelledby="fr-title">
     <div class="wrap">
-      <h2 id="p-title">AquaDock Pro</h2>
-      <p class="sub">Everything in Free, plus more room for big projects. Pro is coming soon.</p>
-      <ul class="pro"><li><span class="dot" style="--tint:#5b8cff" aria-hidden="true"></span><span><b>Unlimited Desktops</b><small>Separate Docks and wallpapers for every part of your day</small></span><span class="chip">3 → Unlimited</span></li><li><span class="dot" style="--tint:#36c2d8" aria-hidden="true"></span><span><b>Unlimited Workspaces</b><small>Save every project’s tabs and reopen them in one click</small></span><span class="chip">3 → Unlimited</span></li><li><span class="dot" style="--tint:#f59e0b" aria-hidden="true"></span><span><b>More of your own wallpapers</b><small>Keep a whole gallery of your photos</small></span><span class="chip">3 → 30</span></li><li><span class="dot" style="--tint:#ec4899" aria-hidden="true"></span><span><b>Lo-Fi Beats</b><small>A calm, endless focus soundtrack</small></span><span class="chip">Pro sound</span></li><li><span class="dot" style="--tint:#8b5cf6" aria-hidden="true"></span><span><b>Workspace version history</b><small>Roll a workspace back to any of its last ten page sets</small></span><span class="chip">10 versions</span></li><li><span class="dot" style="--tint:#22c55e" aria-hidden="true"></span><span><b>Automatic tab recovery</b><small>Snapshots of your open pages every five minutes</small></span><span class="chip">Every 5 min</span></li></ul>
-      <p class="free-note">Free stays free: the Dock, Launchpad, Spotlight, widgets, Notes and To-Do.</p>
+      <h2 id="fr-title">Free. All of it.</h2>
+      <p class="sub" style="margin-bottom:0">Every feature is included for everyone. There’s no Pro plan, no account to create, no ads and no upgrade prompts.</p>
     </div>
   </section>
 
   <section class="sect" aria-labelledby="pv-title">
     <div class="wrap">
       <h2 id="pv-title">Private by design</h2>
-      <p class="privacy-line">Your Dock, Desktops, notes, to-dos and settings are saved in Chrome on your computer. AquaDock doesn’t collect, sell or send your personal data, and it only shows its Dock on websites if you turn on Floating Dock.</p>
+      <p class="privacy-line">Your Dock, notes, tasks, reminders, workspaces and settings are saved in Chrome on your computer. AquaDock has no servers, accounts, analytics or ads, and never sends your data to us. The Weather card only contacts MET Norway, after you choose a city. Floating Dock appears on websites only if you turn it on. <a href="../aquadock/privacy/" style="color:var(--accent)">Read the privacy policy</a>.</p>
     </div>
   </section>
 
@@ -295,8 +295,8 @@ footer{border-top:1px solid var(--line);background:#0b0a09}
     <div class="wrap">
       <h2>Make every new tab feel like home</h2>
       <p>AquaDock is a Hyperpoly Studios product. Questions or ideas: <a href="mailto:hyperpolystudios@gmail.com" style="color:var(--accent)">hyperpolystudios@gmail.com</a></p>
-      <div class="cta"><span class="btn soon" aria-disabled="true">Coming soon to the Chrome Web Store</span><a class="btn line" href="#pro">See AquaDock Pro</a></div>
-      <p class="fine">AquaDock is Mac-inspired and isn’t affiliated with or endorsed by Apple Inc. Mac is a trademark of Apple Inc.</p>
+      <div class="cta"><span class="btn soon" aria-disabled="true">Coming soon to the Chrome Web Store</span><a class="btn line" href="../aquadock/privacy/">Privacy policy</a></div>
+      <p class="fine">AquaDock is Mac-inspired and isn’t affiliated with or endorsed by Apple Inc. Mac is a trademark of Apple Inc. Weather data from MET Norway.</p>
     </div>
   </section>
 </main>
