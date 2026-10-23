@@ -329,10 +329,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09;overflow:hidden}
 .foot-pitch .muted{color:var(--muted);font:400 .92rem/1.5 var(--font);max-width:32ch;margin:0}
 @media (max-width:860px){.foot-top{grid-template-columns:repeat(2,minmax(0,1fr))}.foot-pitch{grid-column:1/-1}}
 @media (max-width:420px){.foot-top{grid-template-columns:1fr}}
-.wordmark{display:block;text-align:center;font:800 clamp(3.4rem,16.4vw,30rem)/.78 var(--display);font-variation-settings:"opsz" 96;
-  letter-spacing:-.055em;white-space:nowrap;margin:0;padding-top:.06em;user-select:none;
-  color:transparent;background:linear-gradient(180deg,#f2b98d,#7a3f22 70%,#2a1a12);background-size:cover;background-position:center;
-  -webkit-background-clip:text;background-clip:text}
+.wordmark{display:block;width:100%;max-width:2200px;height:auto;margin:0 auto;user-select:none;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 82%,transparent)}
 .foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem;padding-block:1.25rem;border-top:1px solid var(--line);color:var(--muted)}
 .foot-bottom a{text-decoration:none}
 .foot-bottom a:hover{color:var(--fg)}
@@ -588,14 +585,14 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
     </div>
     <div>
       <h2 class="fh mono">Studio</h2>
-      <ul><li><a href="#services">What we do</a></li><li><a href="#contact">Start a project</a></li><li><a href="subsidiaries.html">Subsidiaries</a></li><li><a href="privacy/">Privacy policy</a></li><li><a href="#top">Back to top ↑</a></li></ul>
+      <ul><li><a href="#services">What we do</a></li><li><a href="#contact">Start a project</a></li><li><a href="subsidiaries.html">Subsidiaries</a></li><li><a href="privacy/">Privacy policy</a></li></ul>
     </div>
     <div>
       <h2 class="fh mono">Contact</h2>
       <ul><li><span class="copyable" title="Double-click to copy" style="user-select:all;word-break:break-all">hyperpolystudios@gmail.com</span></li><li style="color:var(--muted);font-size:.92rem">Replies within 1 working hour</li></ul>
     </div>
   </div>
-  <p class="wordmark" id="wordmark" aria-hidden="true">HYPERPOLY</p>
+  <img class="wordmark" src="img/footer-wool.jpg" srcset="img/footer-wool-1086.jpg 1086w, img/footer-wool.jpg 2172w" sizes="100vw" width="2172" height="724" alt="" loading="lazy" decoding="async">
   <div class="wrap foot-bottom mono">
     <span>© 2026 Hyperpoly Studios · <a href="privacy/">Privacy</a></span>
     <span>YT · GD · SA</span>
@@ -640,27 +637,6 @@ html.intro-reveal .figure{animation:hero-mark 1.3s .5s cubic-bezier(.2,.7,.2,1) 
   };
   const rng = seed => () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 
-  /* Footer wordmark: letters filled with a faceted texture */
-  const paintWordmark = () => {
-    const cv = document.createElement('canvas'), W = 1600, H = 420, step = 70, rnd = rng(5);
-    cv.width = W; cv.height = H;
-    const ctx = cv.getContext('2d'), cols = Math.ceil(W / step) + 1, rows = Math.ceil(H / step) + 1, g = [];
-    for (let j = 0; j <= rows; j++) { g[j] = []; for (let i = 0; i <= cols; i++) {
-      const jx = i && i < cols ? (rnd() - 0.5) * step * 0.7 : 0, jy = j && j < rows ? (rnd() - 0.5) * step * 0.7 : 0;
-      g[j][i] = [i * step + jx, j * step + jy];
-    } }
-    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) {
-      const a = g[j][i], b = g[j][i + 1], c = g[j + 1][i], d = g[j + 1][i + 1];
-      [[a, b, c], [b, d, c]].forEach(t => {
-        const yMid = (t[0][1] + t[1][1] + t[2][1]) / 3;
-        ctx.beginPath(); ctx.moveTo(...t[0]); ctx.lineTo(...t[1]); ctx.lineTo(...t[2]); ctx.closePath();
-        ctx.fillStyle = shade(0.95 - (yMid / H) * 0.8 + (rnd() - 0.5) * 0.35); ctx.fill();
-      });
-    }
-    try { document.getElementById('wordmark').style.backgroundImage = `url(${cv.toDataURL('image/png')})`; } catch (err) {}
-  };
-
-  paintWordmark();
 
   /* Diagonal card stack: the incoming card tilts in and settles; covered cards shrink back and dim.
      Card positions are worked out from scrollY alone, so a scroll frame does no layout reads, and only
