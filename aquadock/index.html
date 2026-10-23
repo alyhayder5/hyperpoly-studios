@@ -75,6 +75,18 @@
    }
   },
   {
+   "@type": "VideoObject",
+   "name": "AquaDock – a quick tour",
+   "description": "How to use AquaDock: the Dock, Launchpad, Spotlight search, Notes, calendar reminders, tasks, Focus timer and Workspaces.",
+   "thumbnailUrl": "https://www.hyperpolystudios.com/aquadock/aquadock-demo-poster.jpg",
+   "contentUrl": "https://www.hyperpolystudios.com/aquadock/aquadock-demo.mp4",
+   "uploadDate": "2026-10-23",
+   "duration": "PT1M35S",
+   "publisher": {
+    "@id": "https://www.hyperpolystudios.com/#organization"
+   }
+  },
+  {
    "@type": "BreadcrumbList",
    "itemListElement": [
     {
@@ -211,6 +223,7 @@ footer{border-top:1px solid var(--line);background:#0b0a09}
 .sect{padding-block:clamp(3.5rem,7vw,7rem);border-bottom:1px solid var(--line)}
 .sect h2{font:800 clamp(1.9rem,3.6vw,3.6rem)/1.02 var(--display);letter-spacing:-.035em;margin:0 0 .75rem;text-wrap:balance}
 .sect .sub{color:var(--muted);max-width:54ch;margin:0 0 2.5rem;font-size:1.05rem}
+.tour-video{display:block;width:100%;max-width:1100px;height:auto;aspect-ratio:16/9;border-radius:1rem;background:#060b14;box-shadow:0 30px 70px -25px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.08)}
 .features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:0;padding:0;list-style:none}
 .features li{padding:1.5rem;border-radius:1.15rem;background:linear-gradient(160deg,var(--surface-2),var(--surface) 60%);border:1px solid var(--line)}
 .features b{display:block;font:700 1.2rem/1.2 var(--display);letter-spacing:-.015em;margin:0 0 .5rem}
@@ -266,6 +279,17 @@ footer{border-top:1px solid var(--line);background:#0b0a09}
           <div class="dock" aria-hidden="true"><b class="" style="background:linear-gradient(140deg,#ff8a5c,#e5484d)"></b><b class="mid" style="background:linear-gradient(140deg,#5ee7c8,#1fa6a0)"></b><b class="big" style="background:linear-gradient(140deg,#ffd36e,#f59e0b)"></b><b class="mid" style="background:linear-gradient(140deg,#8fb0ff,#5b5bf0)"></b><b class="" style="background:linear-gradient(140deg,#f5f5f7,#c9cbd6)"></b><b class="" style="background:linear-gradient(140deg,#ff9ec2,#c13584)"></b><b class="" style="background:linear-gradient(140deg,#9be15d,#2fa36b)"></b></div>
         </figure>
       </div>
+    </div>
+  </section>
+
+  <section class="sect tour" aria-labelledby="t-title">
+    <div class="wrap">
+      <h2 id="t-title">See how it works</h2>
+      <p class="sub">A quick tour: the Dock, Launchpad, Spotlight, Notes, reminders, tasks, Focus and Workspaces.</p>
+      <video class="tour-video" controls playsinline preload="none" poster="aquadock-demo-poster.jpg" width="1280" height="720">
+        <source src="aquadock-demo.mp4" type="video/mp4">
+        Your browser can’t play this video. <a href="aquadock-demo.mp4">Download the AquaDock tour (MP4)</a>.
+      </video>
     </div>
   </section>
 
