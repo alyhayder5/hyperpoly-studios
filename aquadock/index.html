@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AquaDock – Mac-Style Dock, Launchpad &amp; New Tab for Chrome</title>
+<meta name="description" content="AquaDock turns Chrome’s New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Free, with an optional Pro tier.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.hyperpolystudios.com/aquadock/">
+<meta name="theme-color" content="#0f0d0c">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hyperpoly Studios">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://www.hyperpolystudios.com/aquadock/">
+<meta property="og:title" content="AquaDock – Mac-Style Dock, Launchpad &amp; New Tab for Chrome">
+<meta property="og:description" content="AquaDock turns Chrome’s New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Free, with an optional Pro tier.">
+<meta property="og:image" content="https://www.hyperpolystudios.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AquaDock – Mac-Style Dock, Launchpad &amp; New Tab for Chrome">
+<meta name="twitter:description" content="AquaDock turns Chrome’s New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Free, with an optional Pro tier.">
+<meta name="twitter:image" content="https://www.hyperpolystudios.com/og-image.jpg">
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://www.hyperpolystudios.com/#organization",
+   "name": "Hyperpoly Studios",
+   "url": "https://www.hyperpolystudios.com/",
+   "email": "hyperpolystudios@gmail.com",
+   "logo": "https://www.hyperpolystudios.com/icon-512.png"
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://www.hyperpolystudios.com/aquadock/#app",
+   "name": "AquaDock",
+   "description": "AquaDock turns Chrome’s New Tab into a Mac-inspired desktop with a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Free, with an optional Pro tier.",
+   "url": "https://www.hyperpolystudios.com/aquadock/",
+   "applicationCategory": "BrowserApplication",
+   "applicationSubCategory": "Chrome extension",
+   "operatingSystem": "Google Chrome",
+   "inLanguage": "en",
+   "featureList": [
+    "Magnifying Dock",
+    "Launchpad",
+    "Spotlight search",
+    "Notes, To-Do and Calculator",
+    "Widgets",
+    "Desktops and Workspaces",
+    "Floating Dock on websites"
+   ],
+   "publisher": {
+    "@id": "https://www.hyperpolystudios.com/#organization"
+   },
+   "author": {
+    "@id": "https://www.hyperpolystudios.com/#organization"
+   }
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Hyperpoly Studios",
+     "item": "https://www.hyperpolystudios.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Subsidiaries",
+     "item": "https://www.hyperpolystudios.com/subsidiaries.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "AquaDock",
+     "item": "https://www.hyperpolystudios.com/aquadock/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0f0d0c; --surface:#181513; --surface-2:#1f1b18;
+  --fg:#efe9e3; --muted:#9a918a; --line:#2b2623; --accent:#e8935a; --ok:#8fbf7f; --warn:#e9c46a;
+  --font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --nav-h:4rem; --gut:max(16px, 3vw);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{font-size:clamp(16px, calc(10px + .4vw), 20px);scrollbar-width:thin;scrollbar-color:#3a332e var(--bg)}
+::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:#3a332e;border-radius:99px}
+body{margin:0;background:var(--bg);color:var(--fg);font:1rem/1.6 var(--font);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:clamp(1120px, 88vw, 2200px);margin:0 auto;padding-left:max(var(--gut),env(safe-area-inset-left,0px));padding-right:max(var(--gut),env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+.skip{position:absolute;left:-9999px;top:0}.skip:focus{left:1rem;top:1rem;z-index:100;background:var(--fg);color:var(--bg);padding:.6rem 1rem;border-radius:99px}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:1.5rem;height:var(--nav-h)}
+.brand{display:flex;align-items:center;gap:10px;font:700 1.05rem/1 var(--display);text-decoration:none;letter-spacing:-.01em}
+.brand img{width:1.9rem;height:1.9rem;display:block;mix-blend-mode:lighten}
+.links{display:flex;gap:1.75rem;margin-left:auto}
+.links a{text-decoration:none;color:var(--muted);font-size:.92rem}
+.links a:hover{color:var(--fg)}
+@media (max-width:640px){.links{display:none}}
+.nav-play{display:inline-flex;align-items:center;gap:.45rem;margin-left:1.5rem;text-decoration:none;font-weight:600;font-size:.88rem;
+  padding:.5rem .95rem;border-radius:99px;color:var(--fg);background:color-mix(in srgb,var(--accent) 16%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 55%,transparent)}
+.nav-play svg{width:1.15rem;height:1.15rem;color:var(--accent)}
+.nav-play:hover{background:var(--accent);color:#16110e}
+.nav-play:hover svg{color:#16110e}
+@media (max-width:640px){.nav-play{margin-left:auto}}
+
+.btn{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;font:600 .95rem/1 var(--font);padding:.95rem 1.35rem;border-radius:99px;background:var(--fg);color:var(--bg);border:0}
+.btn:hover{background:var(--accent)}
+.btn.line{background:transparent;color:var(--fg);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.line:hover{box-shadow:inset 0 0 0 1px var(--fg)}
+.btn.soon{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--fg);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 45%,transparent);cursor:default}
+.btn svg{width:1.1rem;height:1.1rem}
+
+footer{border-top:1px solid var(--line);background:#0b0a09}
+.foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 2rem;padding-block:2.5rem;color:var(--muted)}
+.foot a{text-decoration:none;color:var(--fg)}
+.foot a:hover{color:var(--accent)}
+.foot .legal{display:flex;flex-wrap:wrap;gap:.4rem 1.25rem}
+.foot .legal a{color:var(--muted)}
+.foot .legal a:hover{color:var(--fg)}
+.foot .sales{display:inline-flex;align-items:center;gap:.5rem;font:600 .95rem/1 var(--font);letter-spacing:0;text-transform:none}
+.foot .sales .arrow{width:1.05rem;height:1.05rem;animation:nudge 1.6s cubic-bezier(.45,0,.2,1) infinite}
+.foot .sales:hover .arrow{animation-duration:.8s}
+.foot .sales .word{display:inline-flex}
+.foot .sales .ch{display:inline-block}
+.foot .sales.wave .ch{animation:letter-wave .55s calc(var(--i) * .035s) cubic-bezier(.3,.7,.3,1) both}
+@keyframes nudge{0%,100%{transform:translateX(0)}45%{transform:translateX(.35rem)}60%{transform:translateX(.2rem)}}
+@keyframes letter-wave{0%,100%{transform:none}35%{transform:translateY(-.32em)}65%{transform:translateY(.05em)}}
+
+/* long-form legal text */
+.doc{padding-block:clamp(3rem,6vw,6rem) 5rem}
+.doc .kicker{color:var(--accent);margin:0 0 1rem}
+.doc h1{font:800 clamp(2.4rem,5.5vw,5.2rem)/.98 var(--display);letter-spacing:-.04em;margin:0 0 1rem}
+.doc .updated{color:var(--muted);margin:0 0 3rem}
+.prose{max-width:46rem}
+.prose h2{font:700 clamp(1.3rem,1.8vw,1.75rem)/1.2 var(--display);letter-spacing:-.02em;margin:2.75rem 0 .75rem}
+.prose p,.prose li{color:#d9d2cb}
+.prose ul{padding-left:1.2rem}
+.prose li{margin:.4rem 0}
+.prose strong{color:var(--fg)}
+.prose code{font:500 .88em var(--mono);background:var(--surface);border:1px solid var(--line);padding:.1em .4em;border-radius:.35rem}
+.prose a{color:var(--accent)}
+.summary{border:1px solid var(--line);background:var(--surface);border-radius:1.25rem;padding:1.5rem 1.75rem;margin:0 0 1rem;max-width:46rem}
+.summary p{margin:.25rem 0 0;color:#d9d2cb}
+.summary b{font:700 1.1rem var(--display)}
+@media (prefers-reduced-motion:reduce){.foot .sales .arrow,.foot .sales.wave .ch{animation:none}}
+
+.ad-hero{padding-block:clamp(3rem,6vw,6.5rem);border-bottom:1px solid var(--line);overflow-x:clip}
+.ad-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,6rem);align-items:center}
+.crumbs{display:flex;flex-wrap:wrap;gap:.5rem;color:var(--muted);margin:0 0 1.5rem}
+.crumbs a{text-decoration:none}.crumbs a:hover{color:var(--fg)}
+.ad-id{display:flex;align-items:center;gap:.9rem;margin:0 0 1.5rem}
+.ad-logo{width:3.6rem;height:3.6rem;flex:none;filter:drop-shadow(0 8px 22px rgba(70,140,255,.3))}
+.wordmark{font:800 1.6rem/1 var(--display);letter-spacing:-.03em}
+.tagline{color:var(--muted);margin:.3rem 0 0}
+.ad-hero h1{font:800 clamp(2.4rem,5vw,5.4rem)/.98 var(--display);font-variation-settings:"opsz" 96;letter-spacing:-.04em;margin:0 0 1.25rem;text-wrap:balance}
+.ad-hero .lede{color:var(--muted);font-size:clamp(1.05rem,1.3vw,1.3rem);max-width:44ch;margin:0 0 2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
+.facts{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0 0;padding:0;list-style:none}
+.facts li{font:500 .74rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:.55rem .75rem;border-radius:99px;border:1px solid var(--line)}
+
+/* the New Tab desktop, drawn in HTML */
+.desk{position:relative;aspect-ratio:16/10.5;border-radius:1rem;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.08);
+  background:radial-gradient(80% 90% at 15% 10%,#ffb38a 0%,transparent 55%),radial-gradient(70% 80% at 90% 20%,#8f7bff 0%,transparent 60%),radial-gradient(90% 90% at 60% 100%,#2fd1c5 0%,transparent 60%),#3b3f9c;color:#fff;font-size:clamp(.5rem,.9vw,.8rem)}
+.desk .bar{position:absolute;inset:0 0 auto;height:7%;display:flex;align-items:center;gap:3%;padding:0 3%;background:rgba(20,20,40,.28);font-weight:600}
+.desk .bar span:last-child{margin-left:auto;opacity:.9}
+.desk .clock{position:absolute;left:0;right:0;top:20%;text-align:center;font:800 4.2em/1 var(--display);letter-spacing:-.02em;text-shadow:0 4px 30px rgba(0,0,0,.15)}
+.desk .date{position:absolute;left:0;right:0;top:36%;text-align:center;font-weight:600;opacity:.9}
+.desk .search{position:absolute;left:30%;right:30%;top:45%;height:7%;border-radius:99px;background:rgba(255,255,255,.28);display:flex;align-items:center;padding:0 3%;opacity:.95}
+.desk .widget{position:absolute;right:4%;top:14%;width:20%;aspect-ratio:1;border-radius:14%;background:rgba(255,255,255,.22);padding:3%;display:grid;align-content:start;gap:6%;font-weight:700}
+.desk .widget i{display:block;height:7%;border-radius:9px;background:rgba(255,255,255,.55)}
+.desk .note{position:absolute;left:4%;top:16%;width:17%;aspect-ratio:1;border-radius:10%;background:#ffe27a;color:#4a3b00;padding:3%;font-weight:700;transform:rotate(-3deg)}
+.desk .dock{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);display:flex;align-items:flex-end;gap:.6em;padding:.6em .75em;border-radius:1.2em;background:rgba(255,255,255,.26);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.desk .dock b{display:block;width:3.2em;height:3.2em;border-radius:24%;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.desk .dock b.big{width:4.6em;height:4.6em}
+.desk .dock b.mid{width:3.9em;height:3.9em}
+
+.sect{padding-block:clamp(3.5rem,7vw,7rem);border-bottom:1px solid var(--line)}
+.sect h2{font:800 clamp(1.9rem,3.6vw,3.6rem)/1.02 var(--display);letter-spacing:-.035em;margin:0 0 .75rem;text-wrap:balance}
+.sect .sub{color:var(--muted);max-width:54ch;margin:0 0 2.5rem;font-size:1.05rem}
+.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:0;padding:0;list-style:none}
+.features li{padding:1.5rem;border-radius:1.15rem;background:linear-gradient(160deg,var(--surface-2),var(--surface) 60%);border:1px solid var(--line)}
+.features b{display:block;font:700 1.2rem/1.2 var(--display);letter-spacing:-.015em;margin:0 0 .5rem}
+.features p{margin:0;color:var(--muted);font-size:.95rem}
+.features .ico{width:2.4rem;height:2.4rem;border-radius:.7rem;display:grid;place-items:center;margin-bottom:1.1rem;background:rgba(91,140,255,.16);color:#8fb0ff}
+.features .ico svg{width:1.3rem;height:1.3rem}
+.pro{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:0;padding:0;list-style:none;max-width:60rem}
+.pro li{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.25rem;border-radius:1rem;border:1px solid var(--line);background:var(--surface)}
+.pro .dot{width:2.2rem;height:2.2rem;flex:none;border-radius:.65rem;background:color-mix(in srgb,var(--tint) 22%,transparent);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--tint) 45%,transparent)}
+.pro b{display:block;font-weight:700}
+.pro small{color:var(--muted);font-size:.88rem}
+.pro .chip{margin-left:auto;font:500 .72rem/1 var(--mono);white-space:nowrap;padding:.45rem .6rem;border-radius:99px;background:rgba(255,255,255,.06)}
+.free-note{color:var(--muted);margin:1.5rem 0 0;max-width:60ch}
+.privacy-line{max-width:52rem;color:#d9d2cb;font-size:1.05rem}
+.endcta{padding-block:clamp(3.5rem,7vw,7rem);text-align:center}
+.endcta h2{font:800 clamp(2rem,4vw,4rem)/1 var(--display);letter-spacing:-.035em;margin:0 0 1rem}
+.endcta p{color:var(--muted);margin:0 auto 2rem;max-width:46ch}
+.endcta .cta{justify-content:center}
+.fine{color:var(--muted);font-size:.85rem;margin:2.5rem 0 0}
+@media (max-width:980px){.features{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.ad-grid{grid-template-columns:1fr}}
+@media (max-width:760px){.features,.pro{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="../" aria-label="Hyperpoly Studios home">
+      <img src="../hp-icon.png" width="56" height="56" alt="" decoding="async">
+      Hyperpoly
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="../#services">Services</a>
+      <a href="../#contact">Contact</a>
+    </nav>
+    <a class="nav-play" href="../subsidiaries.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10a4 4 0 0 1 4 4v1.5a3.5 3.5 0 0 1-6.3 2.1L13.5 14h-3l-1.2 1.6A3.5 3.5 0 0 1 3 13.5V12a4 4 0 0 1 4-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M7.5 10.5v3M6 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="16" cy="11" r="1.1" fill="currentColor"/><circle cx="17.6" cy="13" r="1.1" fill="currentColor"/></svg>Subsidiaries</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="ad-hero">
+    <div class="wrap">
+      <nav class="crumbs mono" aria-label="Breadcrumb"><a href="../">Hyperpoly</a><span aria-hidden="true">/</span><a href="../subsidiaries.html">Subsidiaries</a><span aria-hidden="true">/</span><span aria-current="page">AquaDock</span></nav>
+      <div class="ad-grid">
+        <div>
+          <div class="ad-id"><svg class="ad-logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="adg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36d1dc"/><stop offset="1" stop-color="#5b5bf0"/></linearGradient></defs>
+<rect width="64" height="64" rx="15" fill="url(#adg)"/><rect x="1" y="1" width="62" height="62" rx="14" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="1.2"/>
+<rect x="10" y="14" width="44" height="3.2" rx="1.6" fill="#fff" fill-opacity=".55"/>
+<rect x="9" y="38" width="46" height="15" rx="6" fill="#fff" fill-opacity=".3"/>
+<rect x="13" y="41" width="9" height="9" rx="2.6" fill="#fff"/><rect x="24.5" y="38.5" width="11" height="11" rx="3" fill="#ffd36e"/><rect x="38" y="41" width="9" height="9" rx="2.6" fill="#fff"/>
+<circle cx="30" cy="55.6" r="1.3" fill="#fff"/></svg><div><div class="wordmark">AquaDock</div><p class="tagline mono">Chrome extension</p></div></div>
+          <h1>A Mac-style desktop in every new tab</h1>
+          <p class="lede">AquaDock turns Chrome’s New Tab page into a desktop with a menu bar, a magnifying Dock, Launchpad, Spotlight search, widgets and mini apps. Your setup stays on your computer.</p>
+          <div class="cta"><span class="btn soon" aria-disabled="true">Coming soon to the Chrome Web Store</span><a class="btn line" href="#pro">See AquaDock Pro</a></div>
+          <ul class="facts" aria-label="At a glance"><li>Chrome</li><li>Free + Pro</li><li>No account</li><li>Stored on your device</li></ul>
+        </div>
+        <figure class="desk" aria-label="Illustration of the AquaDock New Tab desktop: a menu bar, a large clock, a search bar, a sticky note, a widget and a Dock of colourful app icons">
+          <div class="bar" aria-hidden="true"><span>AquaDock</span><span>Apps</span><span>Desktops</span><span>Fri 9:41</span></div>
+          <div class="note" aria-hidden="true">Ship the pricing page</div>
+          <div class="widget" aria-hidden="true">Today<i></i><i style="width:70%"></i><i style="width:85%"></i></div>
+          <div class="clock" aria-hidden="true">9:41</div>
+          <div class="date" aria-hidden="true">Friday, 23 October</div>
+          <div class="search" aria-hidden="true">Search or type a website</div>
+          <div class="dock" aria-hidden="true"><b class="" style="background:linear-gradient(140deg,#ff8a5c,#e5484d)"></b><b class="mid" style="background:linear-gradient(140deg,#5ee7c8,#1fa6a0)"></b><b class="big" style="background:linear-gradient(140deg,#ffd36e,#f59e0b)"></b><b class="mid" style="background:linear-gradient(140deg,#8fb0ff,#5b5bf0)"></b><b class="" style="background:linear-gradient(140deg,#f5f5f7,#c9cbd6)"></b><b class="" style="background:linear-gradient(140deg,#ff9ec2,#c13584)"></b><b class="" style="background:linear-gradient(140deg,#9be15d,#2fa36b)"></b></div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sect" aria-labelledby="f-title">
+    <div class="wrap">
+      <h2 id="f-title">Everything you open, one click away</h2>
+      <p class="sub">Open a new tab and your apps, notes and tools are already there, laid out the way you like.</p>
+      <ul class="features"><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="15" width="18" height="6" rx="2"/><rect x="6" y="10" width="4" height="4" rx="1"/><rect x="14" y="10" width="4" height="4" rx="1"/></svg></span><b>A Dock that magnifies</b><p>Pin your favourite sites. If a site is already open, AquaDock switches to that tab instead of opening a duplicate. Drag to rearrange, drag out to remove.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></svg></span><b>Launchpad</b><p>Every popular web app in one grid. One click pins it to your Dock.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><b>Spotlight search</b><p>Press Ctrl+K (⌘K on Mac) or just start typing to find apps, open tabs, addresses and quick sums, or search the web with your default engine.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2.5"/><path d="M4 9h16"/><path d="M8 13h5M8 16h8"/></svg></span><b>Mini apps and widgets</b><p>Notes, To-Do and a calculator open in movable windows. Add a clock, calendar or sticky note to the desktop.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="13" height="10" rx="2"/><path d="M8 19h11a2 2 0 0 0 2-2V9"/></svg></span><b>Desktops and Workspaces</b><p>Keep separate Docks and wallpapers for work, study and downtime, and save a window’s tabs to reopen them all later.</p></li><li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M8 17h8"/></svg></span><b>A Dock on any website</b><p>Optional Floating Dock slides up from the bottom of any page. Turn it off for sites where you don’t want it.</p></li></ul>
+    </div>
+  </section>
+
+  <section class="sect" id="pro" aria-labelledby="p-title">
+    <div class="wrap">
+      <h2 id="p-title">AquaDock Pro</h2>
+      <p class="sub">Everything in Free, plus more room for big projects. Pro is coming soon.</p>
+      <ul class="pro"><li><span class="dot" style="--tint:#5b8cff" aria-hidden="true"></span><span><b>Unlimited Desktops</b><small>Separate Docks and wallpapers for every part of your day</small></span><span class="chip">3 → Unlimited</span></li><li><span class="dot" style="--tint:#36c2d8" aria-hidden="true"></span><span><b>Unlimited Workspaces</b><small>Save every project’s tabs and reopen them in one click</small></span><span class="chip">3 → Unlimited</span></li><li><span class="dot" style="--tint:#f59e0b" aria-hidden="true"></span><span><b>More of your own wallpapers</b><small>Keep a whole gallery of your photos</small></span><span class="chip">3 → 30</span></li><li><span class="dot" style="--tint:#ec4899" aria-hidden="true"></span><span><b>Lo-Fi Beats</b><small>A calm, endless focus soundtrack</small></span><span class="chip">Pro sound</span></li><li><span class="dot" style="--tint:#8b5cf6" aria-hidden="true"></span><span><b>Workspace version history</b><small>Roll a workspace back to any of its last ten page sets</small></span><span class="chip">10 versions</span></li><li><span class="dot" style="--tint:#22c55e" aria-hidden="true"></span><span><b>Automatic tab recovery</b><small>Snapshots of your open pages every five minutes</small></span><span class="chip">Every 5 min</span></li></ul>
+      <p class="free-note">Free stays free: the Dock, Launchpad, Spotlight, widgets, Notes and To-Do.</p>
+    </div>
+  </section>
+
+  <section class="sect" aria-labelledby="pv-title">
+    <div class="wrap">
+      <h2 id="pv-title">Private by design</h2>
+      <p class="privacy-line">Your Dock, Desktops, notes, to-dos and settings are saved in Chrome on your computer. AquaDock doesn’t collect, sell or send your personal data, and it only shows its Dock on websites if you turn on Floating Dock.</p>
+    </div>
+  </section>
+
+  <section class="endcta">
+    <div class="wrap">
+      <h2>Make every new tab feel like home</h2>
+      <p>AquaDock is a Hyperpoly Studios product. Questions or ideas: <a href="mailto:hyperpolystudios@gmail.com" style="color:var(--accent)">hyperpolystudios@gmail.com</a></p>
+      <div class="cta"><span class="btn soon" aria-disabled="true">Coming soon to the Chrome Web Store</span><a class="btn line" href="#pro">See AquaDock Pro</a></div>
+      <p class="fine">AquaDock is Mac-inspired and isn’t affiliated with or endorsed by Apple Inc. Mac is a trademark of Apple Inc.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot mono">
+    <div class="legal"><span>© 2026 Hyperpoly Studios</span><a href="../privacy/">Privacy</a></div>
+    <a class="sales" href="mailto:hyperpolystudios@gmail.com?subject=Sales%20enquiry" aria-label="Contact Sales"><span class="word" aria-hidden="true"><span class="ch" style="--i:0">C</span><span class="ch" style="--i:1">o</span><span class="ch" style="--i:2">n</span><span class="ch" style="--i:3">t</span><span class="ch" style="--i:4">a</span><span class="ch" style="--i:5">c</span><span class="ch" style="--i:6">t</span><span class="ch" style="--i:7">&nbsp;</span><span class="ch" style="--i:8">S</span><span class="ch" style="--i:9">a</span><span class="ch" style="--i:10">l</span><span class="ch" style="--i:11">e</span><span class="ch" style="--i:12">s</span></span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</footer>
+<script>
+(() => {
+  // Contact Sales: one full letter wave per hover
+  const sales = document.querySelector('.sales');
+  if (sales) {
+    const chars = sales.querySelectorAll('.ch'), last = chars[chars.length - 1];
+    const play = () => sales.classList.add('wave');
+    sales.addEventListener('pointerenter', play); sales.addEventListener('focus', play);
+    last.addEventListener('animationend', () => sales.classList.remove('wave'));
+  }
+})();
+</script>
+</body>
+</html>
